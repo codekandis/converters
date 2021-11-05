@@ -54,37 +54,32 @@ class TypeDeterminator implements TypeDeterminatorInterface
 		{
 			case 'unknown type':
 			{
-				$determinedType = 'unkown';
+				$determinedType = ValidTypes::UNKNOWN;
 				break;
 			}
 			case 'NULL':
 			{
-				$determinedType = 'null';
-				break;
-			}
-			case 'resource':
-			{
-				$determinedType = 'resource';
+				$determinedType = ValidTypes::NULL;
 				break;
 			}
 			case 'resource (closed)':
 			{
-				$determinedType = 'unknown';
+				$determinedType = ValidTypes::UNKNOWN;
 				break;
 			}
 			case 'double':
 			{
-				$determinedType = 'float';
+				$determinedType = ValidTypes::FLOAT;
 				break;
 			}
 			case 'boolean':
 			{
-				$determinedType = 'bool';
+				$determinedType = ValidTypes::BOOL;
 				break;
 			}
 			case 'integer':
 			{
-				$determinedType = 'int';
+				$determinedType = ValidTypes::INT;
 				break;
 			}
 		}

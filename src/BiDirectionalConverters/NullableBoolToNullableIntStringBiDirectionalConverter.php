@@ -14,7 +14,7 @@ use function is_string;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableBoolToNullableStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class NullableBoolToNullableIntStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
 	 * Converts from a nullable bool into a nullable string value.
@@ -34,8 +34,8 @@ class NullableBoolToNullableStringBiDirectionalConverter extends AbstractConvert
 		}
 
 		return false === $value
-			? 'false'
-			: 'true';
+			? '0'
+			: '1';
 	}
 
 	/**
@@ -55,12 +55,12 @@ class NullableBoolToNullableStringBiDirectionalConverter extends AbstractConvert
 			return null;
 		}
 
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_STRING );
+		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
 		if ( null === $regularExpression->match( $value, false ) )
 		{
-			throw $this->getInvalidValueException( $value, ValidTypes::NULL . ', ' . ValidValuesRegularExpressions::REGEX_BOOL_STRING );
+			throw $this->getInvalidValueException( $value, ValidTypes::NULL . ', ' . ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
 		}
 
-		return 'true' === $value;
+		return '1' === $value;
 	}
 }

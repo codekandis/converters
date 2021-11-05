@@ -1,6 +1,11 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
+use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\BiDirectionalConverterInterface;
+use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\Types\ValidValuesRegularExpressions;
+use CodeKandis\RegularExpressions\RegularExpression;
 use function is_int;
 use function is_string;
 
@@ -9,7 +14,7 @@ use function is_string;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class StringToIntBiDirectionalConverter extends AbstractBiDirectionalConverter
+class StringToIntBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
 	 * Converts from a string into an int value.
@@ -20,7 +25,13 @@ class StringToIntBiDirectionalConverter extends AbstractBiDirectionalConverter
 	{
 		if ( false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, 'string' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
+		}
+
+		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INT_STRING );
+		if ( null === $regularExpression->match( $value, false ) )
+		{
+			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_INT_STRING );
 		}
 
 		return (int) $value;
@@ -35,7 +46,7 @@ class StringToIntBiDirectionalConverter extends AbstractBiDirectionalConverter
 	{
 		if ( false === is_int( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, 'int' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::INT );
 		}
 
 		return (string) $value;

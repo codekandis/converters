@@ -1,6 +1,9 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
+use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\BiDirectionalConverterInterface;
+use CodeKandis\Converters\Types\ValidTypes;
 use DateTime;
 use DateTimeZone;
 use function is_string;
@@ -10,7 +13,7 @@ use function is_string;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableDateTimeToNullableStringBiDirectionalConverter extends AbstractBiDirectionalConverter
+class NullableDateTimeToNullableStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
 	 * Stores the format of the timestamp string.
@@ -47,12 +50,12 @@ class NullableDateTimeToNullableStringBiDirectionalConverter extends AbstractBiD
 			throw $this->getInvalidTypeException( $value, '?DateTime' );
 		}
 
-		/**
-		 * @var ?DateTime $value
-		 */
-		return null === $value
-			? null
-			: $value->format( $this->format );
+		if ( null === $value )
+		{
+			return null;
+		}
+
+		return $value->format( $this->format );
 	}
 
 	/**
@@ -64,11 +67,14 @@ class NullableDateTimeToNullableStringBiDirectionalConverter extends AbstractBiD
 	{
 		if ( null !== $value && false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, '?string' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_STRING );
 		}
 
-		return null === $value
-			? null
-			: DateTime::createFromFormat( $this->format, $value, $this->timeZone );
+		if ( null === $value )
+		{
+			return null;
+		}
+
+		return DateTime::createFromFormat( $this->format, $value, $this->timeZone );
 	}
 }

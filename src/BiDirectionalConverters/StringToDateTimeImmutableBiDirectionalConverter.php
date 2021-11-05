@@ -1,6 +1,9 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
+use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\BiDirectionalConverterInterface;
+use CodeKandis\Converters\Types\ValidTypes;
 use DateTimeImmutable;
 use DateTimeZone;
 use function is_string;
@@ -10,7 +13,7 @@ use function is_string;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class StringToDateTimeImmutableBiDirectionalConverter extends AbstractBiDirectionalConverter
+class StringToDateTimeImmutableBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
 	 * Stores the format of the timestamp string.
@@ -44,7 +47,7 @@ class StringToDateTimeImmutableBiDirectionalConverter extends AbstractBiDirectio
 	{
 		if ( false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, 'string' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
 		}
 
 		return DateTimeImmutable::createFromFormat( $this->format, $value, $this->timeZone );

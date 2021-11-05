@@ -1,6 +1,9 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
+use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\UniDirectionalConverterInterface;
 use ReflectionClass;
 use ReflectionException;
 use function in_array;
@@ -12,7 +15,7 @@ use function sprintf;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class EnumToArrayUniDirectionalConverter extends AbstractUniDirectionalConverter
+class EnumToArrayUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
 {
 	/**
 	 * Represents the error message if an enum class does not exist.
@@ -28,7 +31,7 @@ class EnumToArrayUniDirectionalConverter extends AbstractUniDirectionalConverter
 	{
 		if ( false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, 'string' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
 		}
 
 		try
