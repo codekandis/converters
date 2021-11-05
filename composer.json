@@ -26,7 +26,8 @@
 		"source": "https://github.com/codekandis/converters/tree/master"
 	},
 	"require": {
-		"php": "^7.4"
+		"php": "^7.4",
+		"codekandis/regular-expressions": "^0"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-master",
