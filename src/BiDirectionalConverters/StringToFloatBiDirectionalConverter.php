@@ -1,6 +1,8 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
+use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\BiDirectionalConverterInterface;
 use function is_float;
 use function is_string;
 
@@ -9,7 +11,7 @@ use function is_string;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class StringToFloatBiDirectionalConverter extends AbstractBiDirectionalConverter
+class StringToFloatBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
 	 * Converts from a string into a float value.

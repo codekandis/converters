@@ -1,6 +1,8 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
+use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\BiDirectionalConverterInterface;
 use DateTimeImmutable;
 use DateTimeZone;
 use function is_string;
@@ -10,7 +12,7 @@ use function is_string;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableStringToNullableDateTimeImmutableBiDirectionalConverter extends AbstractBiDirectionalConverter
+class NullableStringToNullableDateTimeImmutableBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
 	 * Stores the format of the timestamp string.

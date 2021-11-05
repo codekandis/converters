@@ -1,6 +1,8 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
+use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\BiDirectionalConverterInterface;
 use function is_bool;
 use function is_string;
 
@@ -9,7 +11,7 @@ use function is_string;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableStringToNullableBoolBiDirectionalConverter extends AbstractBiDirectionalConverter
+class NullableStringToNullableBoolBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
 	 * Converts from a nullable string into a nullable bool value.
@@ -26,9 +28,9 @@ class NullableStringToNullableBoolBiDirectionalConverter extends AbstractBiDirec
 		return null === $value
 			? null
 			: (
-				'0' === $value
-					? false
-					: true
+			'0' === $value
+				? false
+				: true
 			);
 	}
 
@@ -47,9 +49,9 @@ class NullableStringToNullableBoolBiDirectionalConverter extends AbstractBiDirec
 		return null === $value
 			? null
 			: (
-				false === $value
-					? '0'
-					: '1'
+			false === $value
+				? '0'
+				: '1'
 			);
 	}
 }

@@ -1,6 +1,8 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
+use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\BiDirectionalConverterInterface;
 use function is_bool;
 use function is_string;
 
@@ -9,7 +11,7 @@ use function is_string;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class BoolToStringBiDirectionalConverter extends AbstractBiDirectionalConverter
+class BoolToStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
 	 * Converts from a bool into a string value.
