@@ -3,6 +3,9 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\BiDirectionalConverterInterface;
+use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\Types\ValidValuesRegularExpressions;
+use CodeKandis\RegularExpressions\RegularExpression;
 use function is_bool;
 use function is_string;
 
@@ -22,16 +25,21 @@ class NullableStringToNullableBoolBiDirectionalConverter extends AbstractConvert
 	{
 		if ( null !== $value && false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, '?string' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_STRING );
 		}
 
-		return null === $value
-			? null
-			: (
-			'0' === $value
-				? false
-				: true
-			);
+		if ( null === $value )
+		{
+			return null;
+		}
+
+		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_STRING );
+		if ( null === $regularExpression->match( $value, false ) )
+		{
+			throw $this->getInvalidValueException( $value, ValidTypes::NULL . ', ' . ValidValuesRegularExpressions::REGEX_BOOL_STRING );
+		}
+
+		return 'true' === $value;
 	}
 
 	/**
@@ -43,15 +51,16 @@ class NullableStringToNullableBoolBiDirectionalConverter extends AbstractConvert
 	{
 		if ( null !== $value && false === is_bool( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, '?bool' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_BOOL );
 		}
 
-		return null === $value
-			? null
-			: (
-			false === $value
-				? '0'
-				: '1'
-			);
+		if ( null === $value )
+		{
+			return null;
+		}
+
+		return false === $value
+			? 'false'
+			: 'true';
 	}
 }

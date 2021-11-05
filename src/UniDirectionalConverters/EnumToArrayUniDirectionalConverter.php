@@ -2,6 +2,7 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\Types\ValidTypes;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use ReflectionClass;
 use ReflectionException;
@@ -30,7 +31,7 @@ class EnumToArrayUniDirectionalConverter extends AbstractConverter implements Un
 	{
 		if ( false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, 'string' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
 		}
 
 		try

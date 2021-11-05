@@ -3,6 +3,9 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\BiDirectionalConverterInterface;
+use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\Types\ValidValuesRegularExpressions;
+use CodeKandis\RegularExpressions\RegularExpression;
 use function is_int;
 use function is_string;
 
@@ -22,12 +25,15 @@ class NullableIntToNullableStringBiDirectionalConverter extends AbstractConverte
 	{
 		if ( null !== $value && false === is_int( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, '?int' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_INT );
 		}
 
-		return null === $value
-			? null
-			: (string) $value;
+		if ( null === $value )
+		{
+			return null;
+		}
+
+		return (string) $value;
 	}
 
 	/**
@@ -39,11 +45,20 @@ class NullableIntToNullableStringBiDirectionalConverter extends AbstractConverte
 	{
 		if ( null !== $value && false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, '?string' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_STRING );
 		}
 
-		return null === $value
-			? null
-			: (int) $value;
+		if ( null === $value )
+		{
+			return null;
+		}
+
+		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INT_STRING );
+		if ( null === $regularExpression->match( $value, false ) )
+		{
+			throw $this->getInvalidValueException( $value, ValidTypes::NULL . ', ' . ValidValuesRegularExpressions::REGEX_INT_STRING );
+		}
+
+		return (int) $value;
 	}
 }

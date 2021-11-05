@@ -6,20 +6,20 @@ use CodeKandis\Converters\BiDirectionalConverterInterface;
 use CodeKandis\Converters\Types\ValidTypes;
 use CodeKandis\Converters\Types\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
-use function is_int;
+use function is_bool;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between nullable string and nullable int.
+ * Represents a bi-directional converter converting between nullable string and nullable bool.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableStringToNullableIntBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class NullableIntStringToNullableBoolBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a nullable string into a nullable int value.
+	 * Converts from a nullable string into a nullable bool value.
 	 * @param ?string $value The nullable string value which has to be converted.
-	 * @return ?int The converted nullable int value.
+	 * @return ?bool The converted nullable bool value.
 	 */
 	public function convertTo( $value )
 	{
@@ -33,25 +33,25 @@ class NullableStringToNullableIntBiDirectionalConverter extends AbstractConverte
 			return null;
 		}
 
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INT_STRING );
+		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
 		if ( null === $regularExpression->match( $value, false ) )
 		{
-			throw $this->getInvalidValueException( $value, ValidTypes::NULL . ', ' . ValidValuesRegularExpressions::REGEX_INT_STRING );
+			throw $this->getInvalidValueException( $value, ValidTypes::NULL . ', ' . ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
 		}
 
-		return (int) $value;
+		return '1' === $value;
 	}
 
 	/**
-	 * Converts from a nullable int into a nullable string value.
-	 * @param ?int $value The nullable int value which has to be converted.
+	 * Converts from a nullable bool into a nullable string value.
+	 * @param ?bool $value The nullable bool value which has to be converted.
 	 * @return ?string The converted nullable string value.
 	 */
 	public function convertFrom( $value )
 	{
-		if ( null !== $value && false === is_int( $value ) )
+		if ( null !== $value && false === is_bool( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_INT );
+			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_BOOL );
 		}
 
 		if ( null === $value )
@@ -59,6 +59,8 @@ class NullableStringToNullableIntBiDirectionalConverter extends AbstractConverte
 			return null;
 		}
 
-		return (string) $value;
+		return false === $value
+			? '0'
+			: '1';
 	}
 }

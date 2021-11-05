@@ -10,16 +10,16 @@ use function is_bool;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between bool and string.
+ * Represents a bi-directional converter converting between bool and an int string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class BoolToStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class BoolToIntStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a bool into a string value.
+	 * Converts from a bool into an int string value.
 	 * @param bool $value The bool value which has to be converted.
-	 * @return string The converted string value.
+	 * @return string The converted int string value.
 	 */
 	public function convertTo( $value )
 	{
@@ -29,13 +29,13 @@ class BoolToStringBiDirectionalConverter extends AbstractConverter implements Bi
 		}
 
 		return false === $value
-			? 'false'
-			: 'true';
+			? '0'
+			: '1';
 	}
 
 	/**
-	 * Converts from a string into a bool value.
-	 * @param string $value The string value which has to be converted.
+	 * Converts from an int string into a bool value.
+	 * @param string $value The int string value which has to be converted.
 	 * @return bool The converted bool value.
 	 */
 	public function convertFrom( $value )
@@ -45,12 +45,12 @@ class BoolToStringBiDirectionalConverter extends AbstractConverter implements Bi
 			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
 		}
 
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_STRING );
+		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
 		if ( null === $regularExpression->match( $value, false ) )
 		{
-			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_BOOL_STRING );
+			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
 		}
 
-		return 'true' === $value;
+		return '1' === $value;
 	}
 }

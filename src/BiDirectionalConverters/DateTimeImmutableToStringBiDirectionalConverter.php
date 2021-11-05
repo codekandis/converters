@@ -3,6 +3,7 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\BiDirectionalConverterInterface;
+use CodeKandis\Converters\Types\ValidTypes;
 use DateTimeImmutable;
 use DateTimeZone;
 use function is_string;
@@ -64,7 +65,7 @@ class DateTimeImmutableToStringBiDirectionalConverter extends AbstractConverter 
 	{
 		if ( false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, 'string' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
 		}
 
 		return DateTimeImmutable::createFromFormat( $this->format, $value, $this->timeZone );

@@ -10,15 +10,15 @@ use function is_bool;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between string and bool.
+ * Represents a bi-directional converter converting between an int string and bool.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class StringToBoolBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class IntStringToBoolBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a string into a bool value.
-	 * @param string $value The string value which has to be converted.
+	 * Converts from an int string into a bool value.
+	 * @param string $value The int string value which has to be converted.
 	 * @return bool The converted bool value.
 	 */
 	public function convertTo( $value )
@@ -28,19 +28,19 @@ class StringToBoolBiDirectionalConverter extends AbstractConverter implements Bi
 			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
 		}
 
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_STRING );
+		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
 		if ( null === $regularExpression->match( $value, false ) )
 		{
-			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_BOOL_STRING );
+			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
 		}
 
-		return 'true' === $value;
+		return '1' === $value;
 	}
 
 	/**
-	 * Converts from a bool into a string value.
+	 * Converts from a bool into an int string value.
 	 * @param bool $value The bool value which has to be converted.
-	 * @return string The converted string value.
+	 * @return string The converted int string value.
 	 */
 	public function convertFrom( $value )
 	{
@@ -50,7 +50,7 @@ class StringToBoolBiDirectionalConverter extends AbstractConverter implements Bi
 		}
 
 		return false === $value
-			? 'false'
-			: 'true';
+			? '0'
+			: '1';
 	}
 }
