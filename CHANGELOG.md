@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [keep a changelog][xtlink-keep-a-changelog]
 and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioning].
 
+## [0.3.0] - 2021-11-28
+
+### Added
+
+* additional uni-directional converters 
+
+[0.3.0]: https://github.com/codekandis/converters/compare/0.2.0..0.3.0
+
+---
 ## [0.2.0] - 2021-11-05
 
 ### Added
