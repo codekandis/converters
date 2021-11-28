@@ -50,9 +50,6 @@ class DateTimeImmutableToStringBiDirectionalConverter extends AbstractConverter 
 			throw $this->getInvalidTypeException( $value, 'DateTimeImmutable' );
 		}
 
-		/**
-		 * @var DateTimeImmutable $value
-		 */
 		return $value->format( $this->format );
 	}
 

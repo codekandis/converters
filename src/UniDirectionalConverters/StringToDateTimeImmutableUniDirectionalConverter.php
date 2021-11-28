@@ -1,19 +1,19 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\Converters\BiDirectionalConverters;
+namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\BiDirectionalConverterInterface;
 use CodeKandis\Converters\Types\ValidTypes;
-use DateTime;
+use CodeKandis\Converters\UniDirectionalConverterInterface;
+use DateTimeImmutable;
 use DateTimeZone;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between string and DateTime.
+ * Represents a uni-directional converter converting string to DateTimeImmutable.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class StringToDateTimeBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class StringToDateTimeImmutableUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
 {
 	/**
 	 * Stores the format of the timestamp string.
@@ -39,32 +39,17 @@ class StringToDateTimeBiDirectionalConverter extends AbstractConverter implement
 	}
 
 	/**
-	 * Converts from a string into a DateTime value.
+	 * Converts from a string into a DateTimeImmutable value.
 	 * @param string $value The string value which has to be converted.
-	 * @return DateTime The converted DateTime value.
+	 * @return DateTimeImmutable The converted DateTimeImmutable value.
 	 */
-	public function convertTo( $value )
+	public function convert( $value )
 	{
 		if ( false === is_string( $value ) )
 		{
 			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
 		}
 
-		return DateTime::createFromFormat( $this->format, $value, $this->timeZone );
-	}
-
-	/**
-	 * Converts from a DateTime into a string value.
-	 * @param DateTime $value The DateTime value which has to be converted.
-	 * @return string The converted string value.
-	 */
-	public function convertFrom( $value )
-	{
-		if ( false === $value instanceof DateTime )
-		{
-			throw $this->getInvalidTypeException( $value, 'DateTime' );
-		}
-
-		return $value->format( $this->format );
+		return DateTimeImmutable::createFromFormat( $this->format, $value, $this->timeZone );
 	}
 }
