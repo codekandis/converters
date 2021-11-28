@@ -50,9 +50,6 @@ class DateTimeToStringBiDirectionalConverter extends AbstractConverter implement
 			throw $this->getInvalidTypeException( $value, 'DateTime' );
 		}
 
-		/**
-		 * @var DateTime $value
-		 */
 		return $value->format( $this->format );
 	}
 
