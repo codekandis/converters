@@ -9,7 +9,7 @@ use CodeKandis\RegularExpressions\RegularExpression;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting string to float.
+ * Represents a uni-directional converter converting a string into a float.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

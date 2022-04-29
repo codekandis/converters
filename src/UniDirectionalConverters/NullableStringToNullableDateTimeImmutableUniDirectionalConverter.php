@@ -9,7 +9,7 @@ use DateTimeZone;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting nullable string to nullable DateTimeImmutable.
+ * Represents a uni-directional converter converting a nullable string into a nullable DateTimeImmutable.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

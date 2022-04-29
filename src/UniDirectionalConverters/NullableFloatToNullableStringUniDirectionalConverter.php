@@ -7,7 +7,7 @@ use CodeKandis\Converters\UniDirectionalConverterInterface;
 use function is_float;
 
 /**
- * Represents a uni-directional converter converting nullable float to nullable string.
+ * Represents a uni-directional converter converting a nullable float into a nullable string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverterInterface;
 use DateTime;
 
 /**
- * Represents a uni-directional converter converting DateTime to string.
+ * Represents a uni-directional converter converting a DateTime into a string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

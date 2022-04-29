@@ -9,7 +9,7 @@ use DateTimeZone;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting string to DateTime.
+ * Represents a uni-directional converter converting a string into a DateTime.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

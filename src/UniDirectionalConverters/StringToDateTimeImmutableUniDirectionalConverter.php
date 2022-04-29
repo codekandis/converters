@@ -9,7 +9,7 @@ use DateTimeZone;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting string to DateTimeImmutable.
+ * Represents a uni-directional converter converting a string into a DateTimeImmutable.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

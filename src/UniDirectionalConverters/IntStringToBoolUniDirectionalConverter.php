@@ -9,7 +9,7 @@ use CodeKandis\RegularExpressions\RegularExpression;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting an int string to bool.
+ * Represents a uni-directional converter converting an int string into a bool.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

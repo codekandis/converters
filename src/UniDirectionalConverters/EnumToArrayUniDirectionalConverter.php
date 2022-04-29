@@ -11,7 +11,7 @@ use function is_string;
 use function sprintf;
 
 /**
- * Represents a uni-directional converter converting enums to arrays of values.
+ * Represents a uni-directional converter converting enums into arrays of values.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -7,7 +7,7 @@ use CodeKandis\Converters\UniDirectionalConverterInterface;
 use function is_int;
 
 /**
- * Represents a uni-directional converter converting nullable int to nullable string.
+ * Represents a uni-directional converter converting a nullable int into a nullable string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
