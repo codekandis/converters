@@ -9,7 +9,7 @@ use CodeKandis\RegularExpressions\RegularExpression;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting nullable string to nullable float.
+ * Represents a uni-directional converter converting a nullable string into a nullable float.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

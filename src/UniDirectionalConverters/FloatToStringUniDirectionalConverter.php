@@ -7,7 +7,7 @@ use CodeKandis\Converters\UniDirectionalConverterInterface;
 use function is_float;
 
 /**
- * Represents a uni-directional converter converting float to string.
+ * Represents a uni-directional converter converting a float into a string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

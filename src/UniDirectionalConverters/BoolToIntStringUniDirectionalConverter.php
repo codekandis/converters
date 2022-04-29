@@ -7,7 +7,7 @@ use CodeKandis\Converters\UniDirectionalConverterInterface;
 use function is_bool;
 
 /**
- * Represents a uni-directional converter converting bool to an int string.
+ * Represents a uni-directional converter converting a bool into an int string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

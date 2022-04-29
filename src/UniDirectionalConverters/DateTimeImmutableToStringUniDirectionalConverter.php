@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverterInterface;
 use DateTimeImmutable;
 
 /**
- * Represents a uni-directional converter converting DateTimeImmutable to string.
+ * Represents a uni-directional converter converting a DateTimeImmutable into a string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

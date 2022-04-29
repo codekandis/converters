@@ -10,7 +10,7 @@ use function is_bool;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between an int string and bool.
+ * Represents a bi-directional converter converting between int string and bool.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

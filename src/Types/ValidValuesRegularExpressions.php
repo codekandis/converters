@@ -31,4 +31,10 @@ abstract class ValidValuesRegularExpressions
 	 * @var string
 	 */
 	public const REGEX_FLOAT_STRING = '~^\\-?[0-9]+(?:\\.[0-9]+)?$~';
+
+	/**
+	 * Represents the regular expression of a binary string value.
+	 * @var string
+	 */
+	public const REGEX_BINARY_STRING = '~^[01]+$~';
 }

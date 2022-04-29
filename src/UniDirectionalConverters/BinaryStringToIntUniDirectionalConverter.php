@@ -6,19 +6,20 @@ use CodeKandis\Converters\Types\ValidTypes;
 use CodeKandis\Converters\Types\ValidValuesRegularExpressions;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\RegularExpressions\RegularExpression;
+use function bindec;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting an int string into a bool.
+ * Represents a uni-directional converter converting a binary string into an int.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class IntStringToBoolUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
+class BinaryStringToIntUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
 {
 	/**
-	 * Converts from an int string into a bool value.
-	 * @param string $value The int string value which has to be converted.
-	 * @return bool The converted bool value.
+	 * Converts from a binary string into an int value.
+	 * @param string $value The binary string value which has to be converted.
+	 * @return int The converted int value.
 	 */
 	public function convert( $value )
 	{
@@ -27,12 +28,12 @@ class IntStringToBoolUniDirectionalConverter extends AbstractConverter implement
 			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
 		}
 
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
+		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BINARY_STRING );
 		if ( null === $regularExpression->match( $value, false ) )
 		{
-			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
+			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_BINARY_STRING );
 		}
 
-		return '1' === $value;
+		return bindec( $value );
 	}
 }

@@ -72,7 +72,7 @@ abstract class ValidTypes
 	 * Represents an array type.
 	 * @var string
 	 */
-	public const ARRAY = 'array';
+	public const ARRAY           = 'array';
 
 	/**
 	 * Represents a nullable array type.
@@ -91,4 +91,10 @@ abstract class ValidTypes
 	 * @var string
 	 */
 	public const NULLABLE_RESOURCE = '?resource';
+
+	/**
+	 * Represents an array of boolean values type.
+	 * @var string
+	 */
+	public const BOOL_ARRAY = 'bool[]';
 }

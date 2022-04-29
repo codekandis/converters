@@ -7,7 +7,7 @@ use CodeKandis\Converters\UniDirectionalConverterInterface;
 use function is_bool;
 
 /**
- * Represents a uni-directional converter converting nullable bool to nullable string.
+ * Represents a uni-directional converter converting a nullable bool into a nullable string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
