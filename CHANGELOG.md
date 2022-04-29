@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [keep a changelog][xtlink-keep-a-changelog]
 and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioning].
 
+## [0.4.0] - 2022-04-29
+
+### Added
+
+* int to binary string and vice versa uni- and bi-directional converters
+* bool array to binary string and vice versa uni- and bi-directional converters
+
+### Fixed
+
+* PHPDoc
+
+[0.4.0]: https://github.com/codekandis/converters/compare/0.3.0..0.4.0
+
+---
 ## [0.3.0] - 2021-11-28
 
 ### Added
