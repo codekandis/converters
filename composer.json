@@ -1,6 +1,6 @@
 {
 	"name": "codekandis/converters",
-	"description": "`codekandis/converters` is a library providing converter interfaces and classes.",
+	"description": "`codekandis/converters` is a library providing uni- and bi-directional converter interfaces and classes.",
 	"keywords": [
 		"php",
 		"library",
@@ -26,12 +26,13 @@
 		"source": "https://github.com/codekandis/converters/tree/master"
 	},
 	"require": {
-		"php": "^7.4",
-		"codekandis/regular-expressions": "^0"
+		"php": ">=8.3",
+		"codekandis/regular-expressions": "^1.0.0"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-master",
-		"codekandis/phpunit": "^3"
+		"codekandis/phpunit": "^5.0.0",
+		"rector/rector": "^1.2.2"
 	},
 	"autoload": {
 		"psr-4": {
@@ -42,13 +43,15 @@
 	},
 	"autoload-dev": {
 		"psr-4": {
+			"CodeKandis\\Converters\\Build\\": [
+				"build/"
+			],
 			"CodeKandis\\Converters\\Tests\\": [
 				"tests/"
 			]
 		}
 	},
 	"scripts": {
-		"post-update-cmd": [
-		]
+		"test": "/usr/bin/env php -dxdebug.mode=coverage ./vendor/phpunit/phpunit/phpunit --configuration ./build/phpunit.xml"
 	}
 }
