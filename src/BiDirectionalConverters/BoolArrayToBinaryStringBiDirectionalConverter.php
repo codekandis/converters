@@ -16,15 +16,15 @@ use function is_string;
 use function strlen;
 
 /**
- * Represents a bi-directional converter converting between bool array and binary string.
+ * Represents a bidirectional converter converting between boolean array and binary string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 class BoolArrayToBinaryStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a bool array into a binary string value.
-	 * @param bool[] $value The bool array value which has to be converted.
+	 * Converts from a boolean array into a binary string value.
+	 * @param bool[] $value The boolean array value which has to be converted.
 	 * @return string The converted binary string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
@@ -56,9 +56,9 @@ class BoolArrayToBinaryStringBiDirectionalConverter extends AbstractConverter im
 	}
 
 	/**
-	 * Converts from a binary string into a bool array value.
+	 * Converts from a binary string into a boolean array value.
 	 * @param string $value The binary string value which has to be converted.
-	 * @return bool[] The converted bool array value.
+	 * @return bool[] The converted boolean array value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */

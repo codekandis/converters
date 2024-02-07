@@ -14,16 +14,16 @@ use function is_bool;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between string and bool.
+ * Represents a bidirectional converter converting between string and boolean.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 class StringToBoolBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a string into a bool value.
+	 * Converts from a string into a boolean value.
 	 * @param string $value The string value which has to be converted.
-	 * @return bool The converted bool value.
+	 * @return bool The converted boolean value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
@@ -45,8 +45,8 @@ class StringToBoolBiDirectionalConverter extends AbstractConverter implements Bi
 	}
 
 	/**
-	 * Converts from a bool into a string value.
-	 * @param bool $value The bool value which has to be converted.
+	 * Converts from a boolean into a string value.
+	 * @param bool $value The boolean value which has to be converted.
 	 * @return string The converted string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
