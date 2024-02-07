@@ -5,6 +5,7 @@ use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValues;
 use function is_bool;
 
 /**
@@ -24,7 +25,7 @@ class NullableBoolToNullableIntStringUniDirectionalConverter extends AbstractCon
 	{
 		if ( null !== $value && false === is_bool( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_BOOL );
+			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_BOOLEAN );
 		}
 
 		if ( null === $value )
@@ -33,7 +34,7 @@ class NullableBoolToNullableIntStringUniDirectionalConverter extends AbstractCon
 		}
 
 		return false === $value
-			? '0'
-			: '1';
+			? ValidValues::BOOL_INT_STRING_FALSE
+			: ValidValues::BOOL_INT_STRING_TRUE;
 	}
 }

@@ -5,6 +5,7 @@ use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValues;
 use function is_array;
 use function is_bool;
 
@@ -25,14 +26,14 @@ class BoolArrayToBinaryStringUniDirectionalConverter extends AbstractConverter i
 	{
 		if ( false === is_array( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::BOOL_ARRAY );
+			throw $this->getInvalidTypeException( $value, ValidTypes::BOOLEAN_ARRAY );
 		}
 
 		foreach ( $value as $valueFetched )
 		{
 			if ( false === is_bool( $valueFetched ) )
 			{
-				throw $this->getInvalidTypeException( $value, ValidTypes::BOOL_ARRAY );
+				throw $this->getInvalidTypeException( $value, ValidTypes::BOOLEAN_ARRAY );
 			}
 		}
 
@@ -40,8 +41,8 @@ class BoolArrayToBinaryStringUniDirectionalConverter extends AbstractConverter i
 		foreach ( $value as $valueFetched )
 		{
 			$binaryString .= false === $valueFetched
-				? '0'
-				: '1';
+				? ValidValues::BOOL_INT_STRING_FALSE
+				: ValidValues::BOOL_INT_STRING_TRUE;
 		}
 
 		return $binaryString;

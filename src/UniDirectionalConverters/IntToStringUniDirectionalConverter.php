@@ -24,7 +24,7 @@ class IntToStringUniDirectionalConverter extends AbstractConverter implements Un
 	{
 		if ( false === is_int( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::INT );
+			throw $this->getInvalidTypeException( $value, ValidTypes::INTEGER );
 		}
 
 		return (string) $value;

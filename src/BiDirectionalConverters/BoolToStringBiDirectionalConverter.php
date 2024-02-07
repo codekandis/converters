@@ -6,6 +6,7 @@ use CodeKandis\Converters\BiDirectionalConverterInterface;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\InvalidValueExceptionInterface;
 use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValues;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
 use function is_bool;
@@ -28,12 +29,12 @@ class BoolToStringBiDirectionalConverter extends AbstractConverter implements Bi
 	{
 		if ( false === is_bool( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::BOOL );
+			throw $this->getInvalidTypeException( $value, ValidTypes::BOOLEAN );
 		}
 
 		return false === $value
-			? 'false'
-			: 'true';
+			? ValidValues::BOOL_STRING_FALSE
+			: ValidValues::BOOL_STRING_TRUE;
 	}
 
 	/**
@@ -56,6 +57,6 @@ class BoolToStringBiDirectionalConverter extends AbstractConverter implements Bi
 			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_BOOL_STRING );
 		}
 
-		return 'true' === $value;
+		return ValidValues::BOOL_STRING_TRUE === $value;
 	}
 }

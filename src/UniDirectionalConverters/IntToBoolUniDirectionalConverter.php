@@ -7,6 +7,7 @@ use CodeKandis\Converters\InvalidValueExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use CodeKandis\Converters\ValidValues;
+use function in_array;
 use function is_int;
 
 /**
@@ -27,14 +28,14 @@ class IntToBoolUniDirectionalConverter extends AbstractConverter implements UniD
 	{
 		if ( false === is_int( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::INT );
+			throw $this->getInvalidTypeException( $value, ValidTypes::INTEGER );
 		}
 
-		if ( 0 !== $value && 1 !== $value )
+		if ( false === in_array( $value, ValidValues::BOOL_INT_SET ) )
 		{
 			throw $this->getInvalidValueException( $value, ...ValidValues::BOOL_INT_STRING_SET );
 		}
 
-		return 1 === $value;
+		return ValidValues::BOOL_INT_TRUE === $value;
 	}
 }

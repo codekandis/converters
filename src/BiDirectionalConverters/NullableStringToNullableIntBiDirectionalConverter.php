@@ -56,7 +56,7 @@ class NullableStringToNullableIntBiDirectionalConverter extends AbstractConverte
 	{
 		if ( null !== $value && false === is_int( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_INT );
+			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_INTEGER );
 		}
 
 		if ( null === $value )

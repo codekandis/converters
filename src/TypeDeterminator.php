@@ -52,34 +52,34 @@ class TypeDeterminator implements TypeDeterminatorInterface
 		$determinedType = gettype( $value );
 		switch ( $determinedType )
 		{
-			case 'unknown type':
+			case NativeTypes::UNKNOWN_TYPE:
 			{
 				$determinedType = ValidTypes::UNKNOWN;
 				break;
 			}
-			case 'NULL':
+			case NativeTypes::NULL:
 			{
 				$determinedType = ValidTypes::NULL;
 				break;
 			}
-			case 'resource (closed)':
+			case NativeTypes::CLOSED_RESOURCE:
 			{
 				$determinedType = ValidTypes::UNKNOWN;
 				break;
 			}
-			case 'double':
+			case NativeTypes::FLOAT:
 			{
 				$determinedType = ValidTypes::FLOAT;
 				break;
 			}
-			case 'boolean':
+			case NativeTypes::BOOLEAN:
 			{
-				$determinedType = ValidTypes::BOOL;
+				$determinedType = ValidTypes::BOOLEAN;
 				break;
 			}
-			case 'integer':
+			case NativeTypes::INTEGER:
 			{
-				$determinedType = ValidTypes::INT;
+				$determinedType = ValidTypes::INTEGER;
 				break;
 			}
 		}

@@ -24,25 +24,25 @@ abstract class ValidTypes
 	 * Represents a bool type.
 	 * @var string
 	 */
-	public const BOOL = 'bool';
+	public const BOOLEAN = 'bool';
 
 	/**
 	 * Represents a nullable bool type.
 	 * @var string
 	 */
-	public const NULLABLE_BOOL = '?bool';
+	public const NULLABLE_BOOLEAN = '?bool';
 
 	/**
 	 * Represents an int type.
 	 * @var string
 	 */
-	public const INT = 'int';
+	public const INTEGER = 'int';
 
 	/**
 	 * Represents a nullable int type.
 	 * @var string
 	 */
-	public const NULLABLE_INT = '?int';
+	public const NULLABLE_INTEGER = '?int';
 
 	/**
 	 * Represents a float type.
@@ -72,7 +72,7 @@ abstract class ValidTypes
 	 * Represents an array type.
 	 * @var string
 	 */
-	public const ARRAY           = 'array';
+	public const ARRAY = 'array';
 
 	/**
 	 * Represents a nullable array type.
@@ -96,7 +96,19 @@ abstract class ValidTypes
 	 * Represents an array of boolean values type.
 	 * @var string
 	 */
-	public const BOOL_ARRAY = 'bool[]';
+	public const BOOLEAN_ARRAY = 'bool[]';
+
+	/**
+	 * Represents a DateTimeZone type.
+	 * @var string
+	 */
+	public const DATE_TIME_ZONE = 'DateTimeZone';
+
+	/**
+	 * Represents a nullable DateTimeZone type.
+	 * @var string
+	 */
+	public const NULLABLE_DATE_TIME_ZONE = '?DateTimeZone';
 
 	/**
 	 * Represents a DateTimeImmutable type.
