@@ -5,6 +5,7 @@ use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
+use Override;
 use function decbin;
 use function is_int;
 
@@ -21,6 +22,7 @@ class IntToBinaryStringUniDirectionalConverter extends AbstractConverter impleme
 	 * @return string The converted binary string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convert( mixed $value ): string
 	{
 		if ( false === is_int( $value ) )

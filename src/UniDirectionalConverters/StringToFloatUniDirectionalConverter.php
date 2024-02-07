@@ -8,6 +8,7 @@ use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use Override;
 use function is_string;
 
 /**
@@ -24,6 +25,7 @@ class StringToFloatUniDirectionalConverter extends AbstractConverter implements 
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
+	#[Override]
 	public function convert( mixed $value ): float
 	{
 		if ( false === is_string( $value ) )

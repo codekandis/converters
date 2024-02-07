@@ -6,6 +6,7 @@ use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use CodeKandis\Converters\ValidValues;
+use Override;
 use function is_array;
 use function is_bool;
 
@@ -22,6 +23,7 @@ class BoolArrayToBinaryStringUniDirectionalConverter extends AbstractConverter i
 	 * @return string The converted binary string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convert( mixed $value ): string
 	{
 		if ( false === is_array( $value ) )

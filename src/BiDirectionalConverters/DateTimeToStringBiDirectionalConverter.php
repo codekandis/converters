@@ -7,6 +7,7 @@ use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\ValidTypes;
 use DateTime;
 use DateTimeZone;
+use Override;
 use function is_string;
 
 /**
@@ -45,6 +46,7 @@ class DateTimeToStringBiDirectionalConverter extends AbstractConverter implement
 	 * @return string The converted string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convertTo( mixed $value ): string
 	{
 		if ( false === $value instanceof DateTime )
@@ -61,6 +63,7 @@ class DateTimeToStringBiDirectionalConverter extends AbstractConverter implement
 	 * @return DateTime The converted DateTime value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convertFrom( mixed $value ): DateTime
 	{
 		if ( false === is_string( $value ) )

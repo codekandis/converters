@@ -9,6 +9,7 @@ use CodeKandis\Converters\ValidTypes;
 use CodeKandis\Converters\ValidValues;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use Override;
 use function is_bool;
 use function is_string;
 
@@ -26,6 +27,7 @@ class IntStringToBoolBiDirectionalConverter extends AbstractConverter implements
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
+	#[Override]
 	public function convertTo( mixed $value ): bool
 	{
 		if ( false === is_string( $value ) )
@@ -48,6 +50,7 @@ class IntStringToBoolBiDirectionalConverter extends AbstractConverter implements
 	 * @return string The converted int string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convertFrom( mixed $value ): string
 	{
 		if ( false === is_bool( $value ) )

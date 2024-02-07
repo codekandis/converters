@@ -5,6 +5,7 @@ use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
+use Override;
 use function is_int;
 
 /**
@@ -20,6 +21,7 @@ class IntToStringUniDirectionalConverter extends AbstractConverter implements Un
 	 * @return string The converted string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convert( mixed $value ): string
 	{
 		if ( false === is_int( $value ) )

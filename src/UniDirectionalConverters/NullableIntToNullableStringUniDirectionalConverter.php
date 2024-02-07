@@ -5,6 +5,7 @@ use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
+use Override;
 use function is_int;
 
 /**
@@ -20,6 +21,7 @@ class NullableIntToNullableStringUniDirectionalConverter extends AbstractConvert
 	 * @return ?string The converted nullable string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convert( mixed $value ): ?string
 	{
 		if ( null !== $value && false === is_int( $value ) )
