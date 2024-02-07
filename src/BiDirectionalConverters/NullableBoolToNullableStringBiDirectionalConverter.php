@@ -6,6 +6,7 @@ use CodeKandis\Converters\BiDirectionalConverterInterface;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\InvalidValueExceptionInterface;
 use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValues;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
 use function is_bool;
@@ -28,7 +29,7 @@ class NullableBoolToNullableStringBiDirectionalConverter extends AbstractConvert
 	{
 		if ( null !== $value && false === is_bool( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_BOOL );
+			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_BOOLEAN );
 		}
 
 		if ( null === $value )
@@ -37,8 +38,8 @@ class NullableBoolToNullableStringBiDirectionalConverter extends AbstractConvert
 		}
 
 		return false === $value
-			? 'false'
-			: 'true';
+			? ValidValues::BOOL_STRING_FALSE
+			: ValidValues::BOOL_STRING_TRUE;
 	}
 
 	/**
@@ -66,6 +67,6 @@ class NullableBoolToNullableStringBiDirectionalConverter extends AbstractConvert
 			throw $this->getInvalidValueException( $value, ValidTypes::NULL, ValidValuesRegularExpressions::REGEX_BOOL_STRING );
 		}
 
-		return 'true' === $value;
+		return ValidValues::BOOL_STRING_TRUE === $value;
 	}
 }

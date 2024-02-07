@@ -27,12 +27,12 @@ class BoolToIntBiDirectionalConverter extends AbstractConverter implements BiDir
 	{
 		if ( false === is_bool( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::BOOL );
+			throw $this->getInvalidTypeException( $value, ValidTypes::BOOLEAN );
 		}
 
 		return false === $value
-			? 0
-			: 1;
+			? ValidValues::BOOL_INT_FALSE
+			: ValidValues::BOOL_INT_TRUE;
 	}
 
 	/**
@@ -46,14 +46,14 @@ class BoolToIntBiDirectionalConverter extends AbstractConverter implements BiDir
 	{
 		if ( false === is_int( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::INT );
+			throw $this->getInvalidTypeException( $value, ValidTypes::INTEGER );
 		}
 
-		if ( 0 !== $value && 1 !== $value )
+		if ( false === in_array( $value, ValidValues::BOOL_INT_SET ) )
 		{
 			throw $this->getInvalidValueException( $value, ...ValidValues::BOOL_INT_STRING_SET );
 		}
 
-		return 1 === $value;
+		return ValidValues::BOOL_INT_TRUE === $value;
 	}
 }
