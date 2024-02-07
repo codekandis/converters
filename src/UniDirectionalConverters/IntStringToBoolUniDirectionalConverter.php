@@ -13,16 +13,16 @@ use Override;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting an int string into a bool.
+ * Represents a unidirectional converter converting a boolean string into a boolean.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 class IntStringToBoolUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
 {
 	/**
-	 * Converts from an int string into a bool value.
-	 * @param string $value The int string value which has to be converted.
-	 * @return bool The converted bool value.
+	 * Converts from a boolean string into a boolean value.
+	 * @param string $value The boolean string value which has to be converted.
+	 * @return bool The converted boolean value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */

@@ -9,19 +9,19 @@ namespace CodeKandis\Converters;
 abstract class ValidValuesRegularExpressions
 {
 	/**
-	 * Represents the regular expression of a bool value.
+	 * Represents the regular expression of a boolean value.
 	 * @var string
 	 */
 	public const string REGEX_BOOL_STRING = '~^(?:true|false)$~';
 
 	/**
-	 * Represents the regular expression of an int representation of a bool value.
+	 * Represents the regular expression of a boolean representation of a boolean value.
 	 * @var string
 	 */
 	public const string REGEX_BOOL_INT_STRING = '~^[01]$~';
 
 	/**
-	 * Represents the regular expression of an int value.
+	 * Represents the regular expression of a boolean value.
 	 * @var string
 	 */
 	public const string REGEX_INT_STRING = '~^\\-?\d+$~';

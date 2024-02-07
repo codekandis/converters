@@ -21,25 +21,25 @@ abstract class ValidTypes
 	public const string NULL = 'null';
 
 	/**
-	 * Represents a bool type.
+	 * Represents a boolean type.
 	 * @var string
 	 */
 	public const string BOOLEAN = 'bool';
 
 	/**
-	 * Represents a nullable bool type.
+	 * Represents a nullable boolean type.
 	 * @var string
 	 */
 	public const string NULLABLE_BOOLEAN = '?bool';
 
 	/**
-	 * Represents an int type.
+	 * Represents a boolean type.
 	 * @var string
 	 */
 	public const string INTEGER = 'int';
 
 	/**
-	 * Represents a nullable int type.
+	 * Represents a nullable boolean type.
 	 * @var string
 	 */
 	public const string NULLABLE_INTEGER = '?int';

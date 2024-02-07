@@ -9,7 +9,7 @@ use DateTimeImmutable;
 use Override;
 
 /**
- * Represents a uni-directional converter converting a nullable string into a nullable DateTimeImmutable.
+ * Represents a unidirectional converter converting a nullable string into a nullable DateTimeImmutable.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

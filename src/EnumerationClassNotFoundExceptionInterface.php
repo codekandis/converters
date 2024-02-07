@@ -11,7 +11,6 @@ interface EnumerationClassNotFoundExceptionInterface
 	/**
 	 * Static constructor.
 	 * @param string $enumerationClassClassName The class name of the enumeration class.
-	 * @return static
 	 */
 	public static function with_enumerationClassClassName( string $enumerationClassClassName ): static;
 }

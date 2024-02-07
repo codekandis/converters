@@ -9,7 +9,7 @@ use Override;
 use function is_float;
 
 /**
- * Represents a uni-directional converter converting a nullable float into a nullable string.
+ * Represents a unidirectional converter converting a nullable float into a nullable string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

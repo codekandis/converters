@@ -18,9 +18,6 @@ class TypeDeterminator implements TypeDeterminatorInterface
 	 * @param bool $strict True if the determined types has to be strict native, otherwise false.
 	 */
 	public function __construct(
-		/**
-		 * Stores if the determined types has to be strict native.
-		 */
 		private readonly bool $strict
 	)
 	{
@@ -63,7 +60,7 @@ class TypeDeterminator implements TypeDeterminatorInterface
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function determine( mixed $value ): string
