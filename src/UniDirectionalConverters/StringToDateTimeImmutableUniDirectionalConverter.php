@@ -7,6 +7,7 @@ use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use DateTimeImmutable;
 use DateTimeZone;
+use Override;
 use function is_string;
 
 /**
@@ -45,6 +46,7 @@ class StringToDateTimeImmutableUniDirectionalConverter extends AbstractConverter
 	 * @return DateTimeImmutable The converted DateTimeImmutable value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convert( mixed $value ): DateTimeImmutable
 	{
 		if ( false === is_string( $value ) )

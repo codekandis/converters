@@ -6,6 +6,7 @@ use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use DateTimeImmutable;
+use Override;
 
 /**
  * Represents a uni-directional converter converting a nullable string into a nullable DateTimeImmutable.
@@ -35,6 +36,7 @@ class NullableDateTimeImmutableToNullableStringUniDirectionalConverter extends A
 	 * @return ?string The converted nullable string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convert( mixed $value ): ?string
 	{
 		if ( null !== $value && false === $value instanceof DateTimeImmutable )

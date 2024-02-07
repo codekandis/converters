@@ -7,6 +7,7 @@ use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use DateTime;
 use DateTimeZone;
+use Override;
 use function is_string;
 
 /**
@@ -45,6 +46,7 @@ class NullableStringToNullableDateTimeUniDirectionalConverter extends AbstractCo
 	 * @return ?DateTime The converted nullable DateTime value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convert( mixed $value ): ?DateTime
 	{
 		if ( null !== $value && false === is_string( $value ) )

@@ -7,6 +7,7 @@ use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\InvalidValueExceptionInterface;
 use CodeKandis\Converters\ValidTypes;
 use CodeKandis\Converters\ValidValues;
+use Override;
 use function is_bool;
 use function is_int;
 
@@ -23,6 +24,7 @@ class BoolToIntBiDirectionalConverter extends AbstractConverter implements BiDir
 	 * @return int The converted int value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convertTo( mixed $value ): int
 	{
 		if ( false === is_bool( $value ) )
@@ -42,6 +44,7 @@ class BoolToIntBiDirectionalConverter extends AbstractConverter implements BiDir
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
+	#[Override]
 	public function convertFrom( mixed $value ): bool
 	{
 		if ( false === is_int( $value ) )

@@ -6,6 +6,7 @@ use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use DateTime;
+use Override;
 
 /**
  * Represents a uni-directional converter converting a nullable DateTime into a nullable string.
@@ -35,6 +36,7 @@ class NullableDateTimeToNullableStringUniDirectionalConverter extends AbstractCo
 	 * @return ?string The converted nullable string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convert( mixed $value ): ?string
 	{
 		if ( null !== $value && false === $value instanceof DateTime )

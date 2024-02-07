@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters;
 
+use Override;
 use function get_class;
 use function gettype;
 use function is_object;
@@ -90,6 +91,7 @@ class TypeDeterminator implements TypeDeterminatorInterface
 	/**
 	 * {@inheritDoc}
 	 */
+	#[Override]
 	public function determine( mixed $value ): string
 	{
 		return true === $this->strict

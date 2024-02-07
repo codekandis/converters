@@ -6,6 +6,7 @@ use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use CodeKandis\Converters\ValidValues;
+use Override;
 use function is_bool;
 
 /**
@@ -21,6 +22,7 @@ class BoolToIntStringUniDirectionalConverter extends AbstractConverter implement
 	 * @return string The converted int string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convert( mixed $value ): string
 	{
 		if ( false === is_bool( $value ) )
