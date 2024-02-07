@@ -45,7 +45,7 @@ class NullableStringToNullableDateTimeImmutableUniDirectionalConverter extends A
 	 * @return ?DateTimeImmutable The converted nullable DateTimeImmutable value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convert( $value )
+	public function convert( mixed $value ): ?DateTimeImmutable
 	{
 		if ( null !== $value && false === is_string( $value ) )
 		{

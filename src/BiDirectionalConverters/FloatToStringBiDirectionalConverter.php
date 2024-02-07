@@ -24,7 +24,7 @@ class FloatToStringBiDirectionalConverter extends AbstractConverter implements B
 	 * @return string The converted string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertTo( $value )
+	public function convertTo( mixed $value ): string
 	{
 		if ( false === is_float( $value ) )
 		{
@@ -41,7 +41,7 @@ class FloatToStringBiDirectionalConverter extends AbstractConverter implements B
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
-	public function convertFrom( $value )
+	public function convertFrom( mixed $value ): float
 	{
 		if ( false === is_string( $value ) )
 		{

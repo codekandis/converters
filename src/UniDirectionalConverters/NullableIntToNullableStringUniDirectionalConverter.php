@@ -20,7 +20,7 @@ class NullableIntToNullableStringUniDirectionalConverter extends AbstractConvert
 	 * @return ?string The converted nullable string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convert( $value )
+	public function convert( mixed $value ): ?string
 	{
 		if ( null !== $value && false === is_int( $value ) )
 		{

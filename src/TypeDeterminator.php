@@ -32,7 +32,7 @@ class TypeDeterminator implements TypeDeterminatorInterface
 	 * @param mixed $value The value to determine its type.
 	 * @return string The determined type.
 	 */
-	private function determineStrict( $value ): string
+	private function determineStrict( mixed $value ): string
 	{
 		return gettype( $value );
 	}
@@ -42,7 +42,7 @@ class TypeDeterminator implements TypeDeterminatorInterface
 	 * @param mixed $value The value to determine its type.
 	 * @return string The determined type.
 	 */
-	private function determineLoose( $value ): string
+	private function determineLoose( mixed $value ): string
 	{
 		if ( true === is_object( $value ) )
 		{
@@ -90,7 +90,7 @@ class TypeDeterminator implements TypeDeterminatorInterface
 	/**
 	 * {@inheritDoc}
 	 */
-	public function determine( $value ): string
+	public function determine( mixed $value ): string
 	{
 		return true === $this->strict
 			? $this->determineStrict( $value )

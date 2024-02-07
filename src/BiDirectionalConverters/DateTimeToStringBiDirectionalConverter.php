@@ -45,7 +45,7 @@ class DateTimeToStringBiDirectionalConverter extends AbstractConverter implement
 	 * @return string The converted string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertTo( $value )
+	public function convertTo( mixed $value ): string
 	{
 		if ( false === $value instanceof DateTime )
 		{
@@ -61,7 +61,7 @@ class DateTimeToStringBiDirectionalConverter extends AbstractConverter implement
 	 * @return DateTime The converted DateTime value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertFrom( $value )
+	public function convertFrom( mixed $value ): DateTime
 	{
 		if ( false === is_string( $value ) )
 		{

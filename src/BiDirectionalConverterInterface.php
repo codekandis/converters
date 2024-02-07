@@ -16,7 +16,7 @@ interface BiDirectionalConverterInterface
 	 * @return mixed The converted value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertTo( $value );
+	public function convertTo( mixed $value ): mixed;
 
 	/**
 	 * Converts from a value.
@@ -24,5 +24,5 @@ interface BiDirectionalConverterInterface
 	 * @return mixed The converted value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertFrom( $value );
+	public function convertFrom( mixed $value ): mixed;
 }

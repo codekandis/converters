@@ -45,7 +45,7 @@ class NullableStringToNullableDateTimeBiDirectionalConverter extends AbstractCon
 	 * @return ?DateTime The converted nullable DateTime value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertTo( $value )
+	public function convertTo( mixed $value ): ?DateTime
 	{
 		if ( null !== $value && false === is_string( $value ) )
 		{
@@ -66,7 +66,7 @@ class NullableStringToNullableDateTimeBiDirectionalConverter extends AbstractCon
 	 * @return ?string The converted nullable string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertFrom( $value )
+	public function convertFrom( mixed $value ): ?string
 	{
 		if ( null !== $value && false === $value instanceof DateTime )
 		{

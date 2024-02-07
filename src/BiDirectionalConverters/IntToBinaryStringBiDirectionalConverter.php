@@ -26,7 +26,7 @@ class IntToBinaryStringBiDirectionalConverter extends AbstractConverter implemen
 	 * @return string The converted binary string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertTo( $value )
+	public function convertTo( mixed $value ): string
 	{
 		if ( false === is_int( $value ) )
 		{
@@ -43,7 +43,7 @@ class IntToBinaryStringBiDirectionalConverter extends AbstractConverter implemen
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
-	public function convertFrom( $value )
+	public function convertFrom( mixed $value ): int
 	{
 		if ( false === is_string( $value ) )
 		{
