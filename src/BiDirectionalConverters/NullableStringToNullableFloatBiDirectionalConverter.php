@@ -25,7 +25,7 @@ class NullableStringToNullableFloatBiDirectionalConverter extends AbstractConver
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
-	public function convertTo( $value )
+	public function convertTo( mixed $value ): ?float
 	{
 		if ( null !== $value && false === is_string( $value ) )
 		{
@@ -52,7 +52,7 @@ class NullableStringToNullableFloatBiDirectionalConverter extends AbstractConver
 	 * @return ?string The converted nullable string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertFrom( $value )
+	public function convertFrom( mixed $value ): ?string
 	{
 		if ( null !== $value && false === is_float( $value ) )
 		{

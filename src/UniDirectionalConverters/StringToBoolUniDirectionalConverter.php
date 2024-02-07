@@ -25,7 +25,7 @@ class StringToBoolUniDirectionalConverter extends AbstractConverter implements U
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
-	public function convert( $value )
+	public function convert( mixed $value ): bool
 	{
 		if ( false === is_string( $value ) )
 		{

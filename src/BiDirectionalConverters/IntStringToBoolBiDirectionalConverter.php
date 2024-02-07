@@ -26,7 +26,7 @@ class IntStringToBoolBiDirectionalConverter extends AbstractConverter implements
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
-	public function convertTo( $value )
+	public function convertTo( mixed $value ): bool
 	{
 		if ( false === is_string( $value ) )
 		{
@@ -48,7 +48,7 @@ class IntStringToBoolBiDirectionalConverter extends AbstractConverter implements
 	 * @return string The converted int string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertFrom( $value )
+	public function convertFrom( mixed $value ): string
 	{
 		if ( false === is_bool( $value ) )
 		{

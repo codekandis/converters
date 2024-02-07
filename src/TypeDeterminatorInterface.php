@@ -13,5 +13,5 @@ interface TypeDeterminatorInterface
 	 * @param mixed $value The value to determine its type.
 	 * @return string The determined type.
 	 */
-	public function determine( $value ): string;
+	public function determine( mixed $value ): string;
 }

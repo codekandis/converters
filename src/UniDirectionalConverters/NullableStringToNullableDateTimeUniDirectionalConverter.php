@@ -45,7 +45,7 @@ class NullableStringToNullableDateTimeUniDirectionalConverter extends AbstractCo
 	 * @return ?DateTime The converted nullable DateTime value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convert( $value )
+	public function convert( mixed $value ): ?DateTime
 	{
 		if ( null !== $value && false === is_string( $value ) )
 		{

@@ -12,125 +12,125 @@ abstract class ValidTypes
 	 * Represents an unknown type.
 	 * @var string
 	 */
-	public const UNKNOWN = 'unknown';
+	public const string UNKNOWN = 'unknown';
 
 	/**
 	 * Represents a NULL type.
 	 * @var string
 	 */
-	public const NULL = 'null';
+	public const string NULL = 'null';
 
 	/**
 	 * Represents a bool type.
 	 * @var string
 	 */
-	public const BOOLEAN = 'bool';
+	public const string BOOLEAN = 'bool';
 
 	/**
 	 * Represents a nullable bool type.
 	 * @var string
 	 */
-	public const NULLABLE_BOOLEAN = '?bool';
+	public const string NULLABLE_BOOLEAN = '?bool';
 
 	/**
 	 * Represents an int type.
 	 * @var string
 	 */
-	public const INTEGER = 'int';
+	public const string INTEGER = 'int';
 
 	/**
 	 * Represents a nullable int type.
 	 * @var string
 	 */
-	public const NULLABLE_INTEGER = '?int';
+	public const string NULLABLE_INTEGER = '?int';
 
 	/**
 	 * Represents a float type.
 	 * @var string
 	 */
-	public const FLOAT = 'float';
+	public const string FLOAT = 'float';
 
 	/**
 	 * Represents a nullable float type.
 	 * @var string
 	 */
-	public const NULLABLE_FLOAT = '?float';
+	public const string NULLABLE_FLOAT = '?float';
 
 	/**
 	 * Represents a string type.
 	 * @var string
 	 */
-	public const STRING = 'string';
+	public const string STRING = 'string';
 
 	/**
 	 * Represents a nullable string type.
 	 * @var string
 	 */
-	public const NULLABLE_STRING = '?string';
+	public const string NULLABLE_STRING = '?string';
 
 	/**
 	 * Represents an array type.
 	 * @var string
 	 */
-	public const ARRAY = 'array';
+	public const string ARRAY = 'array';
 
 	/**
 	 * Represents a nullable array type.
 	 * @var string
 	 */
-	public const NULLABLE_ARRAY = '?array';
+	public const string NULLABLE_ARRAY = '?array';
 
 	/**
 	 * Represents a resource type.
 	 * @var string
 	 */
-	public const RESOURCE = 'resource';
+	public const string RESOURCE = 'resource';
 
 	/**
 	 * Represents a nullable resource type.
 	 * @var string
 	 */
-	public const NULLABLE_RESOURCE = '?resource';
+	public const string NULLABLE_RESOURCE = '?resource';
 
 	/**
 	 * Represents an array of boolean values type.
 	 * @var string
 	 */
-	public const BOOLEAN_ARRAY = 'bool[]';
+	public const string BOOLEAN_ARRAY = 'bool[]';
 
 	/**
 	 * Represents a DateTimeZone type.
 	 * @var string
 	 */
-	public const DATE_TIME_ZONE = 'DateTimeZone';
+	public const string DATE_TIME_ZONE = 'DateTimeZone';
 
 	/**
 	 * Represents a nullable DateTimeZone type.
 	 * @var string
 	 */
-	public const NULLABLE_DATE_TIME_ZONE = '?DateTimeZone';
+	public const string NULLABLE_DATE_TIME_ZONE = '?DateTimeZone';
 
 	/**
 	 * Represents a DateTimeImmutable type.
 	 * @var string
 	 */
-	public const DATE_TIME_IMMUTABLE = 'DateTimeImmutable';
+	public const string DATE_TIME_IMMUTABLE = 'DateTimeImmutable';
 
 	/**
 	 * Represents a nullable DateTimeImmutable type.
 	 * @var string
 	 */
-	public const NULLABLE_DATE_TIME_IMMUTABLE = '?DateTimeImmutable';
+	public const string NULLABLE_DATE_TIME_IMMUTABLE = '?DateTimeImmutable';
 
 	/**
 	 * Represents a DateTime type.
 	 * @var string
 	 */
-	public const DATE_TIME = 'DateTime';
+	public const string DATE_TIME = 'DateTime';
 
 	/**
 	 * Represents a nullable DateTime type.
 	 * @var string
 	 */
-	public const NULLABLE_DATE_TIME = '?DateTime';
+	public const string NULLABLE_DATE_TIME = '?DateTime';
 }
