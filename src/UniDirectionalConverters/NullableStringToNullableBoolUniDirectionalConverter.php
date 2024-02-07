@@ -6,6 +6,7 @@ use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\InvalidValueExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValues;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
 use function is_string;
@@ -42,6 +43,6 @@ class NullableStringToNullableBoolUniDirectionalConverter extends AbstractConver
 			throw $this->getInvalidValueException( $value, ValidTypes::NULL, ValidValuesRegularExpressions::REGEX_BOOL_STRING );
 		}
 
-		return 'true' === $value;
+		return ValidValues::BOOL_STRING_TRUE === $value;
 	}
 }

@@ -6,6 +6,7 @@ use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\InvalidValueExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValues;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
 use function is_string;
@@ -41,7 +42,7 @@ class BinaryStringToBoolArrayUniDirectionalConverter extends AbstractConverter i
 		$boolArray = [];
 		for ( $n = 0; $n < strlen( $value ); $n++ )
 		{
-			$boolArray[] = '0' === $value[ $n ]
+			$boolArray[] = ValidValues::BOOL_INT_STRING_FALSE === $value[ $n ]
 				? false
 				: true;
 		}

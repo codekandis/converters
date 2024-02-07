@@ -5,6 +5,7 @@ use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValues;
 use function is_bool;
 
 /**
@@ -24,11 +25,11 @@ class BoolToIntUniDirectionalConverter extends AbstractConverter implements UniD
 	{
 		if ( false === is_bool( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::BOOL );
+			throw $this->getInvalidTypeException( $value, ValidTypes::BOOLEAN );
 		}
 
 		return false === $value
-			? 0
-			: 1;
+			? ValidValues::BOOL_INT_FALSE
+			: ValidValues::BOOL_INT_TRUE;
 	}
 }

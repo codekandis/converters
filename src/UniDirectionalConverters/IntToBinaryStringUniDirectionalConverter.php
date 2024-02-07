@@ -25,7 +25,7 @@ class IntToBinaryStringUniDirectionalConverter extends AbstractConverter impleme
 	{
 		if ( false === is_int( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::INT );
+			throw $this->getInvalidTypeException( $value, ValidTypes::INTEGER );
 		}
 
 		return decbin( $value );
