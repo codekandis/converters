@@ -8,6 +8,7 @@ use CodeKandis\Converters\InvalidValueExceptionInterface;
 use CodeKandis\Converters\ValidTypes;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use Override;
 use function is_float;
 use function is_string;
 
@@ -24,6 +25,7 @@ class FloatToStringBiDirectionalConverter extends AbstractConverter implements B
 	 * @return string The converted string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convertTo( mixed $value ): string
 	{
 		if ( false === is_float( $value ) )
@@ -41,6 +43,7 @@ class FloatToStringBiDirectionalConverter extends AbstractConverter implements B
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
+	#[Override]
 	public function convertFrom( mixed $value ): float
 	{
 		if ( false === is_string( $value ) )

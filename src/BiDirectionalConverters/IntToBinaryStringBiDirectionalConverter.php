@@ -8,6 +8,7 @@ use CodeKandis\Converters\InvalidValueExceptionInterface;
 use CodeKandis\Converters\ValidTypes;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use Override;
 use function bindec;
 use function decbin;
 use function is_int;
@@ -26,6 +27,7 @@ class IntToBinaryStringBiDirectionalConverter extends AbstractConverter implemen
 	 * @return string The converted binary string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convertTo( mixed $value ): string
 	{
 		if ( false === is_int( $value ) )
@@ -43,6 +45,7 @@ class IntToBinaryStringBiDirectionalConverter extends AbstractConverter implemen
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
+	#[Override]
 	public function convertFrom( mixed $value ): int
 	{
 		if ( false === is_string( $value ) )

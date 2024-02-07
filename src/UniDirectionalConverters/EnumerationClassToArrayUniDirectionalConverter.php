@@ -7,6 +7,7 @@ use CodeKandis\Converters\EnumerationClassNotFoundExceptionInterface;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
+use Override;
 use ReflectionClass;
 use ReflectionException;
 use function in_array;
@@ -24,6 +25,7 @@ class EnumerationClassToArrayUniDirectionalConverter extends AbstractConverter i
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws EnumerationClassNotFoundExceptionInterface The enumeration class does not exist.
 	 */
+	#[Override]
 	public function convert( mixed $value ): array
 	{
 		if ( false === is_string( $value ) )
