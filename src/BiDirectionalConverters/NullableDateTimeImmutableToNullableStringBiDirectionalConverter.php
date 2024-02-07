@@ -18,26 +18,15 @@ use function is_string;
 class NullableDateTimeImmutableToNullableStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
-	 * Stores the format of the timestamp string.
-	 * @var string
-	 */
-	private string $format;
-
-	/**
-	 * Stores the time zone of the timestamp.
-	 * @var ?DateTimeZone
-	 */
-	private ?DateTimeZone $timeZone;
-
-	/**
 	 * Constructor method.
 	 * @param string $format The format of the timestamp string.
 	 * @param ?DateTimeZone $timeZone The time zone of the timestamp.
 	 */
-	public function __construct( string $format, ?DateTimeZone $timeZone = null )
+	public function __construct(
+		private readonly string        $format,
+		private readonly ?DateTimeZone $timeZone = null
+	)
 	{
-		$this->format   = $format;
-		$this->timeZone = $timeZone;
 	}
 
 	/**
