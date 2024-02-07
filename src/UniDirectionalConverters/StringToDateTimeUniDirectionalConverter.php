@@ -45,7 +45,7 @@ class StringToDateTimeUniDirectionalConverter extends AbstractConverter implemen
 	 * @return DateTime The converted DateTime value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convert( $value )
+	public function convert( mixed $value ): DateTime
 	{
 		if ( false === is_string( $value ) )
 		{

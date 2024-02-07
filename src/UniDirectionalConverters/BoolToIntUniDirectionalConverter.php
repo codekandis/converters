@@ -21,7 +21,7 @@ class BoolToIntUniDirectionalConverter extends AbstractConverter implements UniD
 	 * @return int The converted int value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convert( $value )
+	public function convert( mixed $value ): int
 	{
 		if ( false === is_bool( $value ) )
 		{

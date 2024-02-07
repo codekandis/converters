@@ -26,7 +26,7 @@ class NullableStringToNullableBoolBiDirectionalConverter extends AbstractConvert
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
-	public function convertTo( $value )
+	public function convertTo( mixed $value ): ?bool
 	{
 		if ( null !== $value && false === is_string( $value ) )
 		{
@@ -53,7 +53,7 @@ class NullableStringToNullableBoolBiDirectionalConverter extends AbstractConvert
 	 * @return ?string The converted nullable string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertFrom( $value )
+	public function convertFrom( mixed $value ): ?string
 	{
 		if ( null !== $value && false === is_bool( $value ) )
 		{

@@ -23,7 +23,7 @@ class BoolToIntBiDirectionalConverter extends AbstractConverter implements BiDir
 	 * @return int The converted int value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertTo( $value )
+	public function convertTo( mixed $value ): int
 	{
 		if ( false === is_bool( $value ) )
 		{
@@ -42,7 +42,7 @@ class BoolToIntBiDirectionalConverter extends AbstractConverter implements BiDir
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
-	public function convertFrom( $value )
+	public function convertFrom( mixed $value ): bool
 	{
 		if ( false === is_int( $value ) )
 		{

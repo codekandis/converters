@@ -20,7 +20,7 @@ class IntToStringUniDirectionalConverter extends AbstractConverter implements Un
 	 * @return string The converted string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convert( $value )
+	public function convert( mixed $value ): string
 	{
 		if ( false === is_int( $value ) )
 		{
