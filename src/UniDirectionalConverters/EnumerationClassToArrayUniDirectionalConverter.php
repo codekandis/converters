@@ -2,13 +2,15 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\EnumerationClassNotFoundException;
+use CodeKandis\Converters\EnumerationClassNotFoundExceptionInterface;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\ValidTypes;
 use ReflectionClass;
 use ReflectionException;
 use function in_array;
 use function is_string;
-use function sprintf;
 
 /**
  * Represents a uni-directional converter converting enums into arrays of values.
@@ -18,14 +20,9 @@ use function sprintf;
 class EnumerationClassToArrayUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
 {
 	/**
-	 * Represents the error message if an enum class does not exist.
-	 * @var string
-	 */
-	protected const ERROR_ENUM_CLASS_NOT_FOUND = 'The enum class `%s` does not exist.';
-
-	/**
 	 * {@inheritDoc}
-	 * @throws EnumerationClassNotFoundException The enum class does not exist.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @throws EnumerationClassNotFoundExceptionInterface The enumeration class does not exist.
 	 */
 	public function convert( $value )
 	{
@@ -38,14 +35,9 @@ class EnumerationClassToArrayUniDirectionalConverter extends AbstractConverter i
 		{
 			$reflectionClass = new ReflectionClass( $value );
 		}
-		catch ( ReflectionException $exception )
+		catch ( ReflectionException )
 		{
-			throw new EnumerationClassNotFoundException(
-				sprintf(
-					self::ERROR_ENUM_CLASS_NOT_FOUND,
-					$value
-				)
-			);
+			throw EnumerationClassNotFoundException::with_enumerationClassClassName( $value );
 		}
 
 		$convertedValue = [];

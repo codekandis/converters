@@ -1,5 +1,5 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\Converters\Types;
+namespace CodeKandis\Converters;
 
 use function get_class;
 use function gettype;
