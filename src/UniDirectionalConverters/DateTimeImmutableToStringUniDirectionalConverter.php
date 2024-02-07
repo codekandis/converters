@@ -16,18 +16,13 @@ use Override;
 class DateTimeImmutableToStringUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
 {
 	/**
-	 * Stores the format of the timestamp string.
-	 * @var string
-	 */
-	private string $format;
-
-	/**
 	 * Constructor method.
 	 * @param string $format The format of the timestamp string.
 	 */
-	public function __construct( string $format )
+	public function __construct(
+		private readonly string $format
+	)
 	{
-		$this->format = $format;
 	}
 
 	/**
