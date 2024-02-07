@@ -3,7 +3,7 @@ namespace CodeKandis\Converters;
 
 /**
  * Represents the interface of any type determinator.
- * @package codekandis/tiphy
+ * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 interface TypeDeterminatorInterface
