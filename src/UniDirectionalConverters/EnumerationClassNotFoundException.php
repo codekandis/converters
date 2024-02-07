@@ -8,6 +8,6 @@ use ReflectionException;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class EnumClassNotFoundException extends ReflectionException
+class EnumerationClassNotFoundException extends ReflectionException
 {
 }
