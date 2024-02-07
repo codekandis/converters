@@ -21,7 +21,7 @@ class IntToBinaryStringUniDirectionalConverter extends AbstractConverter impleme
 	 * @return string The converted binary string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convert( $value )
+	public function convert( mixed $value ): string
 	{
 		if ( false === is_int( $value ) )
 		{

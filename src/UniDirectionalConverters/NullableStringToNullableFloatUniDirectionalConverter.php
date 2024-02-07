@@ -24,7 +24,7 @@ class NullableStringToNullableFloatUniDirectionalConverter extends AbstractConve
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
-	public function convert( $value )
+	public function convert( mixed $value ): ?float
 	{
 		if ( null !== $value && false === is_string( $value ) )
 		{

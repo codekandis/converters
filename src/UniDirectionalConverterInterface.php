@@ -16,5 +16,5 @@ interface UniDirectionalConverterInterface
 	 * @return mixed The converted value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convert( $value );
+	public function convert( mixed $value ): mixed;
 }

@@ -45,7 +45,7 @@ class StringToDateTimeImmutableBiDirectionalConverter extends AbstractConverter 
 	 * @return DateTimeImmutable The converted DateTimeImmutable value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertTo( $value )
+	public function convertTo( mixed $value ): DateTimeImmutable
 	{
 		if ( false === is_string( $value ) )
 		{
@@ -61,7 +61,7 @@ class StringToDateTimeImmutableBiDirectionalConverter extends AbstractConverter 
 	 * @return string The converted string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
-	public function convertFrom( $value )
+	public function convertFrom( mixed $value ): string
 	{
 		if ( false === $value instanceof DateTimeImmutable )
 		{
