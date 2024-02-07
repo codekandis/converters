@@ -18,7 +18,7 @@ class DateTimeToStringUniDirectionalConverter extends AbstractConverter implemen
 	 * Stores the format of the timestamp string.
 	 * @var string
 	 */
-	private string $format;
+	private readonly string $format;
 
 	/**
 	 * Constructor method.

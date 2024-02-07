@@ -20,13 +20,13 @@ class StringToDateTimeBiDirectionalConverter extends AbstractConverter implement
 	 * Stores the format of the timestamp string.
 	 * @var string
 	 */
-	private string $format;
+	private readonly string $format;
 
 	/**
 	 * Stores the time zone of the timestamp.
 	 * @var ?DateTimeZone
 	 */
-	private ?DateTimeZone $timeZone;
+	private readonly ?DateTimeZone $timeZone;
 
 	/**
 	 * Constructor method.

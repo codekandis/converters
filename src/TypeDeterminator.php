@@ -16,7 +16,7 @@ class TypeDeterminator implements TypeDeterminatorInterface
 	 * Stores if the determined types has to be strict native.
 	 * @var bool
 	 */
-	private bool $strict;
+	private readonly bool $strict;
 
 	/**
 	 * Constructor method.
