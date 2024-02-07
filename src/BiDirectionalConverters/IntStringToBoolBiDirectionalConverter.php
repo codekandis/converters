@@ -3,8 +3,10 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\BiDirectionalConverterInterface;
-use CodeKandis\Converters\Types\ValidTypes;
-use CodeKandis\Converters\Types\ValidValuesRegularExpressions;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
+use CodeKandis\Converters\InvalidValueExceptionInterface;
+use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
 use function is_bool;
 use function is_string;
@@ -20,6 +22,8 @@ class IntStringToBoolBiDirectionalConverter extends AbstractConverter implements
 	 * Converts from an int string into a bool value.
 	 * @param string $value The int string value which has to be converted.
 	 * @return bool The converted bool value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
 	public function convertTo( $value )
 	{
@@ -41,6 +45,7 @@ class IntStringToBoolBiDirectionalConverter extends AbstractConverter implements
 	 * Converts from a bool into an int string value.
 	 * @param bool $value The bool value which has to be converted.
 	 * @return string The converted int string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convertFrom( $value )
 	{

@@ -3,8 +3,10 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\BiDirectionalConverterInterface;
-use CodeKandis\Converters\Types\ValidTypes;
-use CodeKandis\Converters\Types\ValidValuesRegularExpressions;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
+use CodeKandis\Converters\InvalidValueExceptionInterface;
+use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
 use function is_float;
 use function is_string;
@@ -20,6 +22,8 @@ class StringToFloatBiDirectionalConverter extends AbstractConverter implements B
 	 * Converts from a string into a float value.
 	 * @param string $value The string value which has to be converted.
 	 * @return float The converted float value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
 	public function convertTo( $value )
 	{
@@ -41,6 +45,7 @@ class StringToFloatBiDirectionalConverter extends AbstractConverter implements B
 	 * Converts from a float into a string value.
 	 * @param float $value The float value which has to be converted.
 	 * @return string The converted string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convertFrom( $value )
 	{

@@ -2,7 +2,9 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\ValidTypes;
 use DateTime;
 
 /**
@@ -31,12 +33,13 @@ class NullableDateTimeToNullableStringUniDirectionalConverter extends AbstractCo
 	 * Converts from a nullable DateTime into a nullable string value.
 	 * @param ?DateTime $value The nullable DateTime value which has to be converted.
 	 * @return ?string The converted nullable string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convert( $value )
 	{
 		if ( null !== $value && false === $value instanceof DateTime )
 		{
-			throw $this->getInvalidTypeException( $value, '?DateTime' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_DATE_TIME );
 		}
 
 		if ( null === $value )

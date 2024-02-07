@@ -2,8 +2,9 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\ValidTypes;
 use function is_int;
 
 /**
@@ -17,6 +18,7 @@ class IntToStringUniDirectionalConverter extends AbstractConverter implements Un
 	 * Converts from an int into a string value.
 	 * @param int $value The int value which has to be converted.
 	 * @return string The converted string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convert( $value )
 	{

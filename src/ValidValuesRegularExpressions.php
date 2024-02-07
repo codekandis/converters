@@ -1,5 +1,5 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\Converters\Types;
+namespace CodeKandis\Converters;
 
 /**
  * Represents an enumeration of regular expressions of valid values.

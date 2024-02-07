@@ -2,8 +2,9 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\ValidTypes;
 use function is_array;
 use function is_bool;
 
@@ -18,6 +19,7 @@ class BoolArrayToBinaryStringUniDirectionalConverter extends AbstractConverter i
 	 * Converts from a bool array into a binary string value.
 	 * @param bool[] $value The bool array value which has to be converted.
 	 * @return string The converted binary string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convert( $value )
 	{
