@@ -13,16 +13,16 @@ use function is_int;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between nullable string and nullable int.
+ * Represents a bidirectional converter converting between nullable string and nullable boolean.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 class NullableStringToNullableIntBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a nullable string into a nullable int value.
+	 * Converts from a nullable string into a nullable boolean value.
 	 * @param ?string $value The nullable string value which has to be converted.
-	 * @return ?int The converted nullable int value.
+	 * @return ?int The converted nullable boolean value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
@@ -49,8 +49,8 @@ class NullableStringToNullableIntBiDirectionalConverter extends AbstractConverte
 	}
 
 	/**
-	 * Converts from a nullable int into a nullable string value.
-	 * @param ?int $value The nullable int value which has to be converted.
+	 * Converts from a nullable boolean into a nullable string value.
+	 * @param ?int $value The nullable boolean value which has to be converted.
 	 * @return ?string The converted nullable string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */

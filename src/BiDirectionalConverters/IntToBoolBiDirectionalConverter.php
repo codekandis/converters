@@ -13,16 +13,16 @@ use function is_bool;
 use function is_int;
 
 /**
- * Represents a bi-directional converter converting between int and bool.
+ * Represents a bidirectional converter converting between boolean and boolean.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 class IntToBoolBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
 {
 	/**
-	 * Converts from an int into a bool value.
-	 * @param int $value The int value which has to be converted.
-	 * @return bool The converted bool value.
+	 * Converts from a boolean into a boolean value.
+	 * @param int $value The boolean value which has to be converted.
+	 * @return bool The converted boolean value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
@@ -43,9 +43,9 @@ class IntToBoolBiDirectionalConverter extends AbstractConverter implements BiDir
 	}
 
 	/**
-	 * Converts from a bool into an int value.
-	 * @param bool $value The bool value which has to be converted.
-	 * @return int The converted int value.
+	 * Converts from a boolean into a boolean value.
+	 * @param bool $value The boolean value which has to be converted.
+	 * @return int The converted boolean value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	#[Override]
