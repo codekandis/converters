@@ -1,5 +1,5 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\Converters\Types;
+namespace CodeKandis\Converters;
 
 /**
  * Represents an enumeration of valid types.
@@ -97,4 +97,28 @@ abstract class ValidTypes
 	 * @var string
 	 */
 	public const BOOL_ARRAY = 'bool[]';
+
+	/**
+	 * Represents a DateTimeImmutable type.
+	 * @var string
+	 */
+	public const DATE_TIME_IMMUTABLE = 'DateTimeImmutable';
+
+	/**
+	 * Represents a nullable DateTimeImmutable type.
+	 * @var string
+	 */
+	public const NULLABLE_DATE_TIME_IMMUTABLE = '?DateTimeImmutable';
+
+	/**
+	 * Represents a DateTime type.
+	 * @var string
+	 */
+	public const DATE_TIME = 'DateTime';
+
+	/**
+	 * Represents a nullable DateTime type.
+	 * @var string
+	 */
+	public const NULLABLE_DATE_TIME = '?DateTime';
 }

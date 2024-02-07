@@ -3,7 +3,10 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\BiDirectionalConverterInterface;
-use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
+use CodeKandis\Converters\InvalidValueExceptionInterface;
+use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValues;
 use function is_bool;
 use function is_int;
 
@@ -18,6 +21,8 @@ class IntToBoolBiDirectionalConverter extends AbstractConverter implements BiDir
 	 * Converts from an int into a bool value.
 	 * @param int $value The int value which has to be converted.
 	 * @return bool The converted bool value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
 	public function convertTo( $value )
 	{
@@ -28,7 +33,7 @@ class IntToBoolBiDirectionalConverter extends AbstractConverter implements BiDir
 
 		if ( 0 !== $value && 1 !== $value )
 		{
-			throw $this->getInvalidValueException( $value, '0, 1' );
+			throw $this->getInvalidValueException( $value, ...ValidValues::BOOL_INT_STRING_SET );
 		}
 
 		return 1 === $value;
@@ -38,6 +43,7 @@ class IntToBoolBiDirectionalConverter extends AbstractConverter implements BiDir
 	 * Converts from a bool into an int value.
 	 * @param bool $value The bool value which has to be converted.
 	 * @return int The converted int value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convertFrom( $value )
 	{

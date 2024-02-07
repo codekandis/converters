@@ -3,8 +3,10 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\BiDirectionalConverterInterface;
-use CodeKandis\Converters\Types\ValidTypes;
-use CodeKandis\Converters\Types\ValidValuesRegularExpressions;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
+use CodeKandis\Converters\InvalidValueExceptionInterface;
+use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
 use function bindec;
 use function decbin;
@@ -22,6 +24,7 @@ class IntToBinaryStringBiDirectionalConverter extends AbstractConverter implemen
 	 * Converts from an int into a binary string value.
 	 * @param int $value The int value which has to be converted.
 	 * @return string The converted binary string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convertTo( $value )
 	{
@@ -37,6 +40,8 @@ class IntToBinaryStringBiDirectionalConverter extends AbstractConverter implemen
 	 * Converts from a binary string into an int value.
 	 * @param string $value The binary string value which has to be converted.
 	 * @return int The converted int value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
 	public function convertFrom( $value )
 	{

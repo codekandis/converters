@@ -2,8 +2,9 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\ValidTypes;
 use function decbin;
 use function is_int;
 
@@ -18,6 +19,7 @@ class IntToBinaryStringUniDirectionalConverter extends AbstractConverter impleme
 	 * Converts from an int into a binary string value.
 	 * @param int $value The int value which has to be converted.
 	 * @return string The converted binary string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convert( $value )
 	{

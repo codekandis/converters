@@ -2,8 +2,9 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\ValidTypes;
 use DateTimeImmutable;
 use DateTimeZone;
 use function is_string;
@@ -42,6 +43,7 @@ class NullableStringToNullableDateTimeImmutableUniDirectionalConverter extends A
 	 * Converts from a nullable string into a nullable DateTimeImmutable value.
 	 * @param ?string $value The nullable string value which has to be converted.
 	 * @return ?DateTimeImmutable The converted nullable DateTimeImmutable value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convert( $value )
 	{

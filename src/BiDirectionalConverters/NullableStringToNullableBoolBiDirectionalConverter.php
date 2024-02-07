@@ -3,8 +3,10 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\BiDirectionalConverterInterface;
-use CodeKandis\Converters\Types\ValidTypes;
-use CodeKandis\Converters\Types\ValidValuesRegularExpressions;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
+use CodeKandis\Converters\InvalidValueExceptionInterface;
+use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
 use function is_bool;
 use function is_string;
@@ -20,6 +22,8 @@ class NullableStringToNullableBoolBiDirectionalConverter extends AbstractConvert
 	 * Converts from a nullable string into a nullable bool value.
 	 * @param ?string $value The nullable string value which has to be converted.
 	 * @return ?bool The converted nullable bool value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
 	public function convertTo( $value )
 	{
@@ -36,7 +40,7 @@ class NullableStringToNullableBoolBiDirectionalConverter extends AbstractConvert
 		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_STRING );
 		if ( null === $regularExpression->match( $value, false ) )
 		{
-			throw $this->getInvalidValueException( $value, ValidTypes::NULL . ', ' . ValidValuesRegularExpressions::REGEX_BOOL_STRING );
+			throw $this->getInvalidValueException( $value, ValidTypes::NULL, ValidValuesRegularExpressions::REGEX_BOOL_STRING );
 		}
 
 		return 'true' === $value;
@@ -46,6 +50,7 @@ class NullableStringToNullableBoolBiDirectionalConverter extends AbstractConvert
 	 * Converts from a nullable bool into a nullable string value.
 	 * @param ?bool $value The nullable bool value which has to be converted.
 	 * @return ?string The converted nullable string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convertFrom( $value )
 	{

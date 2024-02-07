@@ -2,7 +2,9 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\ValidTypes;
 use DateTimeImmutable;
 
 /**
@@ -31,12 +33,13 @@ class DateTimeImmutableToStringUniDirectionalConverter extends AbstractConverter
 	 * Converts from a DateTimeImmutable into a string value.
 	 * @param DateTimeImmutable $value The DateTimeImmutable value which has to be converted.
 	 * @return string The converted string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convert( $value )
 	{
 		if ( false === $value instanceof DateTimeImmutable )
 		{
-			throw $this->getInvalidTypeException( $value, 'DateTimeImmutable' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::DATE_TIME_IMMUTABLE );
 		}
 
 		return $value->format( $this->format );

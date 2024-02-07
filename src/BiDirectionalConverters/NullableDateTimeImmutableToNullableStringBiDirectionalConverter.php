@@ -3,7 +3,8 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\BiDirectionalConverterInterface;
-use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
+use CodeKandis\Converters\ValidTypes;
 use DateTimeImmutable;
 use DateTimeZone;
 use function is_string;
@@ -42,12 +43,13 @@ class NullableDateTimeImmutableToNullableStringBiDirectionalConverter extends Ab
 	 * Converts from a nullable string into a nullable DateTimeImmutable value.
 	 * @param ?DateTimeImmutable $value The nullable DateTimeImmutable value which has to be converted.
 	 * @return ?string The converted nullable string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convertTo( $value )
 	{
 		if ( null !== $value && false === $value instanceof DateTimeImmutable )
 		{
-			throw $this->getInvalidTypeException( $value, '?DateTimeImmutable' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_DATE_TIME_IMMUTABLE );
 		}
 
 		if ( null === $value )
@@ -62,6 +64,7 @@ class NullableDateTimeImmutableToNullableStringBiDirectionalConverter extends Ab
 	 * Converts from a nullable DateTimeImmutable into a nullable string value.
 	 * @param ?string $value The nullable string value which has to be converted.
 	 * @return ?DateTimeImmutable The converted nullable DateTimeImmutable value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convertFrom( $value )
 	{
