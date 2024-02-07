@@ -15,7 +15,7 @@ use function sprintf;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class EnumToArrayUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
+class EnumerationClassToArrayUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
 {
 	/**
 	 * Represents the error message if an enum class does not exist.
@@ -25,7 +25,7 @@ class EnumToArrayUniDirectionalConverter extends AbstractConverter implements Un
 
 	/**
 	 * {@inheritDoc}
-	 * @throws EnumClassNotFoundException The enum class does not exist.
+	 * @throws EnumerationClassNotFoundException The enum class does not exist.
 	 */
 	public function convert( $value )
 	{
@@ -40,7 +40,7 @@ class EnumToArrayUniDirectionalConverter extends AbstractConverter implements Un
 		}
 		catch ( ReflectionException $exception )
 		{
-			throw new EnumClassNotFoundException(
+			throw new EnumerationClassNotFoundException(
 				sprintf(
 					self::ERROR_ENUM_CLASS_NOT_FOUND,
 					$value
