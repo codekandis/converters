@@ -8,6 +8,7 @@ use CodeKandis\Converters\InvalidValueExceptionInterface;
 use CodeKandis\Converters\ValidTypes;
 use CodeKandis\Converters\ValidValues;
 use Override;
+use function in_array;
 use function is_bool;
 use function is_int;
 
