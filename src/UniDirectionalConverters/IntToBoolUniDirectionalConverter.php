@@ -2,8 +2,11 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
+use CodeKandis\Converters\InvalidValueExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ValidValues;
 use function is_int;
 
 /**
@@ -17,6 +20,8 @@ class IntToBoolUniDirectionalConverter extends AbstractConverter implements UniD
 	 * Converts from an int into a bool value.
 	 * @param int $value The int value which has to be converted.
 	 * @return bool The converted bool value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
 	public function convert( $value )
 	{
@@ -27,7 +32,7 @@ class IntToBoolUniDirectionalConverter extends AbstractConverter implements UniD
 
 		if ( 0 !== $value && 1 !== $value )
 		{
-			throw $this->getInvalidValueException( $value, '0, 1' );
+			throw $this->getInvalidValueException( $value, ...ValidValues::BOOL_INT_STRING_SET );
 		}
 
 		return 1 === $value;

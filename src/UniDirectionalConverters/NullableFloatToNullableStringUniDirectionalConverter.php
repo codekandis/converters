@@ -2,8 +2,9 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\ValidTypes;
 use function is_float;
 
 /**
@@ -17,6 +18,7 @@ class NullableFloatToNullableStringUniDirectionalConverter extends AbstractConve
 	 * Converts from a nullable float into a nullable string value.
 	 * @param ?float $value The nullable float value which has to be converted.
 	 * @return ?string The converted nullable string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convert( $value )
 	{

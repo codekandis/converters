@@ -3,7 +3,8 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\BiDirectionalConverterInterface;
-use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
+use CodeKandis\Converters\ValidTypes;
 use DateTimeImmutable;
 use DateTimeZone;
 use function is_string;
@@ -42,12 +43,13 @@ class DateTimeImmutableToStringBiDirectionalConverter extends AbstractConverter 
 	 * Converts from a DateTimeImmutable into a string value.
 	 * @param DateTimeImmutable $value The DateTimeImmutable value which has to be converted.
 	 * @return string The converted string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convertTo( $value )
 	{
 		if ( false === $value instanceof DateTimeImmutable )
 		{
-			throw $this->getInvalidTypeException( $value, 'DateTimeImmutable' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::DATE_TIME_IMMUTABLE );
 		}
 
 		return $value->format( $this->format );
@@ -57,6 +59,7 @@ class DateTimeImmutableToStringBiDirectionalConverter extends AbstractConverter 
 	 * Converts from a string into a DateTimeImmutable value.
 	 * @param string $value The string value which has to be converted.
 	 * @return DateTimeImmutable The converted DateTimeImmutable value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convertFrom( $value )
 	{

@@ -2,8 +2,9 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\Types\ValidTypes;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\ValidTypes;
 use function is_bool;
 
 /**
@@ -17,6 +18,7 @@ class BoolToIntStringUniDirectionalConverter extends AbstractConverter implement
 	 * Converts from a bool into an int string value.
 	 * @param bool $value The bool value which has to be converted.
 	 * @return string The converted int string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convert( $value )
 	{

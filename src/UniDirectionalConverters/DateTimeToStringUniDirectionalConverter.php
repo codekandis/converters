@@ -2,7 +2,9 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\ValidTypes;
 use DateTime;
 
 /**
@@ -31,12 +33,13 @@ class DateTimeToStringUniDirectionalConverter extends AbstractConverter implemen
 	 * Converts from a DateTime into a string value.
 	 * @param DateTime $value The DateTime value which has to be converted.
 	 * @return string The converted string value.
+	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convert( $value )
 	{
 		if ( false === $value instanceof DateTime )
 		{
-			throw $this->getInvalidTypeException( $value, 'DateTime' );
+			throw $this->getInvalidTypeException( $value, ValidTypes::DATE_TIME );
 		}
 
 		return $value->format( $this->format );
