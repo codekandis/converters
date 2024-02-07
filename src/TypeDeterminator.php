@@ -14,18 +14,16 @@ use function is_object;
 class TypeDeterminator implements TypeDeterminatorInterface
 {
 	/**
-	 * Stores if the determined types has to be strict native.
-	 * @var bool
-	 */
-	private bool $strict;
-
-	/**
 	 * Constructor method.
 	 * @param bool $strict True if the determined types has to be strict native, otherwise false.
 	 */
-	public function __construct( bool $strict )
+	public function __construct(
+		/**
+		 * Stores if the determined types has to be strict native.
+		 */
+		private readonly bool $strict
+	)
 	{
-		$this->strict = $strict;
 	}
 
 	/**
