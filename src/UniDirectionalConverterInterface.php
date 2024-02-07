@@ -4,7 +4,7 @@ namespace CodeKandis\Converters;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 
 /**
- * Represents the interface of any uni-directional converters.
+ * Represents the interface of any unidirectional converter.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

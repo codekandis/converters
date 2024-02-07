@@ -14,16 +14,16 @@ use function is_string;
 use function strlen;
 
 /**
- * Represents a uni-directional converter converting a binary string into a bool array.
+ * Represents a unidirectional converter converting a binary string into a boolean array.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 class BinaryStringToBoolArrayUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a binary string into a bool array value.
+	 * Converts from a binary string into a boolean array value.
 	 * @param string $value The binary string value which has to be converted.
-	 * @return bool[] The converted bool array value.
+	 * @return bool[] The converted boolean array value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */

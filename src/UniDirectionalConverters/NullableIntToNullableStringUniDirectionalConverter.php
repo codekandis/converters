@@ -9,15 +9,15 @@ use Override;
 use function is_int;
 
 /**
- * Represents a uni-directional converter converting a nullable int into a nullable string.
+ * Represents a unidirectional converter converting a nullable boolean into a nullable string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 class NullableIntToNullableStringUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a nullable int into a nullable string value.
-	 * @param ?int $value The nullable int value which has to be converted.
+	 * Converts from a nullable boolean into a nullable string value.
+	 * @param ?int $value The nullable boolean value which has to be converted.
 	 * @return ?string The converted nullable string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */

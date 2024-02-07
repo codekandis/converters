@@ -11,15 +11,15 @@ use function is_array;
 use function is_bool;
 
 /**
- * Represents a uni-directional converter converting a bool array into a binary string.
+ * Represents a unidirectional converter converting a boolean array into a binary string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 class BoolArrayToBinaryStringUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a bool array into a binary string value.
-	 * @param bool[] $value The bool array value which has to be converted.
+	 * Converts from a boolean array into a binary string value.
+	 * @param bool[] $value The boolean array value which has to be converted.
 	 * @return string The converted binary string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */

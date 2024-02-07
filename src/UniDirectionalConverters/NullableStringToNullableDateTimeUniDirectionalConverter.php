@@ -11,7 +11,7 @@ use Override;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting a nullable string into a nullable DateTime.
+ * Represents a unidirectional converter converting a nullable string into a nullable DateTime.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

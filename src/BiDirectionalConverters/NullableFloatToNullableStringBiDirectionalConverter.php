@@ -13,7 +13,7 @@ use function is_float;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between nullable float and nullable string.
+ * Represents a bidirectional converter converting between nullable float and nullable string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

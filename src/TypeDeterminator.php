@@ -14,14 +14,14 @@ use function is_object;
 class TypeDeterminator implements TypeDeterminatorInterface
 {
 	/**
-	 * Stores if the determined types has to be strict native.
+	 * Stores if the determined types have to be strict native.
 	 * @var bool
 	 */
 	private readonly bool $strict;
 
 	/**
 	 * Constructor method.
-	 * @param bool $strict True if the determined types has to be strict native, otherwise false.
+	 * @param bool $strict True if the determined types have to be strict native, otherwise false.
 	 */
 	public function __construct( bool $strict )
 	{
@@ -65,7 +65,7 @@ class TypeDeterminator implements TypeDeterminatorInterface
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function determine( mixed $value ): string

@@ -13,16 +13,16 @@ use function bindec;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting a binary string into an int.
+ * Represents a unidirectional converter converting a binary string into a boolean.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 class BinaryStringToIntUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a binary string into an int value.
+	 * Converts from a binary string into a boolean value.
 	 * @param string $value The binary string value which has to be converted.
-	 * @return int The converted int value.
+	 * @return int The converted boolean value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */

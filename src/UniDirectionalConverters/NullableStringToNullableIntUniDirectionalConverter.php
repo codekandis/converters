@@ -12,16 +12,16 @@ use Override;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting a nullable string into a nullable int.
+ * Represents a unidirectional converter converting a nullable string into a nullable boolean.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 class NullableStringToNullableIntUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a nullable string into a nullable int value.
+	 * Converts from a nullable string into a nullable boolean value.
 	 * @param ?string $value The nullable string value which has to be converted.
-	 * @return ?int The converted nullable int value.
+	 * @return ?int The converted nullable boolean value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
