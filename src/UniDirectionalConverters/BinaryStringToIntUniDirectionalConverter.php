@@ -8,6 +8,7 @@ use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use Override;
 use function bindec;
 use function is_string;
 
@@ -25,6 +26,7 @@ class BinaryStringToIntUniDirectionalConverter extends AbstractConverter impleme
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
+	#[Override]
 	public function convert( mixed $value ): int
 	{
 		if ( false === is_string( $value ) )

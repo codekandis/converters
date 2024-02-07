@@ -8,6 +8,7 @@ use CodeKandis\Converters\InvalidValueExceptionInterface;
 use CodeKandis\Converters\ValidTypes;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use Override;
 use function is_int;
 use function is_string;
 
@@ -25,6 +26,7 @@ class NullableStringToNullableIntBiDirectionalConverter extends AbstractConverte
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */
+	#[Override]
 	public function convertTo( mixed $value ): ?int
 	{
 		if ( null !== $value && false === is_string( $value ) )
@@ -52,6 +54,7 @@ class NullableStringToNullableIntBiDirectionalConverter extends AbstractConverte
 	 * @return ?string The converted nullable string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
+	#[Override]
 	public function convertFrom( mixed $value ): ?string
 	{
 		if ( null !== $value && false === is_int( $value ) )
