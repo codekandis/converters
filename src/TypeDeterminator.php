@@ -8,7 +8,7 @@ use function is_object;
 
 /**
  * Represents a type determinator.
- * @package codekandis/tiphy
+ * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 class TypeDeterminator implements TypeDeterminatorInterface

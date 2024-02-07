@@ -54,12 +54,7 @@ class NullableDateTimeImmutableToNullableStringBiDirectionalConverter extends Ab
 			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_DATE_TIME_IMMUTABLE );
 		}
 
-		if ( null === $value )
-		{
-			return null;
-		}
-
-		return $value->format( $this->format );
+		return $value?->format( $this->format );
 	}
 
 	/**

@@ -54,12 +54,7 @@ class NullableDateTimeToNullableStringBiDirectionalConverter extends AbstractCon
 			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_DATE_TIME );
 		}
 
-		if ( null === $value )
-		{
-			return null;
-		}
-
-		return $value->format( $this->format );
+		return $value?->format( $this->format );
 	}
 
 	/**
