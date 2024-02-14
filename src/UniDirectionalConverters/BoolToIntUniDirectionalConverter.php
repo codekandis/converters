@@ -2,9 +2,9 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
 use Override;
 use function is_bool;
 
@@ -26,7 +26,7 @@ class BoolToIntUniDirectionalConverter extends AbstractConverter implements UniD
 	{
 		if ( false === is_bool( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::BOOLEAN );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::BOOLEAN );
 		}
 
 		return false === $value

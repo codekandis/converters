@@ -2,9 +2,9 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
 use Override;
 use function is_array;
 use function is_bool;
@@ -27,14 +27,14 @@ class BoolArrayToBinaryStringUniDirectionalConverter extends AbstractConverter i
 	{
 		if ( false === is_array( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::BOOLEAN_ARRAY );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::BOOLEAN_ARRAY );
 		}
 
 		foreach ( $value as $valueFetched )
 		{
 			if ( false === is_bool( $valueFetched ) )
 			{
-				throw $this->getInvalidTypeException( $value, ValidTypes::BOOLEAN_ARRAY );
+				throw $this->getInvalidTypeException( $value, ExpectedTypes::BOOLEAN_ARRAY );
 			}
 		}
 

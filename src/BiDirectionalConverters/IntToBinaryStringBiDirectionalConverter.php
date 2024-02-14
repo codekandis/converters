@@ -2,11 +2,11 @@
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\InvalidValueExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
+use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function bindec;
 use function decbin;
@@ -31,7 +31,7 @@ class IntToBinaryStringBiDirectionalConverter extends AbstractConverter implemen
 	{
 		if ( false === is_int( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::INTEGER );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::INTEGER );
 		}
 
 		return decbin( $value );
@@ -49,7 +49,7 @@ class IntToBinaryStringBiDirectionalConverter extends AbstractConverter implemen
 	{
 		if ( false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
 		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BINARY_STRING );

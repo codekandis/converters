@@ -2,8 +2,8 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTimeImmutable;
 use Override;
 
@@ -25,7 +25,7 @@ class DateTimeImmutableToStringUniDirectionalConverter extends AbstractConverter
 	{
 		if ( false === $value instanceof DateTimeImmutable )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::DATE_TIME_IMMUTABLE );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::DATETIME_IMMUTABLE );
 		}
 
 		return $value->format( $this->format );

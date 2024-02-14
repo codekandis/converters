@@ -4,8 +4,8 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\EnumerationClassNotFoundException;
 use CodeKandis\Converters\EnumerationClassNotFoundExceptionInterface;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
 use Override;
 use ReflectionClass;
 use ReflectionException;
@@ -31,7 +31,7 @@ class EnumerationClassToArrayUniDirectionalConverter extends AbstractConverter i
 	{
 		if ( false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
 		try

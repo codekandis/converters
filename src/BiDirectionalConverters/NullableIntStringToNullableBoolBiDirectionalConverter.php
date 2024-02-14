@@ -2,12 +2,12 @@
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\InvalidValueExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
+use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function is_bool;
 use function is_string;
@@ -31,7 +31,7 @@ class NullableIntStringToNullableBoolBiDirectionalConverter extends AbstractConv
 	{
 		if ( null !== $value && false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_STRING );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}
 
 		if ( null === $value )
@@ -42,7 +42,7 @@ class NullableIntStringToNullableBoolBiDirectionalConverter extends AbstractConv
 		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
 		if ( null === $regularExpression->match( $value, false ) )
 		{
-			throw $this->getInvalidValueException( $value, ValidTypes::NULL, ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
+			throw $this->getInvalidValueException( $value, ExpectedTypes::NULL, ValidValuesRegularExpressions::REGEX_BOOL_INT_STRING );
 		}
 
 		return ValidValues::BOOL_INT_STRING_TRUE === $value;
@@ -59,7 +59,7 @@ class NullableIntStringToNullableBoolBiDirectionalConverter extends AbstractConv
 	{
 		if ( null !== $value && false === is_bool( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_BOOLEAN );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_BOOLEAN );
 		}
 
 		if ( null === $value )

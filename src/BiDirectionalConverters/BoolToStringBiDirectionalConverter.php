@@ -2,12 +2,12 @@
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\InvalidValueExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
+use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function is_bool;
 use function is_string;
@@ -30,7 +30,7 @@ class BoolToStringBiDirectionalConverter extends AbstractConverter implements Bi
 	{
 		if ( false === is_bool( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::BOOLEAN );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::BOOLEAN );
 		}
 
 		return false === $value
@@ -50,7 +50,7 @@ class BoolToStringBiDirectionalConverter extends AbstractConverter implements Bi
 	{
 		if ( false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
 		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_STRING );

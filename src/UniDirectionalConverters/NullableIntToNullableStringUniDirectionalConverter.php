@@ -2,8 +2,8 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
 use Override;
 use function is_int;
 
@@ -25,7 +25,7 @@ class NullableIntToNullableStringUniDirectionalConverter extends AbstractConvert
 	{
 		if ( null !== $value && false === is_int( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_INTEGER );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_INTEGER );
 		}
 
 		if ( null === $value )

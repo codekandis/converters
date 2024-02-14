@@ -2,10 +2,10 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\InvalidValueExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
+use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function in_array;
 use function is_int;
@@ -29,7 +29,7 @@ class IntToBoolUniDirectionalConverter extends AbstractConverter implements UniD
 	{
 		if ( false === is_int( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::INTEGER );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::INTEGER );
 		}
 
 		if ( false === in_array( $value, ValidValues::BOOL_INT_SET ) )

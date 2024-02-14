@@ -2,8 +2,8 @@
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTimeImmutable;
 use Override;
 use function is_string;
@@ -26,7 +26,7 @@ class NullableDateTimeImmutableToNullableStringBiDirectionalConverter extends Ab
 	{
 		if ( null !== $value && false === $value instanceof DateTimeImmutable )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_DATE_TIME_IMMUTABLE );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_DATETIME_IMMUTABLE );
 		}
 
 		return $value?->format( $this->format );
@@ -43,7 +43,7 @@ class NullableDateTimeImmutableToNullableStringBiDirectionalConverter extends Ab
 	{
 		if ( null !== $value && false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_STRING );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}
 
 		if ( null === $value )
