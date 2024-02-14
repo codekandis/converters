@@ -1,6 +1,12 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters;
 
+use CodeKandis\Types\InvalidTypeException;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
+use CodeKandis\Types\InvalidValueException;
+use CodeKandis\Types\InvalidValueExceptionInterface;
+use CodeKandis\Types\TypeDeterminator;
+
 /**
  * Represents the base class of any converter.
  * @package codekandis/converters
@@ -16,8 +22,8 @@ abstract class AbstractConverter implements ConverterInterface
 	 */
 	protected function getInvalidTypeException( mixed $invalidValue, string ...$expectedTypes ): InvalidTypeExceptionInterface
 	{
-		$invalidType = ( new TypeDeterminator( false ) )
-			->determine( $invalidValue );
+		$invalidType = ( new TypeDeterminator() )
+			->determine( $invalidValue, false );
 
 		return InvalidTypeException::with_invalidTypeAndExpectedTypes( $invalidType, ...$expectedTypes );
 	}

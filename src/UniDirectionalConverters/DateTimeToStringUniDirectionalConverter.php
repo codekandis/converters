@@ -2,8 +2,8 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTime;
 use Override;
 
@@ -25,7 +25,7 @@ class DateTimeToStringUniDirectionalConverter extends AbstractDateTimeRelatedCon
 	{
 		if ( false === $value instanceof DateTime )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::DATE_TIME );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::DATETIME );
 		}
 
 		return $value->format( $this->format );

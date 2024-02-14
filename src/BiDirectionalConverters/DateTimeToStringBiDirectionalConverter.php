@@ -2,8 +2,8 @@
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTime;
 use Override;
 use function is_string;
@@ -26,7 +26,7 @@ class DateTimeToStringBiDirectionalConverter extends AbstractDateTimeRelatedConv
 	{
 		if ( false === $value instanceof DateTime )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::DATE_TIME );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::DATETIME );
 		}
 
 		return $value->format( $this->format );
@@ -43,7 +43,7 @@ class DateTimeToStringBiDirectionalConverter extends AbstractDateTimeRelatedConv
 	{
 		if ( false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
 		return DateTime::createFromFormat( $this->format, $value, $this->timeZone );
