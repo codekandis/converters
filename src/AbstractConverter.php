@@ -6,7 +6,7 @@ namespace CodeKandis\Converters;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class AbstractConverter
+abstract class AbstractConverter implements ConverterInterface
 {
 	/**
 	 * Gets the `InvalidTypeException`.
