@@ -8,7 +8,7 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-interface BiDirectionalConverterInterface
+interface BiDirectionalConverterInterface extends ConverterInterface
 {
 	/**
 	 * Converts into a value.
