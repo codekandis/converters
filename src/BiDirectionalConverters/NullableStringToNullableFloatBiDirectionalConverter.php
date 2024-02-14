@@ -2,11 +2,11 @@
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\InvalidValueExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
+use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function is_float;
 use function is_string;
@@ -30,7 +30,7 @@ class NullableStringToNullableFloatBiDirectionalConverter extends AbstractConver
 	{
 		if ( null !== $value && false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_STRING );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}
 
 		if ( null === $value )
@@ -41,7 +41,7 @@ class NullableStringToNullableFloatBiDirectionalConverter extends AbstractConver
 		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_FLOAT_STRING );
 		if ( null === $regularExpression->match( $value, false ) )
 		{
-			throw $this->getInvalidValueException( $value, ValidTypes::NULL, ValidValuesRegularExpressions::REGEX_FLOAT_STRING );
+			throw $this->getInvalidValueException( $value, ExpectedTypes::NULL, ValidValuesRegularExpressions::REGEX_FLOAT_STRING );
 		}
 
 		return (float) $value;
@@ -58,7 +58,7 @@ class NullableStringToNullableFloatBiDirectionalConverter extends AbstractConver
 	{
 		if ( null !== $value && false === is_float( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_FLOAT );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_FLOAT );
 		}
 
 		if ( null === $value )

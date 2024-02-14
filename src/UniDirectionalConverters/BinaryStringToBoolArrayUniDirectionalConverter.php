@@ -2,12 +2,12 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\InvalidValueExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
+use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function is_string;
 use function strlen;
@@ -31,7 +31,7 @@ class BinaryStringToBoolArrayUniDirectionalConverter extends AbstractConverter i
 	{
 		if ( false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
 		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BINARY_STRING );
