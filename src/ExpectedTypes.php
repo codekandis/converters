@@ -2,18 +2,12 @@
 namespace CodeKandis\Converters;
 
 /**
- * Represents an enumeration of valid types.
+ * Represents an enumeration of expected types.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class ValidTypes
+abstract class ExpectedTypes
 {
-	/**
-	 * Represents an unknown type.
-	 * @var string
-	 */
-	public const string UNKNOWN = 'unknown';
-
 	/**
 	 * Represents a NULL type.
 	 * @var string
@@ -69,68 +63,32 @@ abstract class ValidTypes
 	public const string NULLABLE_STRING = '?string';
 
 	/**
-	 * Represents an array type.
-	 * @var string
-	 */
-	public const string ARRAY = 'array';
-
-	/**
-	 * Represents a nullable array type.
-	 * @var string
-	 */
-	public const string NULLABLE_ARRAY = '?array';
-
-	/**
-	 * Represents a resource type.
-	 * @var string
-	 */
-	public const string RESOURCE = 'resource';
-
-	/**
-	 * Represents a nullable resource type.
-	 * @var string
-	 */
-	public const string NULLABLE_RESOURCE = '?resource';
-
-	/**
 	 * Represents an array of boolean values type.
 	 * @var string
 	 */
 	public const string BOOLEAN_ARRAY = 'bool[]';
 
 	/**
-	 * Represents a DateTimeZone type.
-	 * @var string
-	 */
-	public const string DATE_TIME_ZONE = 'DateTimeZone';
-
-	/**
-	 * Represents a nullable DateTimeZone type.
-	 * @var string
-	 */
-	public const string NULLABLE_DATE_TIME_ZONE = '?DateTimeZone';
-
-	/**
 	 * Represents a DateTimeImmutable type.
 	 * @var string
 	 */
-	public const string DATE_TIME_IMMUTABLE = 'DateTimeImmutable';
+	public const string DATETIME_IMMUTABLE = 'DateTimeImmutable';
 
 	/**
 	 * Represents a nullable DateTimeImmutable type.
 	 * @var string
 	 */
-	public const string NULLABLE_DATE_TIME_IMMUTABLE = '?DateTimeImmutable';
+	public const string NULLABLE_DATETIME_IMMUTABLE = '?DateTimeImmutable';
 
 	/**
 	 * Represents a DateTime type.
 	 * @var string
 	 */
-	public const string DATE_TIME = 'DateTime';
+	public const string DATETIME = 'DateTime';
 
 	/**
 	 * Represents a nullable DateTime type.
 	 * @var string
 	 */
-	public const string NULLABLE_DATE_TIME = '?DateTime';
+	public const string NULLABLE_DATETIME = '?DateTime';
 }

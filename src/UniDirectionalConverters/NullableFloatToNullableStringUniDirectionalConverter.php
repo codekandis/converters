@@ -2,8 +2,8 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
 use Override;
 use function is_float;
 
@@ -25,7 +25,7 @@ class NullableFloatToNullableStringUniDirectionalConverter extends AbstractConve
 	{
 		if ( null !== $value && false === is_float( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::NULLABLE_FLOAT );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_FLOAT );
 		}
 
 		if ( null === $value )

@@ -2,8 +2,8 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTimeImmutable;
 use Override;
 use function is_string;
@@ -26,7 +26,7 @@ class StringToDateTimeImmutableUniDirectionalConverter extends AbstractDateTimeR
 	{
 		if ( false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
 		return DateTimeImmutable::createFromFormat( $this->format, $value, $this->timeZone );

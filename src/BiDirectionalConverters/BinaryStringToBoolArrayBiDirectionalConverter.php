@@ -2,12 +2,12 @@
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\InvalidValueExceptionInterface;
-use CodeKandis\Converters\ValidTypes;
+use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
+use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function is_array;
 use function is_bool;
@@ -33,7 +33,7 @@ class BinaryStringToBoolArrayBiDirectionalConverter extends AbstractConverter im
 	{
 		if ( false === is_string( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::STRING );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
 		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BINARY_STRING );
@@ -62,14 +62,14 @@ class BinaryStringToBoolArrayBiDirectionalConverter extends AbstractConverter im
 	{
 		if ( false === is_array( $value ) )
 		{
-			throw $this->getInvalidTypeException( $value, ValidTypes::BOOLEAN_ARRAY );
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::BOOLEAN_ARRAY );
 		}
 
 		foreach ( $value as $valueFetched )
 		{
 			if ( false === is_bool( $valueFetched ) )
 			{
-				throw $this->getInvalidTypeException( $value, ValidTypes::BOOLEAN_ARRAY );
+				throw $this->getInvalidTypeException( $value, ExpectedTypes::BOOLEAN_ARRAY );
 			}
 		}
 
