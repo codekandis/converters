@@ -35,7 +35,7 @@ class NullableBoolToNullableIntStringUniDirectionalConverter extends AbstractCon
 		}
 
 		return false === $value
-			? ValidValues::BOOL_INT_STRING_FALSE
-			: ValidValues::BOOL_INT_STRING_TRUE;
+			? ValidValues::BOOLEAN_INTEGER_STRING_FALSE
+			: ValidValues::BOOLEAN_INTEGER_STRING_TRUE;
 	}
 }

@@ -30,7 +30,7 @@ class BoolToIntUniDirectionalConverter extends AbstractConverter implements UniD
 		}
 
 		return false === $value
-			? ValidValues::BOOL_INT_FALSE
-			: ValidValues::BOOL_INT_TRUE;
+			? ValidValues::BOOLEAN_INTEGER_FALSE
+			: ValidValues::BOOLEAN_INTEGER_TRUE;
 	}
 }

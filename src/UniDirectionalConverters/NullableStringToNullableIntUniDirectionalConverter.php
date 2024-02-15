@@ -37,10 +37,10 @@ class NullableStringToNullableIntUniDirectionalConverter extends AbstractConvert
 			return null;
 		}
 
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INT_STRING );
+		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INTEGER_STRING );
 		if ( null === $regularExpression->match( $value, false ) )
 		{
-			throw $this->getInvalidValueException( $value, ExpectedTypes::NULL, ValidValuesRegularExpressions::REGEX_INT_STRING );
+			throw $this->getInvalidValueException( $value, ExpectedTypes::NULL, ValidValuesRegularExpressions::REGEX_INTEGER_STRING );
 		}
 
 		return (int) $value;

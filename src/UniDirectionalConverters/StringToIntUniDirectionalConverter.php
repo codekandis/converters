@@ -32,10 +32,10 @@ class StringToIntUniDirectionalConverter extends AbstractConverter implements Un
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INT_STRING );
+		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INTEGER_STRING );
 		if ( null === $regularExpression->match( $value, false ) )
 		{
-			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_INT_STRING );
+			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_INTEGER_STRING );
 		}
 
 		return (int) $value;
