@@ -18,7 +18,7 @@ abstract class ValidValuesRegularExpressions
 	 * Represents the regular expression of a boolean value.
 	 * @var string
 	 */
-	public const string REGEX_INT_STRING = '~^\\-?[0-9]+$~';
+	public const string REGEX_INTEGER_STRING = '~^\\-?[0-9]+$~';
 
 	/**
 	 * Represents the regular expression of a float value.

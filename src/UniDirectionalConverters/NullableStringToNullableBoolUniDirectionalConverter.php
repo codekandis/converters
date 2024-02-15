@@ -37,11 +37,11 @@ class NullableStringToNullableBoolUniDirectionalConverter extends AbstractConver
 			return null;
 		}
 
-		if ( false === in_array( $value, ValidValues::BOOL_STRING_SET ) )
+		if ( false === in_array( $value, ValidValues::BOOLEAN_STRING_SET ) )
 		{
-			throw $this->getInvalidValueException( $value, ExpectedTypes::NULL, ...ValidValues::BOOL_STRING_SET );
+			throw $this->getInvalidValueException( $value, ExpectedTypes::NULL, ...ValidValues::BOOLEAN_STRING_SET );
 		}
 
-		return ValidValues::BOOL_STRING_TRUE === $value;
+		return ValidValues::BOOLEAN_STRING_TRUE === $value;
 	}
 }
