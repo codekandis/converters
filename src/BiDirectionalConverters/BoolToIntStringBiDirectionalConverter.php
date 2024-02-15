@@ -33,8 +33,8 @@ class BoolToIntStringBiDirectionalConverter extends AbstractConverter implements
 		}
 
 		return false === $value
-			? ValidValues::BOOL_INT_STRING_FALSE
-			: ValidValues::BOOL_INT_STRING_TRUE;
+			? ValidValues::BOOLEAN_INTEGER_STRING_FALSE
+			: ValidValues::BOOLEAN_INTEGER_STRING_TRUE;
 	}
 
 	/**
@@ -52,11 +52,11 @@ class BoolToIntStringBiDirectionalConverter extends AbstractConverter implements
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
-		if ( false === in_array( $value, ValidValues::BOOL_INT_STRING_SET ) )
+		if ( false === in_array( $value, ValidValues::BOOLEAN_INTEGER_STRING_SET ) )
 		{
-			throw $this->getInvalidValueException( $value, ...ValidValues::BOOL_INT_STRING_SET );
+			throw $this->getInvalidValueException( $value, ...ValidValues::BOOLEAN_INTEGER_STRING_SET );
 		}
 
-		return ValidValues::BOOL_INT_STRING_TRUE === $value;
+		return ValidValues::BOOLEAN_INTEGER_STRING_TRUE === $value;
 	}
 }

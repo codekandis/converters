@@ -45,7 +45,7 @@ class BinaryStringToBoolArrayBiDirectionalConverter extends AbstractConverter im
 		$boolArray = [];
 		for ( $n = 0; $n < strlen( $value ); ++$n )
 		{
-			$boolArray[] = ValidValues::BOOL_INT_STRING_FALSE !== $value[ $n ];
+			$boolArray[] = ValidValues::BOOLEAN_INTEGER_STRING_FALSE !== $value[ $n ];
 		}
 
 		return $boolArray;
@@ -77,8 +77,8 @@ class BinaryStringToBoolArrayBiDirectionalConverter extends AbstractConverter im
 		foreach ( $value as $valueFetched )
 		{
 			$binaryString .= false === $valueFetched
-				? ValidValues::BOOL_INT_STRING_FALSE
-				: ValidValues::BOOL_INT_STRING_TRUE;
+				? ValidValues::BOOLEAN_INTEGER_STRING_FALSE
+				: ValidValues::BOOLEAN_INTEGER_STRING_TRUE;
 		}
 
 		return $binaryString;
