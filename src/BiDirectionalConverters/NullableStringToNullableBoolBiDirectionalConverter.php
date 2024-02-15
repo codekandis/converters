@@ -4,8 +4,6 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
-use CodeKandis\Converters\ValidValuesRegularExpressions;
-use CodeKandis\RegularExpressions\RegularExpression;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
@@ -39,10 +37,9 @@ class NullableStringToNullableBoolBiDirectionalConverter extends AbstractConvert
 			return null;
 		}
 
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOL_STRING );
-		if ( null === $regularExpression->match( $value, false ) )
+		if ( false === in_array( $value, ValidValues::BOOL_STRING_SET ) )
 		{
-			throw $this->getInvalidValueException( $value, ExpectedTypes::NULL, ValidValuesRegularExpressions::REGEX_BOOL_STRING );
+			throw $this->getInvalidValueException( $value, ExpectedTypes::NULL, ...ValidValues::BOOL_STRING_SET );
 		}
 
 		return ValidValues::BOOL_STRING_TRUE === $value;
