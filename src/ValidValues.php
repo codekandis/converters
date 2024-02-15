@@ -9,65 +9,65 @@ namespace CodeKandis\Converters;
 abstract class ValidValues
 {
 	/**
-	 * Represents a boolean string for `false`.
+	 * Represents a boolean integer for `false`.
 	 * @var int
 	 */
-	public const int BOOL_INT_FALSE = 0;
+	public const int BOOLEAN_INTEGER_FALSE = 0;
 
 	/**
-	 * Represents a boolean string for `true`.
+	 * Represents a boolean integer for `true`.
 	 * @var int
 	 */
-	public const int BOOL_INT_TRUE = 1;
+	public const int BOOLEAN_INTEGER_TRUE = 1;
 
 	/**
 	 * Represents a set of boolean integers.
 	 * @var int[]
 	 */
-	public const array BOOL_INT_SET = [
-		self::BOOL_INT_FALSE,
-		self::BOOL_INT_TRUE
+	public const array BOOLEAN_INTEGER_SET = [
+		self::BOOLEAN_INTEGER_FALSE,
+		self::BOOLEAN_INTEGER_TRUE
 	];
 
 	/**
 	 * Represents a boolean string for `false`.
 	 * @var string
 	 */
-	public const string BOOL_STRING_FALSE = 'false';
+	public const string BOOLEAN_STRING_FALSE = 'false';
 
 	/**
 	 * Represents a boolean string for `true`.
 	 * @var string
 	 */
-	public const string BOOL_STRING_TRUE = 'true';
+	public const string BOOLEAN_STRING_TRUE = 'true';
 
 	/**
 	 * Represents a set of boolean strings.
 	 * @var string[]
 	 */
-	public const array BOOL_STRING_SET = [
-		self::BOOL_STRING_FALSE,
-		self::BOOL_STRING_TRUE
+	public const array BOOLEAN_STRING_SET = [
+		self::BOOLEAN_STRING_FALSE,
+		self::BOOLEAN_STRING_TRUE
 	];
 
 	/**
 	 * Represents a boolean integer string for `false`.
 	 * @var string
 	 */
-	public const string BOOL_INT_STRING_FALSE = '0';
+	public const string BOOLEAN_INTEGER_STRING_FALSE = '0';
 
 	/**
 	 * Represents a boolean integer string for `true`.
 	 * @var string
 	 */
-	public const string BOOL_INT_STRING_TRUE = '1';
+	public const string BOOLEAN_INTEGER_STRING_TRUE = '1';
 
 	/**
 	 * Represents a set of boolean integer strings.
 	 * @var string[]
 	 */
-	public const array BOOL_INT_STRING_SET = [
-		self::BOOL_INT_STRING_FALSE,
-		self::BOOL_INT_STRING_TRUE
+	public const array BOOLEAN_INTEGER_STRING_SET = [
+		self::BOOLEAN_INTEGER_STRING_FALSE,
+		self::BOOLEAN_INTEGER_STRING_TRUE
 	];
 }
