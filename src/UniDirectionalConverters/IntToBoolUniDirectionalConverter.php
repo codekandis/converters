@@ -4,25 +4,19 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
-use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function in_array;
 use function is_int;
 
 /**
- * Represents a unidirectional converter converting a boolean into a boolean.
+ * Represents a uni-directional converter converting an integer into a boolean.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class IntToBoolUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
+class IntToBoolUniDirectionalConverter extends AbstractConverter implements IntToBoolUniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a boolean into a boolean value.
-	 * @param int $value The boolean value which has to be converted.
-	 * @return bool The converted boolean value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
-	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convert( mixed $value ): bool

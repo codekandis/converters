@@ -4,25 +4,19 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
-use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function in_array;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting a string into a boolean.
+ * Represents a uni-directional converter converting a string into a boolean.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class StringToBoolUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
+class StringToBoolUniDirectionalConverter extends AbstractConverter implements StringToBoolUniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a string into a boolean value.
-	 * @param string $value The string value which has to be converted.
-	 * @return bool The converted boolean value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
-	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convert( mixed $value ): bool

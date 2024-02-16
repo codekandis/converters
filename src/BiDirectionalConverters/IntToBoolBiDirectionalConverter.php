@@ -4,26 +4,20 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
-use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function in_array;
 use function is_bool;
 use function is_int;
 
 /**
- * Represents a bidirectional converter converting between boolean and boolean.
+ * Represents a bi-directional converter converting between `integer` and `boolean`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class IntToBoolBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class IntToBoolBiDirectionalConverter extends AbstractConverter implements IntToBoolBiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a boolean into a boolean value.
-	 * @param int $value The boolean value which has to be converted.
-	 * @return bool The converted boolean value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
-	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convertTo( mixed $value ): bool
@@ -42,10 +36,7 @@ class IntToBoolBiDirectionalConverter extends AbstractConverter implements BiDir
 	}
 
 	/**
-	 * Converts from a boolean into a boolean value.
-	 * @param bool $value The boolean value which has to be converted.
-	 * @return int The converted boolean value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convertFrom( mixed $value ): int

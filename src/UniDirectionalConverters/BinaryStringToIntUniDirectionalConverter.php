@@ -5,25 +5,19 @@ use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
-use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function bindec;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting a binary string into a boolean.
+ * Represents a uni-directional converter converting a binary string into an integer.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class BinaryStringToIntUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
+class BinaryStringToIntUniDirectionalConverter extends AbstractConverter implements BinaryStringToIntUniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a binary string into a boolean value.
-	 * @param string $value The binary string value which has to be converted.
-	 * @return int The converted boolean value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
-	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convert( mixed $value ): int
