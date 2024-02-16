@@ -10,7 +10,7 @@ use function is_bool;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between `nullable boolean` and `nullable string`.
+ * Represents a bidirectional converter converting between `nullable boolean` and `nullable boolean string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

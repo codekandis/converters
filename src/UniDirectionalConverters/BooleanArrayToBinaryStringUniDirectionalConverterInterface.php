@@ -4,16 +4,16 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 
 /**
- * Represents the interface of any uni-directional converter converting a boolean array into a binary string.
+ * Represents the interface of any unidirectional converter converting a `boolean array` into a `binary string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 interface BooleanArrayToBinaryStringUniDirectionalConverterInterface extends UniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a boolean array into a binary string value.
-	 * @param bool[] $value The boolean array value which has to be converted.
-	 * @return string The converted binary string value.
+	 * Converts from a `boolean array` into a `binary string` value.
+	 * @param bool[] $value The `boolean array` value which has to be converted.
+	 * @return string The converted `binary string` value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convert( mixed $value ): string;

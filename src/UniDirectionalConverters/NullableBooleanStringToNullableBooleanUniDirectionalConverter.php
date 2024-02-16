@@ -9,7 +9,7 @@ use function in_array;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting a nullable string into a nullable boolean.
+ * Represents a unidirectional converter converting a `nullable boolean string` into a `nullable boolean`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

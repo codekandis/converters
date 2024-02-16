@@ -12,7 +12,7 @@ use function is_int;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between `integer` and `binary string`.
+ * Represents a bidirectional converter converting between `integer` and `binary string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

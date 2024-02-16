@@ -15,19 +15,19 @@ abstract class ValidValues
 	public const string NULL_STRING = 'null';
 
 	/**
-	 * Represents a boolean integer for `false`.
+	 * Represents a `boolean integer` representing the boolean value `false`.
 	 * @var int
 	 */
 	public const int BOOLEAN_INTEGER_FALSE = 0;
 
 	/**
-	 * Represents a boolean integer for `true`.
+	 * Represents a `boolean integer` representing the boolean value `true`.
 	 * @var int
 	 */
 	public const int BOOLEAN_INTEGER_TRUE = 1;
 
 	/**
-	 * Represents a set of boolean integers.
+	 * Represents a set of `boolean integers`.
 	 * @var int[]
 	 */
 	public const array BOOLEAN_INTEGER_SET = [
@@ -36,19 +36,19 @@ abstract class ValidValues
 	];
 
 	/**
-	 * Represents a boolean string for `false`.
+	 * Represents a `boolean string` representing the boolean value `false`.
 	 * @var string
 	 */
 	public const string BOOLEAN_STRING_FALSE = 'false';
 
 	/**
-	 * Represents a boolean string for `true`.
+	 * Represents a `boolean string` representing the boolean value `true`.
 	 * @var string
 	 */
 	public const string BOOLEAN_STRING_TRUE = 'true';
 
 	/**
-	 * Represents a set of boolean strings.
+	 * Represents a set of `boolean strings`.
 	 * @var string[]
 	 */
 	public const array BOOLEAN_STRING_SET = [
@@ -57,19 +57,19 @@ abstract class ValidValues
 	];
 
 	/**
-	 * Represents a boolean integer string for `false`.
+	 * Represents a `boolean integer string` representing the boolean value `false`.
 	 * @var string
 	 */
 	public const string BOOLEAN_INTEGER_STRING_FALSE = '0';
 
 	/**
-	 * Represents a boolean integer string for `true`.
+	 * Represents a `boolean integer string` representing the boolean value `true`.
 	 * @var string
 	 */
 	public const string BOOLEAN_INTEGER_STRING_TRUE = '1';
 
 	/**
-	 * Represents a set of boolean integer strings.
+	 * Represents a set of `boolean integer strings`.
 	 * @var string[]
 	 */
 	public const array BOOLEAN_INTEGER_STRING_SET = [

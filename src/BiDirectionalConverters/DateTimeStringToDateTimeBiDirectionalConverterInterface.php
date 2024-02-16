@@ -5,24 +5,24 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTime;
 
 /**
- * Represents the interface of any bi-directional converter converting between `string` and `DateTime`.
+ * Represents the interface of any bidirectional converter converting between `DateTime string` and `DateTime`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 interface DateTimeStringToDateTimeBiDirectionalConverterInterface extends BiDirectionalDateTimeRelatedConverterInterface
 {
 	/**
-	 * Converts from a `string` into a `DateTime` value.
-	 * @param string $value The `string` value which has to be converted.
+	 * Converts from a `DateTime string` into a `DateTime` value.
+	 * @param string $value The `DateTime string` value which has to be converted.
 	 * @return DateTime The converted `DateTime` value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convertTo( mixed $value ): DateTime;
 
 	/**
-	 * Converts from a `DateTime` into a `string` value.
+	 * Converts from a `DateTime` into a `DateTime string` value.
 	 * @param DateTime $value The `DateTime` value which has to be converted.
-	 * @return string The converted `string` value.
+	 * @return string The converted `DateTime string` value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convertFrom( mixed $value ): string;

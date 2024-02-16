@@ -5,7 +5,7 @@ use CodeKandis\Converters\ConverterInterface;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 
 /**
- * Represents the interface of any uni-directional converter.
+ * Represents the interface of any unidirectional converter.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
