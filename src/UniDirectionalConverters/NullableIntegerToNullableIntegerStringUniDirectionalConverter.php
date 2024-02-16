@@ -7,7 +7,7 @@ use Override;
 use function is_int;
 
 /**
- * Represents a uni-directional converter converting a nullable integer into a nullable string.
+ * Represents a unidirectional converter converting a `nullable integer` into a `nullable integer string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

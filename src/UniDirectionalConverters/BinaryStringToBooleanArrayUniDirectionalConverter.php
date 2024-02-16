@@ -11,7 +11,7 @@ use function is_string;
 use function strlen;
 
 /**
- * Represents a uni-directional converter converting a binary string into a boolean array.
+ * Represents a unidirectional converter converting a `binary string` into a `boolean array`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

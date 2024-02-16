@@ -9,19 +9,19 @@ namespace CodeKandis\Converters;
 abstract class ValidValuesRegularExpressions
 {
 	/**
-	 * Represents the regular expression of a binary string value.
+	 * Represents the regular expression of a `binary string` value.
 	 * @var string
 	 */
 	public const string REGEX_BINARY_STRING = '~^[01]+$~';
 
 	/**
-	 * Represents the regular expression of a boolean value.
+	 * Represents the regular expression of an `integer string` value.
 	 * @var string
 	 */
 	public const string REGEX_INTEGER_STRING = '~^\\-?\d+$~';
 
 	/**
-	 * Represents the regular expression of a float value.
+	 * Represents the regular expression of a `float string` value.
 	 * @var string
 	 */
 	public const string REGEX_FLOAT_STRING = '~^\\-?\d+(?:\\.\d+)?$~';

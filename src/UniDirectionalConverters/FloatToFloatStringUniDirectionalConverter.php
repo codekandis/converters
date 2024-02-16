@@ -7,7 +7,7 @@ use Override;
 use function is_float;
 
 /**
- * Represents a uni-directional converter converting a float into a string.
+ * Represents a unidirectional converter converting a `float` into a `float string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

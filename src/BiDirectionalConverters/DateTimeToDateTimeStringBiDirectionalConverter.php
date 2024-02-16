@@ -10,7 +10,7 @@ use function is_string;
 use function sprintf;
 
 /**
- * Represents a bi-directional converter converting between `DateTime` and `string`.
+ * Represents a bidirectional converter converting between `DateTime` and `DateTime string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -8,7 +8,7 @@ use Override;
 use function is_bool;
 
 /**
- * Represents a uni-directional converter converting a nullable boolean into a nullable string.
+ * Represents a unidirectional converter converting a `nullable boolean` into a `nullable boolean string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

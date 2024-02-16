@@ -13,7 +13,7 @@ use function is_string;
 use function strlen;
 
 /**
- * Represents a bi-directional converter converting between `binary string` and `boolean array`.
+ * Represents a bidirectional converter converting between `binary string` and `boolean array`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

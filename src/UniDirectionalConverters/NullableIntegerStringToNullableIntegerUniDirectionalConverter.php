@@ -10,7 +10,7 @@ use Override;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting a nullable string into a nullable integer.
+ * Represents a unidirectional converter converting a `nullable integer string` into a `nullable integer`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

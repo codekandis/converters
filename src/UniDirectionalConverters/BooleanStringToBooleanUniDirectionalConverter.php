@@ -9,7 +9,7 @@ use function in_array;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting a string into a boolean.
+ * Represents a unidirectional converter converting a `boolean string` into a `boolean`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

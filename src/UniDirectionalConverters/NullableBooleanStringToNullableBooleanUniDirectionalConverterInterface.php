@@ -5,16 +5,16 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use CodeKandis\Types\InvalidValueExceptionInterface;
 
 /**
- * Represents the interface of any uni-directional converter converting a nullable string into a nullable boolean.
+ * Represents the interface of any unidirectional converter converting a `nullable boolean string` into a `nullable boolean`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 interface NullableBooleanStringToNullableBooleanUniDirectionalConverterInterface extends UniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a nullable string into a nullable boolean value.
-	 * @param ?string $value The nullable string value which has to be converted.
-	 * @return ?bool The converted nullable boolean value.
+	 * Converts from a `nullable boolean string` into a `nullable boolean` value.
+	 * @param ?string $value The `nullable boolean string` value which has to be converted.
+	 * @return ?bool The converted `nullable boolean` value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */

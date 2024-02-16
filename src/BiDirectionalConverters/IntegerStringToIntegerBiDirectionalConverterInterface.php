@@ -5,15 +5,15 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use CodeKandis\Types\InvalidValueExceptionInterface;
 
 /**
- * Represents the interface of any bi-directional converter converting between `string` and `integer`.
+ * Represents the interface of any bidirectional converter converting between `integer string` and `integer`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 interface IntegerStringToIntegerBiDirectionalConverterInterface extends BiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a `string` into an `integer` value.
-	 * @param string $value The `string` value which has to be converted.
+	 * Converts from an `integer string` into an `integer` value.
+	 * @param string $value The `integer string` value which has to be converted.
 	 * @return int The converted `integer` value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
@@ -21,9 +21,9 @@ interface IntegerStringToIntegerBiDirectionalConverterInterface extends BiDirect
 	public function convertTo( mixed $value ): int;
 
 	/**
-	 * Converts from an `integer` into a `string` value.
+	 * Converts from an `integer` into an `integer string` value.
 	 * @param int $value The `integer` value which has to be converted.
-	 * @return string The converted `string` value.
+	 * @return string The converted `integer string` value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convertFrom( mixed $value ): string;

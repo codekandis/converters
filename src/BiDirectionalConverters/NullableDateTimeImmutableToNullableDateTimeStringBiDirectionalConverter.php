@@ -10,7 +10,7 @@ use function is_string;
 use function sprintf;
 
 /**
- * Represents a bi-directional converter converting between `nullable DateTimeImmutable` and `nullable string`.
+ * Represents a bidirectional converter converting between `nullable DateTimeImmutable` and `nullable DateTime string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
