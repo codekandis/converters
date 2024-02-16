@@ -5,24 +5,19 @@ use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
-use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function is_float;
 use function is_string;
 
 /**
- * Represents a bidirectional converter converting between nullable float and nullable string.
+ * Represents a bi-directional converter converting between `nullable float` and `nullable string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableFloatToNullableStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class NullableFloatToNullableStringBiDirectionalConverter extends AbstractConverter implements NullableFloatToNullableStringBiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a nullable float into a nullable string value.
-	 * @param ?float $value The nullable float value which has to be converted.
-	 * @return ?string The converted nullable string value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convertTo( mixed $value ): ?string
@@ -41,11 +36,7 @@ class NullableFloatToNullableStringBiDirectionalConverter extends AbstractConver
 	}
 
 	/**
-	 * Converts from a nullable string into a nullable float value.
-	 * @param ?string $value The nullable string value which has to be converted.
-	 * @return ?float The converted nullable float value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
-	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convertFrom( mixed $value ): ?float

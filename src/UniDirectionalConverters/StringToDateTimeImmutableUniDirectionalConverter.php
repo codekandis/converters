@@ -3,23 +3,19 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTimeImmutable;
 use Override;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting a string into a DateTimeImmutable.
+ * Represents a uni-directional converter converting a string into a DateTimeImmutable.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class StringToDateTimeImmutableUniDirectionalConverter extends AbstractDateTimeRelatedConverter implements UniDirectionalDateTimeRelatedConverterInterface
+class StringToDateTimeImmutableUniDirectionalConverter extends AbstractDateTimeRelatedConverter implements StringToDateTimeImmutableUniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a string into a DateTimeImmutable value.
-	 * @param string $value The string value which has to be converted.
-	 * @return DateTimeImmutable The converted DateTimeImmutable value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convert( mixed $value ): DateTimeImmutable

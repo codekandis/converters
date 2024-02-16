@@ -5,24 +5,19 @@ use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
-use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function is_float;
 use function is_string;
 
 /**
- * Represents a bidirectional converter converting between float and string.
+ * Represents a bi-directional converter converting between `float` and `string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class FloatToStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class FloatToStringBiDirectionalConverter extends AbstractConverter implements FloatToStringBiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a float into a string value.
-	 * @param float $value The float value which has to be converted.
-	 * @return string The converted string value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convertTo( mixed $value ): string
@@ -36,11 +31,7 @@ class FloatToStringBiDirectionalConverter extends AbstractConverter implements B
 	}
 
 	/**
-	 * Converts from a string into a float value.
-	 * @param string $value The string value which has to be converted.
-	 * @return float The converted float value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
-	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convertFrom( mixed $value ): float

@@ -4,25 +4,20 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
-use CodeKandis\Types\InvalidValueExceptionInterface;
 use Override;
 use function in_array;
 use function is_bool;
 use function is_string;
 
 /**
- * Represents a bidirectional converter converting between boolean and boolean string.
+ * Represents a bi-directional converter converting between `boolean` and `integer string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class BoolToIntStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class BoolToIntStringBiDirectionalConverter extends AbstractConverter implements BoolToIntStringBiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a boolean into a boolean string value.
-	 * @param bool $value The boolean value which has to be converted.
-	 * @return string The converted boolean string value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convertTo( mixed $value ): string
@@ -38,11 +33,7 @@ class BoolToIntStringBiDirectionalConverter extends AbstractConverter implements
 	}
 
 	/**
-	 * Converts from a boolean string into a boolean value.
-	 * @param string $value The boolean string value which has to be converted.
-	 * @return bool The converted boolean value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
-	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convertFrom( mixed $value ): bool
