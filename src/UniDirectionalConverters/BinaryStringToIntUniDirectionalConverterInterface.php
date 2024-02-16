@@ -5,7 +5,7 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use CodeKandis\Types\InvalidValueExceptionInterface;
 
 /**
- * Represents the interface of any uni-directional converter converting a binary string into an integer.
+ * Represents the interface of any unidirectional converter converting a binary string into an integer.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

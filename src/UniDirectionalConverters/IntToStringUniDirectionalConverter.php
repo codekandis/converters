@@ -6,7 +6,7 @@ use CodeKandis\Converters\ExpectedTypes;
 use function is_int;
 
 /**
- * Represents a uni-directional converter converting an integer into a string.
+ * Represents a unidirectional converter converting an integer into a string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

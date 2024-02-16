@@ -7,7 +7,7 @@ use function decbin;
 use function is_int;
 
 /**
- * Represents a uni-directional converter converting an integer into a binary string.
+ * Represents a unidirectional converter converting an integer into a binary string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

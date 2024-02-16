@@ -5,7 +5,7 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use CodeKandis\Types\InvalidValueExceptionInterface;
 
 /**
- * Represents the interface of any uni-directional converter converting a nullable integer string into a nullable boolean.
+ * Represents the interface of any unidirectional converter converting a nullable integer string into a nullable boolean.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

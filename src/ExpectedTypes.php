@@ -9,55 +9,55 @@ namespace CodeKandis\Converters;
 abstract class ExpectedTypes
 {
 	/**
-	 * Represents a NULL type.
+	 * Represents a `NULL` type.
 	 * @var string
 	 */
 	public const string NULL = 'null';
 
 	/**
-	 * Represents a boolean type.
+	 * Represents a `boolean` type.
 	 * @var string
 	 */
 	public const string BOOLEAN = 'bool';
 
 	/**
-	 * Represents a nullable boolean type.
+	 * Represents a `nullable boolean` type.
 	 * @var string
 	 */
 	public const string NULLABLE_BOOLEAN = '?bool';
 
 	/**
-	 * Represents a boolean type.
+	 * Represents a `boolean` type.
 	 * @var string
 	 */
 	public const string INTEGER = 'int';
 
 	/**
-	 * Represents a nullable boolean type.
+	 * Represents a `nullable boolean` type.
 	 * @var string
 	 */
 	public const string NULLABLE_INTEGER = '?int';
 
 	/**
-	 * Represents a float type.
+	 * Represents a `float` type.
 	 * @var string
 	 */
 	public const string FLOAT = 'float';
 
 	/**
-	 * Represents a nullable float type.
+	 * Represents a `nullable float` type.
 	 * @var string
 	 */
 	public const string NULLABLE_FLOAT = '?float';
 
 	/**
-	 * Represents a string type.
+	 * Represents a `string` type.
 	 * @var string
 	 */
 	public const string STRING = 'string';
 
 	/**
-	 * Represents a nullable string type.
+	 * Represents a `nullable string` type.
 	 * @var string
 	 */
 	public const string NULLABLE_STRING = '?string';
@@ -69,25 +69,25 @@ abstract class ExpectedTypes
 	public const string BOOLEAN_ARRAY = 'bool[]';
 
 	/**
-	 * Represents a DateTimeImmutable type.
+	 * Represents a `DateTimeImmutable` type.
 	 * @var string
 	 */
 	public const string DATETIME_IMMUTABLE = 'DateTimeImmutable';
 
 	/**
-	 * Represents a nullable DateTimeImmutable type.
+	 * Represents a `nullable DateTimeImmutable` type.
 	 * @var string
 	 */
 	public const string NULLABLE_DATETIME_IMMUTABLE = '?DateTimeImmutable';
 
 	/**
-	 * Represents a DateTime type.
+	 * Represents a `DateTime` type.
 	 * @var string
 	 */
 	public const string DATETIME = 'DateTime';
 
 	/**
-	 * Represents a nullable DateTime type.
+	 * Represents a `nullable DateTime` type.
 	 * @var string
 	 */
 	public const string NULLABLE_DATETIME = '?DateTime';

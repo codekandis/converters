@@ -8,7 +8,7 @@ use CodeKandis\RegularExpressions\RegularExpression;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting a string into an integer.
+ * Represents a unidirectional converter converting a string into an integer.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

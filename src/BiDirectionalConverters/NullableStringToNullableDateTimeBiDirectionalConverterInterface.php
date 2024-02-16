@@ -5,7 +5,7 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTime;
 
 /**
- * Represents the interface of any bi-directional converter converting between `nullable string` and `nullable DateTime`.
+ * Represents the interface of any bidirectional converter converting between `nullable string` and `nullable DateTime`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

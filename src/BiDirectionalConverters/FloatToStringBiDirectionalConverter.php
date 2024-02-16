@@ -9,7 +9,7 @@ use function is_float;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between `float` and `string`.
+ * Represents a bidirectional converter converting between `float` and `string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

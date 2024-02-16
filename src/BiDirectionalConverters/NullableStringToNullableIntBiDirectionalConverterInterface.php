@@ -5,7 +5,7 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use CodeKandis\Types\InvalidValueExceptionInterface;
 
 /**
- * Represents the interface of any bi-directional converter converting between `nullable string` and `nullable integer`.
+ * Represents the interface of any bidirectional converter converting between `nullable string` and `nullable integer`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

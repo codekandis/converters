@@ -5,7 +5,7 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use CodeKandis\Types\InvalidValueExceptionInterface;
 
 /**
- * Represents the interface of any uni-directional converter converting an integer into a boolean.
+ * Represents the interface of any unidirectional converter converting an integer into a boolean.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -5,7 +5,7 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTimeImmutable;
 
 /**
- * Represents the interface of any bi-directional converter converting between `DateTimeImmutable` and `string`.
+ * Represents the interface of any bidirectional converter converting between `DateTimeImmutable` and `string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -7,7 +7,7 @@ use CodeKandis\Converters\ValidValues;
 use function is_bool;
 
 /**
- * Represents a uni-directional converter converting a boolean into an integer string.
+ * Represents a unidirectional converter converting a boolean into an integer string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -4,7 +4,7 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 
 /**
- * Represents the interface of any uni-directional converter converting a boolean into an integer.
+ * Represents the interface of any unidirectional converter converting a boolean into an integer.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

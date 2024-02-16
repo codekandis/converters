@@ -5,7 +5,7 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use CodeKandis\Types\InvalidValueExceptionInterface;
 
 /**
- * Represents the interface of any bi-directional converter converting between `binary string` and `boolean array`.
+ * Represents the interface of any bidirectional converter converting between `binary string` and `boolean array`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -6,7 +6,7 @@ use CodeKandis\Converters\ExpectedTypes;
 use function is_int;
 
 /**
- * Represents a uni-directional converter converting a nullable integer into a nullable string.
+ * Represents a unidirectional converter converting a nullable integer into a nullable string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

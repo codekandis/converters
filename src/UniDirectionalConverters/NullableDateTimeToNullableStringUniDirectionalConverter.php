@@ -6,7 +6,7 @@ use CodeKandis\Converters\ExpectedTypes;
 use DateTime;
 
 /**
- * Represents a uni-directional converter converting a nullable DateTime into a nullable string.
+ * Represents a unidirectional converter converting a nullable DateTime into a nullable string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

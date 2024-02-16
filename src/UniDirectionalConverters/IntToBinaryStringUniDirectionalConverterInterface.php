@@ -4,7 +4,7 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 
 /**
- * Represents the interface of any uni-directional converter converting an integer into a binary string.
+ * Represents the interface of any unidirectional converter converting an integer into a binary string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

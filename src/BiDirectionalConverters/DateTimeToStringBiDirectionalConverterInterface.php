@@ -5,7 +5,7 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTime;
 
 /**
- * Represents the interface of any bi-directional converter converting between `DateTime` and `string`.
+ * Represents the interface of any bidirectional converter converting between `DateTime` and `string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

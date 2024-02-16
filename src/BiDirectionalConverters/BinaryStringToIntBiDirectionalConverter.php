@@ -11,7 +11,7 @@ use function is_int;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between `binary string` and `integer`.
+ * Represents a bidirectional converter converting between `binary string` and `integer`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

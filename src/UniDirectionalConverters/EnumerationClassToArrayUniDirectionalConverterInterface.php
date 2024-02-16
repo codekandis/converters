@@ -5,7 +5,7 @@ use CodeKandis\Converters\EnumerationClassNotFoundExceptionInterface;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 
 /**
- * Represents the interface of any uni-directional converter converting an enumeration class into an array of values.
+ * Represents the interface of any unidirectional converter converting an enumeration class into an array of values.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -6,7 +6,7 @@ use CodeKandis\Converters\ExpectedTypes;
 use DateTimeImmutable;
 
 /**
- * Represents a uni-directional converter converting a DateTimeImmutable into a string.
+ * Represents a unidirectional converter converting a DateTimeImmutable into a string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -5,7 +5,7 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use CodeKandis\Types\InvalidValueExceptionInterface;
 
 /**
- * Represents the interface of any bi-directional converter converting between `string` and `float`.
+ * Represents the interface of any bidirectional converter converting between `string` and `float`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
