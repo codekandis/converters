@@ -6,29 +6,21 @@ use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
-use CodeKandis\Types\InvalidValueExceptionInterface;
-use Override;
 use function is_array;
 use function is_bool;
 use function is_string;
 use function strlen;
 
 /**
- * Represents a bidirectional converter converting between binary string and boolean array.
+ * Represents a bi-directional converter converting between `binary string` and `boolean array`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class BinaryStringToBoolArrayBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class BinaryStringToBoolArrayBiDirectionalConverter extends AbstractConverter implements BinaryStringToBoolArrayBiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a binary string into a boolean array value.
-	 * @param string $value The binary string value which has to be converted.
-	 * @return bool[] The converted boolean array value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
-	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
+	 * @inheritDoc
 	 */
-	#[Override]
 	public function convertTo( mixed $value ): array
 	{
 		if ( false === is_string( $value ) )
@@ -52,12 +44,8 @@ class BinaryStringToBoolArrayBiDirectionalConverter extends AbstractConverter im
 	}
 
 	/**
-	 * Converts from a boolean array into a binary string value.
-	 * @param bool[] $value The boolean array value which has to be converted.
-	 * @return string The converted binary string value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
-	#[Override]
 	public function convertFrom( mixed $value ): string
 	{
 		if ( false === is_array( $value ) )

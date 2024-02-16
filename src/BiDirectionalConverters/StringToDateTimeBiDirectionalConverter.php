@@ -3,25 +3,19 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTime;
-use Override;
 use function is_string;
 
 /**
- * Represents a bidirectional converter converting between string and DateTime.
+ * Represents a bi-directional converter converting between `string` and `DateTime`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class StringToDateTimeBiDirectionalConverter extends AbstractDateTimeRelatedConverter implements BiDirectionalDateTimeRelatedConverterInterface
+class StringToDateTimeBiDirectionalConverter extends AbstractDateTimeRelatedConverter implements StringToDateTimeBiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a string into a DateTime value.
-	 * @param string $value The string value which has to be converted.
-	 * @return DateTime The converted DateTime value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
-	#[Override]
 	public function convertTo( mixed $value ): DateTime
 	{
 		if ( false === is_string( $value ) )
@@ -33,12 +27,8 @@ class StringToDateTimeBiDirectionalConverter extends AbstractDateTimeRelatedConv
 	}
 
 	/**
-	 * Converts from a DateTime into a string value.
-	 * @param DateTime $value The DateTime value which has to be converted.
-	 * @return string The converted string value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
-	#[Override]
 	public function convertFrom( mixed $value ): string
 	{
 		if ( false === $value instanceof DateTime )

@@ -3,24 +3,18 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTimeImmutable;
-use Override;
 
 /**
- * Represents a unidirectional converter converting a nullable string into a nullable DateTimeImmutable.
+ * Represents a uni-directional converter converting a nullable DateTimeImmutable into a nullable string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableDateTimeImmutableToNullableStringUniDirectionalConverter extends AbstractDateTimeRelatedConverter implements UniDirectionalDateTimeRelatedConverterInterface
+class NullableDateTimeImmutableToNullableStringUniDirectionalConverter extends AbstractDateTimeRelatedConverter implements NullableDateTimeImmutableToNullableStringUniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a nullable string into a nullable DateTimeImmutable value.
-	 * @param ?DateTimeImmutable $value The nullable DateTimeImmutable value which has to be converted.
-	 * @return ?string The converted nullable string value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
-	#[Override]
 	public function convert( mixed $value ): ?string
 	{
 		if ( null !== $value && false === $value instanceof DateTimeImmutable )

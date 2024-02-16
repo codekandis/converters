@@ -3,25 +3,19 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTimeImmutable;
-use Override;
 use function is_string;
 
 /**
- * Represents a bidirectional converter converting between nullable string and nullable DateTimeImmutable.
+ * Represents a bi-directional converter converting between `nullable DateTimeImmutable` and `nullable string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableDateTimeImmutableToNullableStringBiDirectionalConverter extends AbstractDateTimeRelatedConverter implements BiDirectionalDateTimeRelatedConverterInterface
+class NullableDateTimeImmutableToNullableStringBiDirectionalConverter extends AbstractDateTimeRelatedConverter implements NullableDateTimeImmutableToNullableStringBiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a nullable string into a nullable DateTimeImmutable value.
-	 * @param ?DateTimeImmutable $value The nullable DateTimeImmutable value which has to be converted.
-	 * @return ?string The converted nullable string value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
-	#[Override]
 	public function convertTo( mixed $value ): ?string
 	{
 		if ( null !== $value && false === $value instanceof DateTimeImmutable )
@@ -33,12 +27,8 @@ class NullableDateTimeImmutableToNullableStringBiDirectionalConverter extends Ab
 	}
 
 	/**
-	 * Converts from a nullable DateTimeImmutable into a nullable string value.
-	 * @param ?string $value The nullable string value which has to be converted.
-	 * @return ?DateTimeImmutable The converted nullable DateTimeImmutable value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
-	#[Override]
 	public function convertFrom( mixed $value ): ?DateTimeImmutable
 	{
 		if ( null !== $value && false === is_string( $value ) )

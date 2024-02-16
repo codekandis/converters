@@ -3,25 +3,19 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTime;
-use Override;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting a string into a DateTime.
+ * Represents a uni-directional converter converting a string into a DateTime.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class StringToDateTimeUniDirectionalConverter extends AbstractDateTimeRelatedConverter implements UniDirectionalDateTimeRelatedConverterInterface
+class StringToDateTimeUniDirectionalConverter extends AbstractDateTimeRelatedConverter implements StringToDateTimeUniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a string into a DateTime value.
-	 * @param string $value The string value which has to be converted.
-	 * @return DateTime The converted DateTime value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
-	#[Override]
 	public function convert( mixed $value ): DateTime
 	{
 		if ( false === is_string( $value ) )

@@ -5,29 +5,21 @@ use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
-use CodeKandis\Types\InvalidValueExceptionInterface;
-use Override;
 use function bindec;
 use function decbin;
 use function is_int;
 use function is_string;
 
 /**
- * Represents a bidirectional converter converting between binary string and boolean.
+ * Represents a bi-directional converter converting between `binary string` and `integer`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class BinaryStringToIntBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class BinaryStringToIntBiDirectionalConverter extends AbstractConverter implements BinaryStringToIntBiDirectionalConverterInterface
 {
 	/**
-	 * Converts from a binary string into a boolean value.
-	 * @param string $value The binary string value which has to be converted.
-	 * @return int The converted boolean value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
-	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
+	 * @inheritDoc
 	 */
-	#[Override]
 	public function convertTo( mixed $value ): int
 	{
 		if ( false === is_string( $value ) )
@@ -45,12 +37,8 @@ class BinaryStringToIntBiDirectionalConverter extends AbstractConverter implemen
 	}
 
 	/**
-	 * Converts from a boolean into a binary string value.
-	 * @param int $value The boolean value which has to be converted.
-	 * @return string The converted binary string value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
-	#[Override]
 	public function convertFrom( mixed $value ): string
 	{
 		if ( false === is_int( $value ) )
