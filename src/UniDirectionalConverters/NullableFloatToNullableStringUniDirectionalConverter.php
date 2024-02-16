@@ -3,22 +3,18 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
 use Override;
 use function is_float;
 
 /**
- * Represents a unidirectional converter converting a nullable float into a nullable string.
+ * Represents a uni-directional converter converting a nullable float into a nullable string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableFloatToNullableStringUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
+class NullableFloatToNullableStringUniDirectionalConverter extends AbstractConverter implements NullableFloatToNullableStringUniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a nullable float into a nullable string value.
-	 * @param ?float $value The nullable float value which has to be converted.
-	 * @return ?string The converted nullable string value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convert( mixed $value ): ?string

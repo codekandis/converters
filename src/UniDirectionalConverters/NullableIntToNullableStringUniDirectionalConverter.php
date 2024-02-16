@@ -3,22 +3,18 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
 use Override;
 use function is_int;
 
 /**
- * Represents a unidirectional converter converting a nullable boolean into a nullable string.
+ * Represents a uni-directional converter converting a nullable integer into a nullable string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableIntToNullableStringUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
+class NullableIntToNullableStringUniDirectionalConverter extends AbstractConverter implements NullableIntToNullableStringUniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a nullable boolean into a nullable string value.
-	 * @param ?int $value The nullable boolean value which has to be converted.
-	 * @return ?string The converted nullable string value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convert( mixed $value ): ?string

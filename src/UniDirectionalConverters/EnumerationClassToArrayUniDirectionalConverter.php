@@ -3,9 +3,7 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\EnumerationClassNotFoundException;
-use CodeKandis\Converters\EnumerationClassNotFoundExceptionInterface;
 use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
 use Override;
 use ReflectionClass;
 use ReflectionException;
@@ -13,18 +11,14 @@ use function in_array;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting an enumeration class into an array of values.
+ * Represents a uni-directional converter converting an enumeration class into an array of values.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class EnumerationClassToArrayUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
+class EnumerationClassToArrayUniDirectionalConverter extends AbstractConverter implements EnumerationClassToArrayUniDirectionalConverterInterface
 {
 	/**
-	 * Converts an enumeration class into an array of values.
-	 * @param mixed $value The class name of the enumeration class which has to be converted.
-	 * @return mixed The converted array of values.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
-	 * @throws EnumerationClassNotFoundExceptionInterface The enumeration class does not exist.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convert( mixed $value ): array

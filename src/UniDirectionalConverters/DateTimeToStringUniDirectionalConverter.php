@@ -3,22 +3,18 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Types\InvalidTypeExceptionInterface;
 use DateTime;
 use Override;
 
 /**
- * Represents a unidirectional converter converting a DateTime into a string.
+ * Represents a uni-directional converter converting a DateTime into a string.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class DateTimeToStringUniDirectionalConverter extends AbstractDateTimeRelatedConverter implements UniDirectionalDateTimeRelatedConverterInterface
+class DateTimeToStringUniDirectionalConverter extends AbstractDateTimeRelatedConverter implements DateTimeToStringUniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a DateTime into a string value.
-	 * @param DateTime $value The DateTime value which has to be converted.
-	 * @return string The converted string value.
-	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
+	 * @inheritDoc
 	 */
 	#[Override]
 	public function convert( mixed $value ): string
