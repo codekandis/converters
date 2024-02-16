@@ -9,7 +9,7 @@ use function is_array;
 use function is_bool;
 
 /**
- * Represents a uni-directional converter converting a boolean array into a binary string.
+ * Represents a unidirectional converter converting a `boolean array` into a `binary string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

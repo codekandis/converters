@@ -10,7 +10,7 @@ use Override;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting a nullable string into a nullable float.
+ * Represents a unidirectional converter converting a `nullable float string` into a `nullable float`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

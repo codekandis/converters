@@ -10,7 +10,7 @@ use function is_bool;
 use function is_int;
 
 /**
- * Represents a bi-directional converter converting between `boolean` and `integer`.
+ * Represents a bidirectional converter converting between `boolean` and `boolean integer`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

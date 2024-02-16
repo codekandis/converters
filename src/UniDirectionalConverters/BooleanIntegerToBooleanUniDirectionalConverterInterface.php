@@ -5,16 +5,16 @@ use CodeKandis\Types\InvalidTypeExceptionInterface;
 use CodeKandis\Types\InvalidValueExceptionInterface;
 
 /**
- * Represents the interface of any uni-directional converter converting an integer into a boolean.
+ * Represents the interface of any unidirectional converter converting a `boolean integer` into a `boolean`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 interface BooleanIntegerToBooleanUniDirectionalConverterInterface extends UniDirectionalConverterInterface
 {
 	/**
-	 * Converts from an integer into a boolean value.
-	 * @param int $value The integer value which has to be converted.
-	 * @return bool The converted boolean value.
+	 * Converts from a `boolean integer` into a `boolean` value.
+	 * @param int $value The `boolean integer` value which has to be converted.
+	 * @return bool The converted `boolean` value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 * @throws InvalidValueExceptionInterface The value to convert is invalid.
 	 */

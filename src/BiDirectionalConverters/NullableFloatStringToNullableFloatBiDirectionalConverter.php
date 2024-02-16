@@ -11,7 +11,7 @@ use function is_float;
 use function is_string;
 
 /**
- * Represents a bi-directional converter converting between `nullable string` and `nullable float`.
+ * Represents a bidirectional converter converting between `nullable float string` and `nullable float`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -11,7 +11,7 @@ use function in_array;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting an enumeration class into an array of values.
+ * Represents a unidirectional converter converting an `enumeration class` into an `array` of values.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

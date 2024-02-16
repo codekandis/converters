@@ -10,7 +10,7 @@ use function bindec;
 use function is_string;
 
 /**
- * Represents a uni-directional converter converting a binary string into an integer.
+ * Represents a unidirectional converter converting a `binary string` into an `integer`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

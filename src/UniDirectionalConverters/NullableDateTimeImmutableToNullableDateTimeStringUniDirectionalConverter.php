@@ -7,7 +7,7 @@ use DateTimeImmutable;
 use Override;
 
 /**
- * Represents a uni-directional converter converting a nullable DateTimeImmutable into a nullable string.
+ * Represents a unidirectional converter converting a `nullable DateTimeImmutable` into a `nullable DateTime string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

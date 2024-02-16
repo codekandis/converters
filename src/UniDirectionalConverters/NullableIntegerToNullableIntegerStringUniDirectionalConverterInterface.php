@@ -4,16 +4,16 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 
 /**
- * Represents the interface of any uni-directional converter converting a nullable integer into a nullable string.
+ * Represents the interface of any unidirectional converter converting a `nullable integer` into a `nullable integer string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
 interface NullableIntegerToNullableIntegerStringUniDirectionalConverterInterface extends UniDirectionalConverterInterface
 {
 	/**
-	 * Converts from a nullable integer into a nullable string value.
-	 * @param ?int $value The nullable integer value which has to be converted.
-	 * @return ?string The converted nullable string value.
+	 * Converts from a `nullable integer` into a `nullable integer string` value.
+	 * @param ?int $value The `nullable integer` value which has to be converted.
+	 * @return ?string The converted `nullable integer string` value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
 	 */
 	public function convert( mixed $value ): ?string;
