@@ -2,7 +2,6 @@
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
-use CodeKandis\Converters\BiDirectionalDateTimeRelatedConverterInterface;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\ValidTypes;
 use DateTime;

@@ -3,7 +3,6 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use Override;
 use function decbin;
