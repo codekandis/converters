@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\Converters;
+namespace CodeKandis\Converters\UniDirectionalConverters;
 
+use CodeKandis\Converters\ConverterInterface;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 
 /**

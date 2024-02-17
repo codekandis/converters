@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\Converters;
+namespace CodeKandis\Converters\BiDirectionalConverters;
 
+use CodeKandis\Converters\DateTimeRelatedConverterInterface;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 
 /**
