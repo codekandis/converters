@@ -5,7 +5,6 @@ use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\EnumerationClassNotFoundException;
 use CodeKandis\Converters\EnumerationClassNotFoundExceptionInterface;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\UniDirectionalConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use Override;
 use ReflectionClass;
