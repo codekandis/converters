@@ -3,7 +3,6 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\UniDirectionalDateTimeRelatedConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use DateTimeImmutable;
 use Override;
