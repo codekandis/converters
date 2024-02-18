@@ -20,14 +20,14 @@ class NullableBoolToNullableStringUniDirectionalConverter extends AbstractConver
 	#[Override]
 	public function convert( mixed $value ): ?string
 	{
-		if ( null !== $value && false === is_bool( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_BOOLEAN );
-		}
-
 		if ( null === $value )
 		{
 			return null;
+		}
+
+		if ( false === is_bool( $value ) )
+		{
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_BOOLEAN );
 		}
 
 		return false === $value

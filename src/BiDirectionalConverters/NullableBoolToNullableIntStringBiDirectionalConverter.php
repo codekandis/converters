@@ -22,14 +22,14 @@ class NullableBoolToNullableIntStringBiDirectionalConverter extends AbstractConv
 	#[Override]
 	public function convertTo( mixed $value ): ?string
 	{
-		if ( null !== $value && false === is_bool( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_BOOLEAN );
-		}
-
 		if ( null === $value )
 		{
 			return null;
+		}
+
+		if ( false === is_bool( $value ) )
+		{
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_BOOLEAN );
 		}
 
 		return false === $value
@@ -43,14 +43,14 @@ class NullableBoolToNullableIntStringBiDirectionalConverter extends AbstractConv
 	#[Override]
 	public function convertFrom( mixed $value ): ?bool
 	{
-		if ( null !== $value && false === is_string( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
-		}
-
 		if ( null === $value )
 		{
 			return null;
+		}
+
+		if ( false === is_string( $value ) )
+		{
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}
 
 		if ( false === in_array( $value, ValidValues::BOOLEAN_INTEGER_STRING_SET ) )
