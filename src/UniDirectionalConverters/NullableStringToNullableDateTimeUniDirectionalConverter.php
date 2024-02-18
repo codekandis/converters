@@ -3,8 +3,10 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Converters\ValidValues;
 use DateTime;
 use function is_string;
+use function sprintf;
 
 /**
  * Represents a uni-directional converter converting a nullable string into a nullable DateTime.
@@ -28,6 +30,16 @@ class NullableStringToNullableDateTimeUniDirectionalConverter extends AbstractDa
 			return null;
 		}
 
-		return DateTime::createFromFormat( $this->format, $value, $this->timeZone );
+		$convertedValue = DateTime::createFromFormat( $this->format, $value, $this->timeZone );
+
+		if ( false === $convertedValue )
+		{
+			throw $this->getInvalidValueException(
+				$value,
+				sprintf( ValidValues::TEMPLATE_DATETIME_STRING_TEMPLATE, $this->format )
+			);
+		}
+
+		return $convertedValue;
 	}
 }

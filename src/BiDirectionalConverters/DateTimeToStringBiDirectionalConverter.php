@@ -3,8 +3,10 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Converters\ValidValues;
 use DateTime;
 use function is_string;
+use function sprintf;
 
 /**
  * Represents a bi-directional converter converting between `DateTime` and `string`.
@@ -36,6 +38,16 @@ class DateTimeToStringBiDirectionalConverter extends AbstractDateTimeRelatedConv
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
-		return DateTime::createFromFormat( $this->format, $value, $this->timeZone );
+		$convertedValue = DateTime::createFromFormat( $this->format, $value, $this->timeZone );
+
+		if ( false === $convertedValue )
+		{
+			throw $this->getInvalidValueException(
+				$value,
+				sprintf( ValidValues::TEMPLATE_DATETIME_STRING_TEMPLATE, $this->format )
+			);
+		}
+
+		return $convertedValue;
 	}
 }
