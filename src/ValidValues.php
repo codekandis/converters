@@ -70,4 +70,10 @@ abstract class ValidValues
 		self::BOOLEAN_INTEGER_STRING_FALSE,
 		self::BOOLEAN_INTEGER_STRING_TRUE
 	];
+
+	/**
+	 * Represents the template of a `DateTime string`.
+	 * @var string
+	 */
+	public const string TEMPLATE_DATETIME_STRING_TEMPLATE = 'string<datetime<%s>>';
 }
