@@ -19,11 +19,16 @@ class NullableDateTimeToNullableStringUniDirectionalConverter extends AbstractDa
 	#[Override]
 	public function convert( mixed $value ): ?string
 	{
-		if ( null !== $value && false === $value instanceof DateTime )
+		if ( null === $value )
+		{
+			return null;
+		}
+
+		if ( false === $value instanceof DateTime )
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_DATETIME );
 		}
 
-		return $value?->format( $this->format );
+		return $value->format( $this->format );
 	}
 }
