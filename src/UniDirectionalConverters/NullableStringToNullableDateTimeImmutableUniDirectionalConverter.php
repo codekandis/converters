@@ -22,14 +22,14 @@ class NullableStringToNullableDateTimeImmutableUniDirectionalConverter extends A
 	#[Override]
 	public function convert( mixed $value ): ?DateTimeImmutable
 	{
-		if ( null !== $value && false === is_string( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
-		}
-
 		if ( null === $value )
 		{
 			return null;
+		}
+
+		if ( false === is_string( $value ) )
+		{
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}
 
 		$convertedValue = DateTimeImmutable::createFromFormat( $this->format, $value, $this->timeZone );

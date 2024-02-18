@@ -22,14 +22,14 @@ class NullableStringToNullableFloatBiDirectionalConverter extends AbstractConver
 	#[Override]
 	public function convertTo( mixed $value ): ?float
 	{
-		if ( null !== $value && false === is_string( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
-		}
-
 		if ( null === $value )
 		{
 			return null;
+		}
+
+		if ( false === is_string( $value ) )
+		{
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}
 
 		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_FLOAT_STRING );
@@ -47,14 +47,14 @@ class NullableStringToNullableFloatBiDirectionalConverter extends AbstractConver
 	#[Override]
 	public function convertFrom( mixed $value ): ?string
 	{
-		if ( null !== $value && false === is_float( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_FLOAT );
-		}
-
 		if ( null === $value )
 		{
 			return null;
+		}
+
+		if ( false === is_float( $value ) )
+		{
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_FLOAT );
 		}
 
 		return (string) $value;

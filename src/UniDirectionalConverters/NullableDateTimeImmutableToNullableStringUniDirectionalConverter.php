@@ -19,7 +19,12 @@ class NullableDateTimeImmutableToNullableStringUniDirectionalConverter extends A
 	#[Override]
 	public function convert( mixed $value ): ?string
 	{
-		if ( null !== $value && false === $value instanceof DateTimeImmutable )
+		if ( null === $value )
+		{
+			return null;
+		}
+
+		if ( false === $value instanceof DateTimeImmutable )
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_DATETIME_IMMUTABLE );
 		}
