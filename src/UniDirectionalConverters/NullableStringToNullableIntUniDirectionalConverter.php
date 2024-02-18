@@ -19,14 +19,14 @@ class NullableStringToNullableIntUniDirectionalConverter extends AbstractConvert
 	 */
 	public function convert( mixed $value ): ?int
 	{
-		if ( null !== $value && false === is_string( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
-		}
-
 		if ( null === $value )
 		{
 			return null;
+		}
+
+		if ( false === is_string( $value ) )
+		{
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}
 
 		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INTEGER_STRING );

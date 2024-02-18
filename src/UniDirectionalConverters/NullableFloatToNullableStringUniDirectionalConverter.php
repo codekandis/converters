@@ -17,14 +17,14 @@ class NullableFloatToNullableStringUniDirectionalConverter extends AbstractConve
 	 */
 	public function convert( mixed $value ): ?string
 	{
-		if ( null !== $value && false === is_float( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_FLOAT );
-		}
-
 		if ( null === $value )
 		{
 			return null;
+		}
+
+		if ( false === is_float( $value ) )
+		{
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_FLOAT );
 		}
 
 		return (string) $value;

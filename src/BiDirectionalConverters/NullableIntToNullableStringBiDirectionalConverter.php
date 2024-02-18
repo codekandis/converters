@@ -20,14 +20,14 @@ class NullableIntToNullableStringBiDirectionalConverter extends AbstractConverte
 	 */
 	public function convertTo( mixed $value ): ?string
 	{
-		if ( null !== $value && false === is_int( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_INTEGER );
-		}
-
 		if ( null === $value )
 		{
 			return null;
+		}
+
+		if ( false === is_int( $value ) )
+		{
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_INTEGER );
 		}
 
 		return (string) $value;
@@ -38,14 +38,14 @@ class NullableIntToNullableStringBiDirectionalConverter extends AbstractConverte
 	 */
 	public function convertFrom( mixed $value ): ?int
 	{
-		if ( null !== $value && false === is_string( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
-		}
-
 		if ( null === $value )
 		{
 			return null;
+		}
+
+		if ( false === is_string( $value ) )
+		{
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}
 
 		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INTEGER_STRING );

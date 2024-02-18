@@ -20,14 +20,14 @@ class NullableStringToNullableDateTimeBiDirectionalConverter extends AbstractDat
 	 */
 	public function convertTo( mixed $value ): ?DateTime
 	{
-		if ( null !== $value && false === is_string( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
-		}
-
 		if ( null === $value )
 		{
 			return null;
+		}
+
+		if ( false === is_string( $value ) )
+		{
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}
 
 		$convertedValue = DateTime::createFromFormat( $this->format, $value, $this->timeZone );
@@ -48,7 +48,12 @@ class NullableStringToNullableDateTimeBiDirectionalConverter extends AbstractDat
 	 */
 	public function convertFrom( mixed $value ): ?string
 	{
-		if ( null !== $value && false === $value instanceof DateTime )
+		if ( null === $value )
+		{
+			return null;
+		}
+
+		if ( false === $value instanceof DateTime )
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_DATETIME );
 		}

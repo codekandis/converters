@@ -20,14 +20,14 @@ class NullableStringToNullableDateTimeImmutableBiDirectionalConverter extends Ab
 	 */
 	public function convertTo( mixed $value ): ?DateTimeImmutable
 	{
-		if ( null !== $value && false === is_string( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
-		}
-
 		if ( null === $value )
 		{
 			return null;
+		}
+
+		if ( false === is_string( $value ) )
+		{
+			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}
 
 		$convertedValue = DateTimeImmutable::createFromFormat( $this->format, $value, $this->timeZone );
@@ -48,7 +48,12 @@ class NullableStringToNullableDateTimeImmutableBiDirectionalConverter extends Ab
 	 */
 	public function convertFrom( mixed $value ): ?string
 	{
-		if ( null !== $value && false === $value instanceof DateTimeImmutable )
+		if ( null === $value )
+		{
+			return null;
+		}
+
+		if ( false === $value instanceof DateTimeImmutable )
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_DATETIME_IMMUTABLE );
 		}
