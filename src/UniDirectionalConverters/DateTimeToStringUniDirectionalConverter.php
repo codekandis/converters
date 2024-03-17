@@ -1,9 +1,9 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
-use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\UniDirectionalDateTimeRelatedConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use DateTime;
 use Override;
@@ -13,18 +13,8 @@ use Override;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class DateTimeToStringUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
+class DateTimeToStringUniDirectionalConverter extends AbstractDateTimeRelatedConverter implements UniDirectionalDateTimeRelatedConverterInterface
 {
-	/**
-	 * Constructor method.
-	 * @param string $format The format of the timestamp string.
-	 */
-	public function __construct(
-		private readonly string $format
-	)
-	{
-	}
-
 	/**
 	 * Converts from a DateTime into a string value.
 	 * @param DateTime $value The DateTime value which has to be converted.

@@ -1,12 +1,11 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
-use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\BiDirectionalConverterInterface;
+use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
+use CodeKandis\Converters\BiDirectionalDateTimeRelatedConverterInterface;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\ValidTypes;
 use DateTime;
-use DateTimeZone;
 use Override;
 use function is_string;
 
@@ -15,20 +14,8 @@ use function is_string;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableDateTimeToNullableStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class NullableDateTimeToNullableStringBiDirectionalConverter extends AbstractDateTimeRelatedConverter implements BiDirectionalDateTimeRelatedConverterInterface
 {
-	/**
-	 * Constructor method.
-	 * @param string $format The format of the timestamp string.
-	 * @param ?DateTimeZone $timeZone The time zone of the timestamp.
-	 */
-	public function __construct(
-		private readonly string        $format,
-		private readonly ?DateTimeZone $timeZone = null
-	)
-	{
-	}
-
 	/**
 	 * Converts from a nullable DateTime into a nullable string value.
 	 * @param ?DateTime $value The nullable DateTime value which has to be converted.
