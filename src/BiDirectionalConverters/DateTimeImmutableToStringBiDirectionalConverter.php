@@ -1,12 +1,11 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
-use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\BiDirectionalConverterInterface;
+use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
+use CodeKandis\Converters\BiDirectionalDateTimeRelatedConverterInterface;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
 use CodeKandis\Converters\ValidTypes;
 use DateTimeImmutable;
-use DateTimeZone;
 use Override;
 use function is_string;
 
@@ -15,31 +14,8 @@ use function is_string;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class DateTimeImmutableToStringBiDirectionalConverter extends AbstractConverter implements BiDirectionalConverterInterface
+class DateTimeImmutableToStringBiDirectionalConverter extends AbstractDateTimeRelatedConverter implements BiDirectionalDateTimeRelatedConverterInterface
 {
-	/**
-	 * Stores the format of the timestamp string.
-	 * @var string
-	 */
-	private readonly string $format;
-
-	/**
-	 * Stores the time zone of the timestamp.
-	 * @var ?DateTimeZone
-	 */
-	private readonly ?DateTimeZone $timeZone;
-
-	/**
-	 * Constructor method.
-	 * @param string $format The format of the timestamp string.
-	 * @param ?DateTimeZone $timeZone The time zone of the timestamp.
-	 */
-	public function __construct( string $format, ?DateTimeZone $timeZone = null )
-	{
-		$this->format   = $format;
-		$this->timeZone = $timeZone;
-	}
-
 	/**
 	 * Converts from a DateTimeImmutable into a string value.
 	 * @param DateTimeImmutable $value The DateTimeImmutable value which has to be converted.

@@ -1,9 +1,9 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
-use CodeKandis\Converters\AbstractConverter;
+use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\InvalidTypeExceptionInterface;
-use CodeKandis\Converters\UniDirectionalConverterInterface;
+use CodeKandis\Converters\UniDirectionalDateTimeRelatedConverterInterface;
 use CodeKandis\Converters\ValidTypes;
 use DateTime;
 use Override;
@@ -13,23 +13,8 @@ use Override;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableDateTimeToNullableStringUniDirectionalConverter extends AbstractConverter implements UniDirectionalConverterInterface
+class NullableDateTimeToNullableStringUniDirectionalConverter extends AbstractDateTimeRelatedConverter implements UniDirectionalDateTimeRelatedConverterInterface
 {
-	/**
-	 * Stores the format of the timestamp string.
-	 * @var string
-	 */
-	private readonly string $format;
-
-	/**
-	 * Constructor method.
-	 * @param string $format The format of the timestamp string.
-	 */
-	public function __construct( string $format )
-	{
-		$this->format = $format;
-	}
-
 	/**
 	 * Converts from a nullable DateTime into a nullable string value.
 	 * @param ?DateTime $value The nullable DateTime value which has to be converted.
