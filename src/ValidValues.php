@@ -9,6 +9,12 @@ namespace CodeKandis\Converters;
 abstract class ValidValues
 {
 	/**
+	 * Represents a `null string`.
+	 * @var string
+	 */
+	public const string NULL_STRING = 'null';
+
+	/**
 	 * Represents a boolean integer for `false`.
 	 * @var int
 	 */
