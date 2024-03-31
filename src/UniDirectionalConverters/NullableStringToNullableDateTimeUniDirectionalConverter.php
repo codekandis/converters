@@ -38,6 +38,7 @@ class NullableStringToNullableDateTimeUniDirectionalConverter extends AbstractDa
 		{
 			throw $this->getInvalidValueException(
 				$value,
+				ValidValues::NULL_STRING,
 				sprintf( ValidValues::TEMPLATE_DATETIME_STRING_TEMPLATE, $this->format )
 			);
 		}

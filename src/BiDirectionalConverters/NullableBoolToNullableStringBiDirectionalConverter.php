@@ -55,7 +55,7 @@ class NullableBoolToNullableStringBiDirectionalConverter extends AbstractConvert
 
 		if ( false === in_array( $value, ValidValues::BOOLEAN_STRING_SET ) )
 		{
-			throw $this->getInvalidValueException( $value, ExpectedTypes::NULL, ...ValidValues::BOOLEAN_STRING_SET );
+			throw $this->getInvalidValueException( $value, ValidValues::NULL_STRING, ...ValidValues::BOOLEAN_STRING_SET );
 		}
 
 		return ValidValues::BOOLEAN_STRING_TRUE === $value;
