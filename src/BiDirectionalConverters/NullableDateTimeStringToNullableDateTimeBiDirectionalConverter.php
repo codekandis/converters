@@ -1,49 +1,41 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
-use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
-use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Converters\ValidValues;
+use CodeKandis\Converters\UniDirectionalConverters\NullableDateTimeStringToNullableDateTimeUniDirectionalConverter;
+use CodeKandis\Converters\UniDirectionalConverters\NullableDateTimeToNullableDateTimeStringUniDirectionalConverter;
 use DateTime;
+use DateTimeZone;
 use Override;
-use function is_string;
-use function sprintf;
 
 /**
  * Represents a bidirectional converter converting between `nullable DateTime string` and `nullable DateTime`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableDateTimeStringToNullableDateTimeBiDirectionalConverter extends AbstractDateTimeRelatedConverter implements NullableDateTimeStringToNullableDateTimeBiDirectionalConverterInterface
+class NullableDateTimeStringToNullableDateTimeBiDirectionalConverter extends AbstractDateTimeRelatedBiDirectionalConverter implements NullableDateTimeStringToNullableDateTimeBiDirectionalConverterInterface
 {
+	/**
+	 * Constructor method.
+	 * @param string $format The format of the timestamp string.
+	 * @param ?DateTimeZone $timeZone The time zone of the timestamp.
+	 */
+	public function __construct( string $format, ?DateTimeZone $timeZone = null )
+	{
+		parent::__construct(
+			$format,
+			$timeZone,
+			new NullableDateTimeStringToNullableDateTimeUniDirectionalConverter( $format, $timeZone ),
+			new NullableDateTimeToNullableDateTimeStringUniDirectionalConverter( $format, $timeZone )
+		);
+	}
+
 	/**
 	 * @inheritDoc
 	 */
 	#[Override]
 	public function convertTo( mixed $value ): ?DateTime
 	{
-		if ( null === $value )
-		{
-			return null;
-		}
-
-		if ( false === is_string( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
-		}
-
-		$convertedValue = DateTime::createFromFormat( $this->format, $value, $this->timeZone );
-
-		if ( false === $convertedValue )
-		{
-			throw $this->getInvalidValueException(
-				$value,
-				ValidValues::NULL_STRING,
-				sprintf( ValidValues::TEMPLATE_DATETIME_STRING_TEMPLATE, $this->format )
-			);
-		}
-
-		return $convertedValue;
+		return parent::convertTo( $value );
 	}
 
 	/**
@@ -52,16 +44,6 @@ class NullableDateTimeStringToNullableDateTimeBiDirectionalConverter extends Abs
 	#[Override]
 	public function convertFrom( mixed $value ): ?string
 	{
-		if ( null === $value )
-		{
-			return null;
-		}
-
-		if ( false === $value instanceof DateTime )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_DATETIME );
-		}
-
-		return $value?->format( $this->format );
+		return parent::convertFrom( $value );
 	}
 }

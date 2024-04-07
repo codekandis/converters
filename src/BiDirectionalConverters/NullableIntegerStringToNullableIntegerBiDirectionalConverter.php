@@ -1,45 +1,35 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
-use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Converters\ValidValues;
-use CodeKandis\Converters\ValidValuesRegularExpressions;
-use CodeKandis\RegularExpressions\RegularExpression;
+use CodeKandis\Converters\UniDirectionalConverters\NullableIntegerStringToNullableIntegerUniDirectionalConverter;
+use CodeKandis\Converters\UniDirectionalConverters\NullableIntegerToNullableIntegerStringUniDirectionalConverter;
 use Override;
-use function is_int;
-use function is_string;
 
 /**
  * Represents a bidirectional converter converting between `nullable integer string` and `nullable integer`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class NullableIntegerStringToNullableIntegerBiDirectionalConverter extends AbstractConverter implements NullableIntegerStringToNullableIntegerBiDirectionalConverterInterface
+class NullableIntegerStringToNullableIntegerBiDirectionalConverter extends AbstractBiDirectionalConverter implements NullableIntegerStringToNullableIntegerBiDirectionalConverterInterface
 {
+	/**
+	 * Constructor method.
+	 */
+	public function __construct()
+	{
+		parent::__construct(
+			new NullableIntegerStringToNullableIntegerUniDirectionalConverter(),
+			new NullableIntegerToNullableIntegerStringUniDirectionalConverter()
+		);
+	}
+
 	/**
 	 * @inheritDoc
 	 */
 	#[Override]
 	public function convertTo( mixed $value ): ?int
 	{
-		if ( null === $value )
-		{
-			return null;
-		}
-
-		if ( false === is_string( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
-		}
-
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INTEGER_STRING );
-		if ( null === $regularExpression->match( $value, false ) )
-		{
-			throw $this->getInvalidValueException( $value, ValidValues::NULL_STRING, ValidValuesRegularExpressions::REGEX_INTEGER_STRING );
-		}
-
-		return (int) $value;
+		return parent::convertTo( $value );
 	}
 
 	/**
@@ -48,16 +38,6 @@ class NullableIntegerStringToNullableIntegerBiDirectionalConverter extends Abstr
 	#[Override]
 	public function convertFrom( mixed $value ): ?string
 	{
-		if ( null === $value )
-		{
-			return null;
-		}
-
-		if ( false === is_int( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_INTEGER );
-		}
-
-		return (string) $value;
+		return parent::convertFrom( $value );
 	}
 }
