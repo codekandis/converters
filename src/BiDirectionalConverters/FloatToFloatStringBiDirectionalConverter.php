@@ -1,33 +1,35 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
-use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Converters\ValidValuesRegularExpressions;
-use CodeKandis\RegularExpressions\RegularExpression;
+use CodeKandis\Converters\UniDirectionalConverters\FloatStringToFloatUniDirectionalConverter;
+use CodeKandis\Converters\UniDirectionalConverters\FloatToFloatStringUniDirectionalConverter;
 use Override;
-use function is_float;
-use function is_string;
 
 /**
  * Represents a bidirectional converter converting between `float` and `float string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class FloatToFloatStringBiDirectionalConverter extends AbstractConverter implements FloatToFloatStringBiDirectionalConverterInterface
+class FloatToFloatStringBiDirectionalConverter extends AbstractBiDirectionalConverter implements FloatToFloatStringBiDirectionalConverterInterface
 {
+	/**
+	 * Constructor method.
+	 */
+	public function __construct()
+	{
+		parent::__construct(
+			new FloatToFloatStringUniDirectionalConverter(),
+			new FloatStringToFloatUniDirectionalConverter()
+		);
+	}
+
 	/**
 	 * @inheritDoc
 	 */
 	#[Override]
 	public function convertTo( mixed $value ): string
 	{
-		if ( false === is_float( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::FLOAT );
-		}
-
-		return (string) $value;
+		return parent::convertTo( $value );
 	}
 
 	/**
@@ -36,17 +38,6 @@ class FloatToFloatStringBiDirectionalConverter extends AbstractConverter impleme
 	#[Override]
 	public function convertFrom( mixed $value ): float
 	{
-		if ( false === is_string( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
-		}
-
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_FLOAT_STRING );
-		if ( null === $regularExpression->match( $value, false ) )
-		{
-			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_FLOAT_STRING );
-		}
-
-		return (float) $value;
+		return parent::convertFrom( $value );
 	}
 }

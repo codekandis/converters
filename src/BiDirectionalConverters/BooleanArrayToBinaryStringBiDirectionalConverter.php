@@ -1,52 +1,35 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\BiDirectionalConverters;
 
-use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Converters\ValidValues;
-use CodeKandis\Converters\ValidValuesRegularExpressions;
-use CodeKandis\RegularExpressions\RegularExpression;
+use CodeKandis\Converters\UniDirectionalConverters\BinaryStringToBooleanArrayUniDirectionalConverter;
+use CodeKandis\Converters\UniDirectionalConverters\BooleanArrayToBinaryStringUniDirectionalConverter;
 use Override;
-use function is_array;
-use function is_bool;
-use function is_string;
-use function strlen;
 
 /**
  * Represents a bidirectional converter converting between `boolean array` and `binary string`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-class BooleanArrayToBinaryStringBiDirectionalConverter extends AbstractConverter implements BooleanArrayToBinaryStringBiDirectionalConverterInterface
+class BooleanArrayToBinaryStringBiDirectionalConverter extends AbstractBiDirectionalConverter implements BooleanArrayToBinaryStringBiDirectionalConverterInterface
 {
+	/**
+	 * Constructor method.
+	 */
+	public function __construct()
+	{
+		parent::__construct(
+			new BooleanArrayToBinaryStringUniDirectionalConverter(),
+			new BinaryStringToBooleanArrayUniDirectionalConverter()
+		);
+	}
+
 	/**
 	 * @inheritDoc
 	 */
 	#[Override]
 	public function convertTo( mixed $value ): string
 	{
-		if ( false === is_array( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::BOOLEAN_ARRAY );
-		}
-
-		foreach ( $value as $valueFetched )
-		{
-			if ( false === is_bool( $valueFetched ) )
-			{
-				throw $this->getInvalidTypeException( $value, ExpectedTypes::BOOLEAN_ARRAY );
-			}
-		}
-
-		$binaryString = '';
-		foreach ( $value as $valueFetched )
-		{
-			$binaryString .= false === $valueFetched
-				? ValidValues::BOOLEAN_INTEGER_STRING_FALSE
-				: ValidValues::BOOLEAN_INTEGER_STRING_TRUE;
-		}
-
-		return $binaryString;
+		return parent::convertTo( $value );
 	}
 
 	/**
@@ -55,23 +38,6 @@ class BooleanArrayToBinaryStringBiDirectionalConverter extends AbstractConverter
 	#[Override]
 	public function convertFrom( mixed $value ): array
 	{
-		if ( false === is_string( $value ) )
-		{
-			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
-		}
-
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BINARY_STRING );
-		if ( null === $regularExpression->match( $value, false ) )
-		{
-			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_BINARY_STRING );
-		}
-
-		$boolArray = [];
-		for ( $n = 0; $n < strlen( $value ); ++$n )
-		{
-			$boolArray[] = ValidValues::BOOLEAN_INTEGER_STRING_FALSE !== $value[ $n ];
-		}
-
-		return $boolArray;
+		return parent::convertFrom( $value );
 	}
 }
