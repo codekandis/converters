@@ -27,6 +27,18 @@ abstract class ExpectedTypes
 	public const string NULLABLE_BOOLEAN = '?bool';
 
 	/**
+	 * Represents a `boolean array` type.
+	 * @var string
+	 */
+	public const string BOOLEAN_ARRAY = 'bool[]';
+
+	/**
+	 * Represents a `nullable boolean array` type.
+	 * @var string
+	 */
+	public const string NULLABLE_BOOLEAN_ARRAY = '?bool[]';
+
+	/**
 	 * Represents a `boolean` type.
 	 * @var string
 	 */
@@ -37,6 +49,18 @@ abstract class ExpectedTypes
 	 * @var string
 	 */
 	public const string NULLABLE_INTEGER = '?int';
+
+	/**
+	 * Represents an `integer array` type.
+	 * @var string
+	 */
+	public const string INTEGER_ARRAY = 'int[]';
+
+	/**
+	 * Represents an `nullable integer array` type.
+	 * @var string
+	 */
+	public const string NULLABLE_INTEGER_ARRAY = '?int[]';
 
 	/**
 	 * Represents a `float` type.
@@ -63,10 +87,16 @@ abstract class ExpectedTypes
 	public const string NULLABLE_STRING = '?string';
 
 	/**
-	 * Represents a `boolean array` type.
+	 * Represents a `string array` type.
 	 * @var string
 	 */
-	public const string BOOLEAN_ARRAY = 'bool[]';
+	public const string STRING_ARRAY = 'string[]';
+
+	/**
+	 * Represents a `nullable string array` type.
+	 * @var string
+	 */
+	public const string NULLABLE_STRING_ARRAY = '?string[]';
 
 	/**
 	 * Represents a `DateTimeImmutable` type.
