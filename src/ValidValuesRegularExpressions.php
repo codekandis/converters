@@ -24,13 +24,13 @@ abstract class ValidValuesRegularExpressions
 	 * Represents the regular expression of an int value.
 	 * @var string
 	 */
-	public const string REGEX_INT_STRING = '~^\\-?[0-9]+$~';
+	public const string REGEX_INT_STRING = '~^\\-?\d+$~';
 
 	/**
 	 * Represents the regular expression of a float value.
 	 * @var string
 	 */
-	public const string REGEX_FLOAT_STRING = '~^\\-?[0-9]+(?:\\.[0-9]+)?$~';
+	public const string REGEX_FLOAT_STRING = '~^\\-?\d+(?:\\.\d+)?$~';
 
 	/**
 	 * Represents the regular expression of a binary string value.
