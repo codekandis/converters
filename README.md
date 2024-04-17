@@ -10,6 +10,9 @@
 ## Index
 
 * [Installation](#installation)
+* [Testing](#testing)
+* [How to use](#how-to-use)
+* [List of converters](#list-of-converters)
 
 ## Installation
 
@@ -19,13 +22,69 @@ Install the latest version with
 $ composer require codekandis/converters
 ```
 
+## Testing
+
+Test the code with
+
+```bash
+$ composer run-script test
+```
+
+## How to use
+
+### Unidirectional converters
+
+```php
+$value = false;
+
+( new IntegerToBinaryStringUniDirectionalConverter() )
+    ->convert( $value );
+/**
+ * 0
+ */
+
+$value = 0;
+
+( new BinaryStringToIntegerUniDirectionalConverter() )
+    ->convert( $value );
+/**
+ * false
+ */
+```
+
+### Bidirectional converters
+
+```php
+$value = 42;
+
+( new IntegerToBinaryStringBiDirectionalConverter() )
+    ->convertTo( $value );
+/**
+ * '101010'
+ */
+
+$value = '101010';
+
+( new IntegerToBinaryStringBiDirectionalConverter() )
+    ->convertFrom( $value );
+/**
+ * 42
+ */
+```
+
+## List of converters
+
+[See the documentation][doclink] for further information about all available base and concreate converters.
+
 
 
 [xtlink-version-badge]: https://img.shields.io/badge/version-development-blue.svg
 [xtlink-license-badge]: https://img.shields.io/badge/license-MIT-yellow.svg
-[xtlink-php-version-badge]: https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg
-[xtlink-code-coverage-badge]: https://img.shields.io/badge/coverage-0%25-red.svg
+[xtlink-php-version-badge]: https://img.shields.io/badge/php-%3E%3D%208.3-8892BF.svg
+[xtlink-code-coverage-badge]: https://img.shields.io/badge/coverage-99.65%25-green.svg
 [xtlink-php-net]: https://php.net
 
 [srclink-changelog]: ./CHANGELOG.md
 [srclink-license]: ./LICENSE
+
+[doclink]: ./docs/README.md
