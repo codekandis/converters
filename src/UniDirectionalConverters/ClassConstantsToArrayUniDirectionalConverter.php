@@ -38,11 +38,11 @@ class ClassConstantsToArrayUniDirectionalConverter extends AbstractConverter imp
 		}
 
 		$convertedValue = [];
-		foreach ( $reflectionClass->getConstants() as $constantValue )
+		foreach ( $reflectionClass->getConstants() as $constantName => $constantValue )
 		{
 			if ( false === in_array( $constantValue, $convertedValue, true ) )
 			{
-				$convertedValue[] = $constantValue;
+				$convertedValue[ $constantName ] = $constantValue;
 			}
 		}
 
