@@ -28,7 +28,12 @@ class BooleanIntegerToBooleanUniDirectionalConverter extends AbstractConverter i
 
 		if ( false === in_array( $value, ValidValues::BOOLEAN_INTEGER_SET ) )
 		{
-			throw $this->getInvalidValueException( $value, ...ValidValues::BOOLEAN_INTEGER_STRING_SET );
+			$expectedValues = array_map(
+				fn( $expectedValue ): string => (string) $expectedValue,
+				ValidValues::BOOLEAN_INTEGER_SET
+			);
+
+			throw $this->getInvalidValueException( $value, ...$expectedValues );
 		}
 
 		return ValidValues::BOOLEAN_INTEGER_TRUE === $value;
