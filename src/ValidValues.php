@@ -48,15 +48,6 @@ abstract class ValidValues
 	public const string BOOLEAN_STRING_TRUE = 'true';
 
 	/**
-	 * Represents a set of `boolean strings`.
-	 * @var string[]
-	 */
-	public const array BOOLEAN_STRING_SET = [
-		self::BOOLEAN_STRING_FALSE,
-		self::BOOLEAN_STRING_TRUE
-	];
-
-	/**
 	 * Represents a `boolean integer string` representing the boolean value `false`.
 	 * @var string
 	 */
@@ -67,15 +58,6 @@ abstract class ValidValues
 	 * @var string
 	 */
 	public const string BOOLEAN_INTEGER_STRING_TRUE = '1';
-
-	/**
-	 * Represents a set of `boolean integer strings`.
-	 * @var string[]
-	 */
-	public const array BOOLEAN_INTEGER_STRING_SET = [
-		self::BOOLEAN_INTEGER_STRING_FALSE,
-		self::BOOLEAN_INTEGER_STRING_TRUE
-	];
 
 	/**
 	 * Represents the template of a `DateTime string`.
