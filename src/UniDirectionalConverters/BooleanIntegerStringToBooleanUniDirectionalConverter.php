@@ -4,8 +4,9 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
+use CodeKandis\Converters\ValidValuesRegularExpressions;
+use CodeKandis\RegularExpressions\RegularExpression;
 use Override;
-use function in_array;
 use function is_string;
 
 /**
@@ -26,9 +27,10 @@ class BooleanIntegerStringToBooleanUniDirectionalConverter extends AbstractConve
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
-		if ( false === in_array( $value, ValidValues::BOOLEAN_INTEGER_STRING_SET ) )
+		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BOOLEAN_INTEGER_STRING );
+		if ( null === $regularExpression->match( $value, false ) )
 		{
-			throw $this->getInvalidValueException( $value, ...ValidValues::BOOLEAN_INTEGER_STRING_SET );
+			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_BOOLEAN_INTEGER_STRING );
 		}
 
 		return ValidValues::BOOLEAN_INTEGER_STRING_TRUE === $value;

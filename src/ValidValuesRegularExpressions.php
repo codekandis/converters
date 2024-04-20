@@ -9,6 +9,18 @@ namespace CodeKandis\Converters;
 abstract class ValidValuesRegularExpressions
 {
 	/**
+	 * Represents the regular expression of a `boolean string` value.
+	 * @var string
+	 */
+	public const string REGEX_BOOLEAN_STRING = '~^false|true$~';
+
+	/**
+	 * Represents the regular expression of a `boolean integer string` value.
+	 * @var string
+	 */
+	public const string REGEX_BOOLEAN_INTEGER_STRING = '~^[01]$~';
+
+	/**
 	 * Represents the regular expression of a `binary string` value.
 	 */
 	public const string REGEX_BINARY_STRING = '~^[01]+$~';
