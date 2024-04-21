@@ -33,6 +33,7 @@
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-master",
+		"codekandis/json-codec": "^3.0.0",
 		"codekandis/phpunit": "^5.0.0",
 		"rector/rector": "^1.0.5"
 	},
