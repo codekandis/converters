@@ -8,7 +8,7 @@ use Override;
 use function is_bool;
 
 /**
- * Represents a unidirectional converter converting a `boolean` into a `boolean string`.
+ * Represents a unidirectional converter converting a boolean value equal to `false` or `true` into its corresponding boolean string value matching the regular expression `ValidValuesRegularExpressions::REGEX_BOOLEAN_STRING`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

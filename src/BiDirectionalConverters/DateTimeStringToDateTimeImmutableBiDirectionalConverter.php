@@ -8,7 +8,7 @@ use DateTimeZone;
 use Override;
 
 /**
- * Represents a bidirectional converter converting between `DateTime string` and `DateTimeImmutable`.
+ * Represents a bidirectional converter converting a `DateTime` string value into its corresponding `DateTimeImmutable` value depending on a given format - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

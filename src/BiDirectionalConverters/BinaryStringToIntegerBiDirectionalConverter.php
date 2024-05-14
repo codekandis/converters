@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverters\IntegerToBinaryStringUniDirec
 use Override;
 
 /**
- * Represents a bidirectional converter converting between `binary string` and `integer`.
+ * Represents a bidirectional converter converting a binary string value matching the regular expression [`ValidValuesRegularExpressions::REGEX_BINARY_STRING`] into its corresponding integer value - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

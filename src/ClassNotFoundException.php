@@ -14,7 +14,6 @@ class ClassNotFoundException extends ReflectionException implements ClassNotFoun
 {
 	/**
 	 * Represents the exception message if a class does not exist.
-	 * @var string
 	 */
 	public const string EXCEPTION_MESSAGE_CLASS_NOT_FOUND = 'The class `%s` does not exist.';
 

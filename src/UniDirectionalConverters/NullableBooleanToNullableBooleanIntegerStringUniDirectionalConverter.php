@@ -8,7 +8,7 @@ use Override;
 use function is_bool;
 
 /**
- * Represents a unidirectional converter converting a `nullable boolean` into a `nullable boolean integer string`.
+ * Represents a unidirectional converter converting a nullable boolean value equal to `false` or `true` into its corresponding nullable boolean integer string value matching the regular expression `ValidValuesRegularExpressions::REGEX_BOOLEAN_INTEGER_STRING`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

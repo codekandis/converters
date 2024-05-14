@@ -7,7 +7,7 @@ use DateTime;
 use Override;
 
 /**
- * Represents a unidirectional converter converting a `DateTime` into a `DateTime string`.
+ * Represents a unidirectional converter converting a `DateTime` value into its corresponding `DateTime` string value depending on a given format.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
