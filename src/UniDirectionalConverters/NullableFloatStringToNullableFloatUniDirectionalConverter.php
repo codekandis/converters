@@ -10,7 +10,7 @@ use Override;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting a `nullable float string` into a `nullable float`.
+ * Represents a unidirectional converter converting a nullable float string value matching the regular expression `ValidValuesRegularExpressions::REGEX_FLOAT_STRING` into its corresponding nullable float value.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -8,7 +8,7 @@ use Override;
 use function is_bool;
 
 /**
- * Represents a unidirectional converter converting a `nullable boolean` into a `nullable boolean integer`.
+ * Represents a unidirectional converter converting a nullable boolean value equal to `false` or `true` into its corresponding nullable boolean integer value equal to `0` or `1`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

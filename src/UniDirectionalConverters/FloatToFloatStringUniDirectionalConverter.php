@@ -7,7 +7,7 @@ use Override;
 use function is_float;
 
 /**
- * Represents a unidirectional converter converting a `float` into a `float string`.
+ * Represents a unidirectional converter converting a float value into its corresponding float string value matching the regular expression `ValidValuesRegularExpressions::REGEX_FLOAT_STRING`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

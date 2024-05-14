@@ -4,7 +4,7 @@ namespace CodeKandis\Converters\BiDirectionalConverters;
 use CodeKandis\Converters\UniDirectionalConverters\UniDirectionalConverterInterface;
 
 /**
- * Represents the trait of a
+ * Represents the trait of any bidirectional converter.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

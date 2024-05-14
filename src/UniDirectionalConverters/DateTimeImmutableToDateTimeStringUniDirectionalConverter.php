@@ -7,7 +7,7 @@ use DateTimeImmutable;
 use Override;
 
 /**
- * Represents a unidirectional converter converting a `DateTimeImmutable` into a `DateTime string`.
+ * Represents a unidirectional converter converting a `DateTimeImmutable` value into its corresponding `DateTime` string value depending on a given format.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

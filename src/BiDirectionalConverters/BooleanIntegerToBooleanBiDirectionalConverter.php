@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverters\BooleanToBooleanIntegerUniDir
 use Override;
 
 /**
- * Represents a bidirectional converter converting between `boolean integer` and `boolean`.
+ * Represents a bidirectional converter converting a boolean integer value equal to `0` or `1` into its corresponding boolean value equal to `false` or `true` - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

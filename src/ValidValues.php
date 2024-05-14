@@ -10,19 +10,16 @@ abstract class ValidValues
 {
 	/**
 	 * Represents a `null string`.
-	 * @var string
 	 */
 	public const string NULL_STRING = 'null';
 
 	/**
 	 * Represents a `boolean integer` representing the boolean value `false`.
-	 * @var int
 	 */
 	public const int BOOLEAN_INTEGER_FALSE = 0;
 
 	/**
 	 * Represents a `boolean integer` representing the boolean value `true`.
-	 * @var int
 	 */
 	public const int BOOLEAN_INTEGER_TRUE = 1;
 
@@ -37,13 +34,11 @@ abstract class ValidValues
 
 	/**
 	 * Represents a `boolean string` representing the boolean value `false`.
-	 * @var string
 	 */
 	public const string BOOLEAN_STRING_FALSE = 'false';
 
 	/**
 	 * Represents a `boolean string` representing the boolean value `true`.
-	 * @var string
 	 */
 	public const string BOOLEAN_STRING_TRUE = 'true';
 
@@ -58,13 +53,11 @@ abstract class ValidValues
 
 	/**
 	 * Represents a `boolean integer string` representing the boolean value `false`.
-	 * @var string
 	 */
 	public const string BOOLEAN_INTEGER_STRING_FALSE = '0';
 
 	/**
 	 * Represents a `boolean integer string` representing the boolean value `true`.
-	 * @var string
 	 */
 	public const string BOOLEAN_INTEGER_STRING_TRUE = '1';
 
@@ -79,7 +72,6 @@ abstract class ValidValues
 
 	/**
 	 * Represents the template of a `DateTime string`.
-	 * @var string
 	 */
 	public const string TEMPLATE_DATETIME_STRING_TEMPLATE = 'string<datetime<%s>>';
 }

@@ -11,7 +11,7 @@ use function bindec;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting a `nullable binary string` into an `nullable integer`.
+ * Represents a unidirectional converter converting a nullable binary string value matching the regular expression `ValidValuesRegularExpressions::REGEX_BINARY_STRING` into its corresponding nullable integer value.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
