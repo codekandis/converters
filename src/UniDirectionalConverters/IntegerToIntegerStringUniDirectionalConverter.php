@@ -7,7 +7,7 @@ use Override;
 use function is_int;
 
 /**
- * Represents a unidirectional converter converting an `integer` into an `integer string`.
+ * Represents a unidirectional converter converting an integer value into its corresponding integer string value matching the regular expression `ValidValuesRegularExpressions::REGEX_INTEGER_STRING`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -8,7 +8,7 @@ use DateTimeZone;
 use Override;
 
 /**
- * Represents a bidirectional converter converting between `nullable DateTime` and `nullable DateTime string`.
+ * Represents a bidirectional converter converting a nullable `DateTime` value into its corresponding nullable `DateTime` string value depending on a given format - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

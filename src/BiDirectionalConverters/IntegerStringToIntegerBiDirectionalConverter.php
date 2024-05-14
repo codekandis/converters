@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverters\IntegerToIntegerStringUniDire
 use Override;
 
 /**
- * Represents a bidirectional converter converting between `integer string` and `integer`.
+ * Represents a bidirectional converter converting an integer string value matching the regular expression `ValidValuesRegularExpressions::REGEX_INTEGER_STRING` into its corresponding integer value - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

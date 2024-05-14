@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverters\NullableBooleanToNullableBool
 use Override;
 
 /**
- * Represents a bidirectional converter converting between `nullable boolean integer` and `nullable boolean`.
+ * Represents a bidirectional converter converting a nullable boolean integer value equal to `0` or `1` into its corresponding nullable boolean value equal to `false` or `true` - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

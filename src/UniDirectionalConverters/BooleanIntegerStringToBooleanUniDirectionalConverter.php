@@ -9,7 +9,7 @@ use function in_array;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting a `boolean integer string` into a `boolean`.
+ * Represents a unidirectional converter converting a boolean integer string value matching the regular expression `ValidValuesRegularExpressions::REGEX_BOOLEAN_INTEGER_STRING` into its corresponding boolean value equal to `false` or `true`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

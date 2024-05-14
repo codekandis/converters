@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverters\NullableIntegerToNullableInte
 use Override;
 
 /**
- * Represents a bidirectional converter converting between `nullable integer string` and `nullable integer`.
+ * Represents a bidirectional converter converting a nullable integer string value matching the regular expression `ValidValuesRegularExpressions::REGEX_INTEGER_STRING` into its corresponding nullable integer value - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

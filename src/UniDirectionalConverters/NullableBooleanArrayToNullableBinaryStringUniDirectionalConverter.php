@@ -9,7 +9,7 @@ use function is_array;
 use function is_bool;
 
 /**
- * Represents a unidirectional converter converting a `nullable boolean array` into a `nullable binary string`.
+ * Represents a unidirectional converter converting a nullable boolean array containing values equal to `false` or `true` into its corresponding nullable binary string value matching the regular expression `ValidValuesRegularExpressions::REGEX_BINARY_STRING`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

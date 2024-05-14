@@ -10,7 +10,7 @@ use function is_string;
 use function sprintf;
 
 /**
- * Represents a unidirectional converter converting a `DateTime string` into a `DateTimeImmutable`.
+ * Represents a unidirectional converter converting a `DateTime` string value into its corresponding `DateTimeImmutable` value depending on a given format.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

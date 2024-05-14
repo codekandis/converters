@@ -11,7 +11,7 @@ use function is_string;
 use function strlen;
 
 /**
- * Represents a unidirectional converter converting a `nullable binary string` into a `nullable boolean array`.
+ * Represents a unidirectional converter converting a nullable binary string value matching the regular expression `ValidValuesRegularExpressions::REGEX_BINARY_STRING` into its corresponding nullable boolean array containing values equal to `false` or `true`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

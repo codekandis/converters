@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverters\NullableBooleanToNullableBool
 use Override;
 
 /**
- * Represents a bidirectional converter converting between `nullable boolean string` and `nullable boolean`.
+ * Represents a bidirectional converter converting a nullable boolean string value matching the regular expression `ValidValuesRegularExpressions::REGEX_BOOLEAN_STRING` into its corresponding nullable boolean value equal to `false` or `true` - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

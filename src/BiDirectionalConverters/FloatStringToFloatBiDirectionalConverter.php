@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverters\FloatToFloatStringUniDirectio
 use Override;
 
 /**
- * Represents a bidirectional converter converting between `float string` and `float`.
+ * Represents a bidirectional converter converting a float string value matching the regular expression `ValidValuesRegularExpressions::REGEX_FLOAT_STRING` into its corresponding float value - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -9,7 +9,7 @@ use Override;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting an `integer string` into an `integer`.
+ * Represents a unidirectional converter converting an integer string value matching the regular expression `ValidValuesRegularExpressions::REGEX_INTEGER_STRING` into its corresponding integer value.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

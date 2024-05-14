@@ -8,7 +8,7 @@ use DateTimeZone;
 use Override;
 
 /**
- * Represents a bidirectional converter converting between `DateTime` and `DateTime string`.
+ * Represents a bidirectional converter converting a `DateTime` value into its corresponding `DateTime` string value depending on a given format - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

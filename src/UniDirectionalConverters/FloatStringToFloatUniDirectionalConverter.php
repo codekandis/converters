@@ -9,7 +9,7 @@ use Override;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting a `float string` into a `float`.
+ * Represents a unidirectional converter converting a float string value matching the regular expression `ValidValuesRegularExpressions::REGEX_FLOAT_STRING` into its corresponding float value.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -10,7 +10,7 @@ use function bindec;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting a `binary string` into an `integer`.
+ * Represents a unidirectional converter converting a binary string value matching the regular expression `ValidValuesRegularExpressions::REGEX_BINARY_STRING` into its corresponding integer value.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

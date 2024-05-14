@@ -7,7 +7,7 @@ use CodeKandis\Converters\UniDirectionalConverters\UniDirectionalConverterInterf
 use DateTimeZone;
 
 /**
- * Represents the base class of any `DateTime` related converter.
+ * Represents the base class of any `DateTime` related bidirectional converter.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

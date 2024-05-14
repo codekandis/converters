@@ -9,7 +9,7 @@ use function in_array;
 use function is_int;
 
 /**
- * Represents a unidirectional converter converting a `boolean integer` into a `boolean`.
+ * Represents a unidirectional converter converting a boolean integer value equal to `0` or `1` into its corresponding boolean value equal to `false` or `true`.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

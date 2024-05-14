@@ -10,7 +10,7 @@ use Override;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting a `nullable integer string` into a `nullable integer`.
+ * Represents a unidirectional converter converting a nullable integer string value matching the regular expression `ValidValuesRegularExpressions::REGEX_INTEGER_STRING` into its corresponding nullable integer value.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
