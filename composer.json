@@ -1,7 +1,7 @@
 {
 	"name": "codekandis/converters",
 	"description": "`codekandis/converters` is a library providing uni- and bi-directional converter interfaces and classes.",
-	"version": "dev-development",
+	"version": "1.0.0",
 	"keywords": [
 		"php",
 		"library",
