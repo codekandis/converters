@@ -1,62 +1,41 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters;
 
-use CodeKandis\Converters\Types\InvalidTypeException;
-use CodeKandis\Converters\Types\InvalidValueException;
-use CodeKandis\Converters\Types\TypeDeterminator;
-use function sprintf;
+use CodeKandis\Types\InvalidTypeException;
+use CodeKandis\Types\InvalidTypeExceptionInterface;
+use CodeKandis\Types\InvalidValueException;
+use CodeKandis\Types\InvalidValueExceptionInterface;
+use CodeKandis\Types\TypeDeterminator;
 
 /**
  * Represents the base class of any converter.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class AbstractConverter
+abstract class AbstractConverter implements ConverterInterface
 {
 	/**
-	 * Represents the error message if the type of a value to convert is not valid.
-	 * @var string
+	 * Gets the `InvalidTypeException`.
+	 * @param mixed $invalidValue The given invalid value.
+	 * @param string[] $expectedTypes The expected types.
+	 * @return InvalidTypeExceptionInterface The `InvalidTypeException`.
 	 */
-	protected const ERROR_INVALID_TYPE = 'The type of the value is not valid. `%s` expected, but `%s` given.';
-
-	/**
-	 * Represents the error message if the value to convert is not valid.
-	 * @var string
-	 */
-	protected const ERROR_INVALID_VALUE = 'The value is not valid. `%s` expected, but `%s` given.';
-
-	/**
-	 * Gets the InvalidTypeException.
-	 * @param mixed $value The given value.
-	 * @param string $expectedType The expected type.
-	 * @return InvalidTypeException The InvalidTypeException.
-	 */
-	protected function getInvalidTypeException( $value, string $expectedType ): InvalidTypeException
+	protected function getInvalidTypeException( mixed $invalidValue, string ...$expectedTypes ): InvalidTypeExceptionInterface
 	{
-		return new InvalidTypeException(
-			sprintf(
-				static::ERROR_INVALID_TYPE,
-				$expectedType,
-				( new TypeDeterminator( false ) )
-					->determine( $value )
-			)
-		);
+		$invalidType = ( new TypeDeterminator() )
+			->determine( $invalidValue, false );
+
+		return InvalidTypeException::with_invalidTypeAndExpectedTypes( $invalidType, ...$expectedTypes );
 	}
 
 	/**
-	 * Gets the InvalidValueException.
-	 * @param mixed $value The given value.
-	 * @param string $expectedValue The expected value.
-	 * @return InvalidValueException The InvalidValueException.
+	 * Gets the `InvalidValueException`.
+	 * @param mixed $invalidValue The given invalid value.
+	 * @param string[] $expectedValues The expected values.
+	 * @return InvalidValueExceptionInterface The `InvalidValueException`.
 	 */
-	protected function getInvalidValueException( $value, string $expectedValue ): InvalidValueException
+	protected function getInvalidValueException( mixed $invalidValue, string ...$expectedValues ): InvalidValueExceptionInterface
 	{
-		return new InvalidValueException(
-			sprintf(
-				static::ERROR_INVALID_VALUE,
-				$expectedValue,
-				$value
-			)
-		);
+		return InvalidValueException::with_invalidValueAndExpectedValues( $invalidValue, ...$expectedValues );
 	}
 }
