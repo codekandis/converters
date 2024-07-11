@@ -63,5 +63,5 @@ abstract class ValidValues
 	 * Represents the template of a `DateTime string`.
 	 * @var string
 	 */
-	public const string TEMPLATE_DATETIME_STRING_TEMPLATE = 'string<datetime<%s>>';
+	public const string DATETIME_STRING_TEMPLATE = 'string<datetime<%s>>';
 }
