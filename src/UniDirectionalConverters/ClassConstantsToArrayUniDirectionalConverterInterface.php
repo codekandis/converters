@@ -1,7 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
-use CodeKandis\Converters\ClassNotFoundExceptionInterface;
+use CodeKandis\Types\ClassNotFoundExceptionInterface;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 
 /**
@@ -16,7 +16,7 @@ interface ClassConstantsToArrayUniDirectionalConverterInterface extends UniDirec
 	 * @param mixed $value The class name of the class whose constants has to be converted.
 	 * @return mixed The converted array of corresponding key value pairs.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.
-	 * @throws ClassNotFoundExceptionInterface The enumeration class does not exist.
+	 * @throws ClassNotFoundExceptionInterface The class does not exist.
 	 */
 	public function convert( mixed $value ): array;
 }
