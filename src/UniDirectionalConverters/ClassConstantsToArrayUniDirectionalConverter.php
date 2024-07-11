@@ -2,8 +2,8 @@
 namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
-use CodeKandis\Converters\ClassNotFoundException;
 use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Types\ClassNotFoundException;
 use Override;
 use ReflectionClass;
 use ReflectionException;
