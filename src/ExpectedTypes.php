@@ -1,12 +1,14 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters;
 
+use CodeKandis\Types\BaseObject;
+
 /**
  * Represents an enumeration of expected types.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class ExpectedTypes
+abstract class ExpectedTypes extends BaseObject implements ExpectedTypesInterface
 {
 	/**
 	 * Represents a `NULL` type.

@@ -1,12 +1,14 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters;
 
+use CodeKandis\Types\BaseObject;
+
 /**
  * Represents an enumeration of regular expressions of valid values.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class ValidValuesRegularExpressions
+abstract class ValidValuesRegularExpressions extends BaseObject implements ValidValuesRegularExpressionsInterface
 {
 	/**
 	 * Represents the regular expression of a `boolean string` value.
