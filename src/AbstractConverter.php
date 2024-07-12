@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters;
 
+use CodeKandis\Types\BaseObject;
 use CodeKandis\Types\InvalidTypeException;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 use CodeKandis\Types\InvalidValueException;
@@ -13,7 +14,7 @@ use CodeKandis\Types\TypeDetermination\TypeDeterminator;
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class AbstractConverter implements ConverterInterface
+abstract class AbstractConverter extends BaseObject implements ConverterInterface
 {
 	/**
 	 * Gets the `InvalidTypeException`.

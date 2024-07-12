@@ -1,12 +1,14 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Converters;
 
+use CodeKandis\Types\BaseObject;
+
 /**
  * Represents an enumeration of valid values.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class ValidValues
+abstract class ValidValues extends BaseObject implements ValidValuesInterface
 {
 	/**
 	 * Represents a `null string`.
