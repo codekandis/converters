@@ -7,7 +7,6 @@ use CodeKandis\Converters\ValidValues;
 use DateTimeImmutable;
 use Override;
 use function is_string;
-use function sprintf;
 
 /**
  * Represents a unidirectional converter converting a nullable `DateTime` string value into its corresponding nullable `DateTimeImmutable` value depending on a given format.
@@ -39,7 +38,7 @@ class NullableDateTimeStringToNullableDateTimeImmutableUniDirectionalConverter e
 			throw $this->getInvalidValueException(
 				$value,
 				ValidValues::NULL_STRING,
-				sprintf( ValidValues::DATETIME_STRING_TEMPLATE, $this->format )
+				ValidValues::createDateTimeString( $this->format )
 			);
 		}
 

@@ -8,4 +8,10 @@ namespace CodeKandis\Converters;
  */
 interface ValidValuesInterface
 {
+	/**
+	 * Creates a `DateTime string` by a specific format.
+	 * @param string $format The format to create the `DateTime string` from.
+	 * @return string The created `DateTime string` from.
+	 */
+	public static function createDateTimeString( string $format ): string;
 }

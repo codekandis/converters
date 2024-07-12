@@ -7,7 +7,6 @@ use CodeKandis\Converters\ValidValues;
 use DateTime;
 use Override;
 use function is_string;
-use function sprintf;
 
 /**
  * Represents a unidirectional converter converting a `DateTime` string value into its corresponding `DateTime` value depending on a given format.
@@ -33,7 +32,7 @@ class DateTimeStringToDateTimeUniDirectionalConverter extends AbstractDateTimeRe
 		{
 			throw $this->getInvalidValueException(
 				$value,
-				sprintf( ValidValues::DATETIME_STRING_TEMPLATE, $this->format )
+				ValidValues::createDateTimeString( $this->format )
 			);
 		}
 
