@@ -33,7 +33,7 @@ class DateTimeStringToDateTimeUniDirectionalConverter extends AbstractDateTimeRe
 		{
 			throw $this->getInvalidValueException(
 				$value,
-				sprintf( ValidValues::DATETIME_STRING_TEMPLATE, $this->format )
+				ValidValues::createDateTimeString( $this->format )
 			);
 		}
 

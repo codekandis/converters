@@ -39,7 +39,7 @@ class NullableDateTimeStringToNullableDateTimeUniDirectionalConverter extends Ab
 			throw $this->getInvalidValueException(
 				$value,
 				ValidValues::NULL_STRING,
-				sprintf( ValidValues::DATETIME_STRING_TEMPLATE, $this->format )
+				ValidValues::createDateTimeString( $this->format )
 			);
 		}
 

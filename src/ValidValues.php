@@ -2,6 +2,8 @@
 namespace CodeKandis\Converters;
 
 use CodeKandis\Types\BaseObject;
+use Override;
+use function sprintf;
 
 /**
  * Represents an enumeration of valid values.
@@ -66,4 +68,13 @@ abstract class ValidValues extends BaseObject implements ValidValuesInterface
 	 * @var string
 	 */
 	public const string DATETIME_STRING_TEMPLATE = 'string<datetime<%s>>';
+
+	/**
+	 * @inheritDoc
+	 */
+	#[Override]
+	public static function createDateTimeString( string $format ): string
+	{
+		return sprintf( ValidValues::DATETIME_STRING_TEMPLATE, $format );
+	}
 }
