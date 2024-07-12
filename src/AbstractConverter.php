@@ -5,7 +5,8 @@ use CodeKandis\Types\InvalidTypeException;
 use CodeKandis\Types\InvalidTypeExceptionInterface;
 use CodeKandis\Types\InvalidValueException;
 use CodeKandis\Types\InvalidValueExceptionInterface;
-use CodeKandis\Types\TypeDeterminator;
+use CodeKandis\Types\TypeDetermination\TypeDeterminationKind;
+use CodeKandis\Types\TypeDetermination\TypeDeterminator;
 
 /**
  * Represents the base class of any converter.
@@ -23,7 +24,7 @@ abstract class AbstractConverter implements ConverterInterface
 	protected function getInvalidTypeException( mixed $invalidValue, string ...$expectedTypes ): InvalidTypeExceptionInterface
 	{
 		$invalidType = ( new TypeDeterminator() )
-			->determine( $invalidValue, false );
+			->determine( $invalidValue, TypeDeterminationKind::TypeHintDetailed );
 
 		return InvalidTypeException::with_invalidTypeAndExpectedTypes( $invalidType, ...$expectedTypes );
 	}
