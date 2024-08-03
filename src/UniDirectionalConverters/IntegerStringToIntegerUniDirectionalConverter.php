@@ -5,6 +5,8 @@ use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use CodeKandis\RegularExpressions\RegularExpressionNotMatchingExceptionInterface;
+use CodeKandis\Types\InvalidOffsetExceptionInterface;
 use Override;
 use function is_string;
 
@@ -26,10 +28,16 @@ class IntegerStringToIntegerUniDirectionalConverter extends AbstractConverter im
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INTEGER_STRING );
-		if ( null === $regularExpression->match( $value, false ) )
+		try
 		{
-			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_INTEGER_STRING );
+			$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INTEGER_STRING );
+			if ( null === $regularExpression->match( $value, false ) )
+			{
+				throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_INTEGER_STRING );
+			}
+		}
+		catch ( RegularExpressionNotMatchingExceptionInterface | InvalidOffsetExceptionInterface )
+		{
 		}
 
 		return (int) $value;

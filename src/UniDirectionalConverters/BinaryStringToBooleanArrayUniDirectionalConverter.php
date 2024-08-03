@@ -6,6 +6,8 @@ use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use CodeKandis\RegularExpressions\RegularExpressionNotMatchingExceptionInterface;
+use CodeKandis\Types\InvalidOffsetExceptionInterface;
 use Override;
 use function is_string;
 use function strlen;
@@ -28,10 +30,16 @@ class BinaryStringToBooleanArrayUniDirectionalConverter extends AbstractConverte
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BINARY_STRING );
-		if ( null === $regularExpression->match( $value, false ) )
+		try
 		{
-			throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_BINARY_STRING );
+			$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_BINARY_STRING );
+			if ( null === $regularExpression->match( $value, false ) )
+			{
+				throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_BINARY_STRING );
+			}
+		}
+		catch ( RegularExpressionNotMatchingExceptionInterface | InvalidOffsetExceptionInterface )
+		{
 		}
 
 		$boolArray = [];

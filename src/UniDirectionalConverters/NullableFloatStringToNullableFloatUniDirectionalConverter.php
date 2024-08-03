@@ -6,6 +6,8 @@ use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
 use CodeKandis\Converters\ValidValuesRegularExpressions;
 use CodeKandis\RegularExpressions\RegularExpression;
+use CodeKandis\RegularExpressions\RegularExpressionNotMatchingExceptionInterface;
+use CodeKandis\Types\InvalidOffsetExceptionInterface;
 use Override;
 use function is_string;
 
@@ -32,10 +34,16 @@ class NullableFloatStringToNullableFloatUniDirectionalConverter extends Abstract
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}
 
-		$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_FLOAT_STRING );
-		if ( null === $regularExpression->match( $value, false ) )
+		try
 		{
-			throw $this->getInvalidValueException( $value, ValidValues::NULL_STRING, ValidValuesRegularExpressions::REGEX_FLOAT_STRING );
+			$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_FLOAT_STRING );
+			if ( null === $regularExpression->match( $value, false ) )
+			{
+				throw $this->getInvalidValueException( $value, ValidValues::NULL_STRING, ValidValuesRegularExpressions::REGEX_FLOAT_STRING );
+			}
+		}
+		catch ( RegularExpressionNotMatchingExceptionInterface | InvalidOffsetExceptionInterface )
+		{
 		}
 
 		return (float) $value;
