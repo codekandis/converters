@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverters\NullableFloatToNullableFloatS
 use Override;
 
 /**
- * Represents a bidirectional converter converting a nullable float string value matching the regular expression `ValidValuesRegularExpressions::REGEX_FLOAT_STRING` into its corresponding nullable float value - and vice versa.
+ * Represents a bidirectional converter converting a nullable float string value matching the regular expression {@link ValidValues::REGEX_FLOAT_STRING} into its corresponding nullable float value - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

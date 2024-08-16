@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverters\NullableIntegerToNullableBina
 use Override;
 
 /**
- * Represents a bidirectional converter converting a nullable binary string value matching the regular expression `ValidValuesRegularExpressions::REGEX_BINARY_STRING` into its corresponding nullable integer value - and vice versa.
+ * Represents a bidirectional converter converting a nullable binary string value matching the regular expression {@link ValidValues::REGEX_BINARY_STRING} into its corresponding nullable integer value - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

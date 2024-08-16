@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverters\BooleanToBooleanStringUniDire
 use Override;
 
 /**
- * Represents a bidirectional converter converting a boolean string value matching the regular expression `ValidValuesRegularExpressions::REGEX_BOOLEAN_STRING` into its corresponding boolean value equal to `false` or `true` - and vice versa.
+ * Represents a bidirectional converter converting a boolean string value matching the regular expression {@link ValidValues::REGEX_BOOLEAN_STRING} into its corresponding boolean value equal to `false` or `true` - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -6,7 +6,7 @@ use CodeKandis\Converters\UniDirectionalConverters\BooleanArrayToBinaryStringUni
 use Override;
 
 /**
- * Represents a bidirectional converter converting a binary string value matching the regular expression `ValidValuesRegularExpressions::REGEX_BINARY_STRING` into its corresponding boolean array containing values equal to `false` or `true` - and vice versa.
+ * Represents a bidirectional converter converting a binary string value matching the regular expression {@link ValidValues::REGEX_BINARY_STRING} into its corresponding boolean array containing values equal to `false` or `true` - and vice versa.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

@@ -7,7 +7,7 @@ use Override;
 use function is_float;
 
 /**
- * Represents a unidirectional converter converting a nullable float value into its corresponding nullable float string value matching the regular expression `ValidValuesRegularExpressions::REGEX_FLOAT_STRING`.
+ * Represents a unidirectional converter converting a nullable float value into its corresponding nullable float string value matching the regular expression {@link ValidValues::REGEX_FLOAT_STRING}.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

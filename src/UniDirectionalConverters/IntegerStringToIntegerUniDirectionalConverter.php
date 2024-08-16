@@ -3,7 +3,7 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
-use CodeKandis\Converters\ValidValuesRegularExpressions;
+use CodeKandis\Converters\ValidValues;
 use CodeKandis\RegularExpressions\RegularExpression;
 use CodeKandis\RegularExpressions\RegularExpressionNotMatchingExceptionInterface;
 use CodeKandis\Types\InvalidOffsetExceptionInterface;
@@ -11,7 +11,7 @@ use Override;
 use function is_string;
 
 /**
- * Represents a unidirectional converter converting an integer string value matching the regular expression `ValidValuesRegularExpressions::REGEX_INTEGER_STRING` into its corresponding integer value.
+ * Represents a unidirectional converter converting an integer string value matching the regular expression {@link ValidValues::REGEX_INTEGER_STRING} into its corresponding integer value.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -30,10 +30,10 @@ class IntegerStringToIntegerUniDirectionalConverter extends AbstractConverter im
 
 		try
 		{
-			$regularExpression = new RegularExpression( ValidValuesRegularExpressions::REGEX_INTEGER_STRING );
+			$regularExpression = new RegularExpression( ValidValues::REGEX_INTEGER_STRING );
 			if ( null === $regularExpression->match( $value, false ) )
 			{
-				throw $this->getInvalidValueException( $value, ValidValuesRegularExpressions::REGEX_INTEGER_STRING );
+				throw $this->getInvalidValueException( $value, ValidValues::REGEX_INTEGER_STRING );
 			}
 		}
 		catch ( RegularExpressionNotMatchingExceptionInterface | InvalidOffsetExceptionInterface )

@@ -7,7 +7,7 @@ use Override;
 use function is_int;
 
 /**
- * Represents a unidirectional converter converting a nullable integer value into its corresponding nullable integer string value matching the regular expression `ValidValuesRegularExpressions::REGEX_INTEGER_STRING`.
+ * Represents a unidirectional converter converting a nullable integer value into its corresponding nullable integer string value matching the regular expression {@link ValidValues::REGEX_INTEGER_STRING}.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */

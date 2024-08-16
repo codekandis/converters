@@ -8,7 +8,7 @@ use function decbin;
 use function is_int;
 
 /**
- * Represents a unidirectional converter converting an integer value into its corresponding binary string value matching the regular expression `ValidValuesRegularExpressions::REGEX_BINARY_STRING`.
+ * Represents a unidirectional converter converting an integer value into its corresponding binary string value matching the regular expression {@link ValidValues::REGEX_BINARY_STRING}.
  * @package codekandis/converters
  * @author Christian Ramelow <info@codekandis.net>
  */
