@@ -4,9 +4,10 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
+use CodeKandis\Validators\IsNullValidator;
+use CodeKandis\Validators\IsStringValidator;
 use DateTime;
 use Override;
-use function is_string;
 
 /**
  * Represents a unidirectional converter converting a nullable `DateTime` string value into its corresponding nullable `DateTime` value depending on a given format.
@@ -21,12 +22,18 @@ class NullableDateTimeStringToNullableDateTimeUniDirectionalConverter extends Ab
 	#[Override]
 	public function convert( mixed $value ): ?DateTime
 	{
-		if ( null === $value )
+		if (
+			true === ( new IsNullValidator() )
+				->validate( $value )
+		)
 		{
 			return null;
 		}
 
-		if ( false === is_string( $value ) )
+		if (
+			false === ( new IsStringValidator() )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}

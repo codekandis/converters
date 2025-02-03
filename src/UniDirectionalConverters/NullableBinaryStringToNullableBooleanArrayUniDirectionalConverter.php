@@ -4,11 +4,11 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
-use CodeKandis\RegularExpressions\RegularExpression;
-use CodeKandis\RegularExpressions\RegularExpressionNotMatchingExceptionInterface;
-use CodeKandis\Types\InvalidOffsetExceptionInterface;
+use CodeKandis\Types\UnexpectedErrorExceptionInterface;
+use CodeKandis\Validators\IsMatchingRegularExpressionValidator;
+use CodeKandis\Validators\IsNullValidator;
+use CodeKandis\Validators\IsStringValidator;
 use Override;
-use function is_string;
 use function strlen;
 
 /**
@@ -20,30 +20,33 @@ class NullableBinaryStringToNullableBooleanArrayUniDirectionalConverter extends 
 {
 	/**
 	 * @inheritDoc
+	 * @throws UnexpectedErrorExceptionInterface An unexpected error occured.
 	 */
 	#[Override]
 	public function convert( mixed $value ): ?array
 	{
-		if ( null === $value )
+		if (
+			true === ( new IsNullValidator() )
+				->validate( $value )
+		)
 		{
 			return null;
 		}
 
-		if ( false === is_string( $value ) )
+		if (
+			false === ( new IsStringValidator() )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_STRING );
 		}
 
-		try
+		if (
+			false === ( new IsMatchingRegularExpressionValidator( ValidValues::REGEX_BINARY_STRING ) )
+				->validate( $value )
+		)
 		{
-			$regularExpression = new RegularExpression( ValidValues::REGEX_BINARY_STRING );
-			if ( null === $regularExpression->match( $value, false ) )
-			{
-				throw $this->getInvalidValueException( $value, ValidValues::NULL_STRING, ValidValues::REGEX_BINARY_STRING );
-			}
-		}
-		catch ( RegularExpressionNotMatchingExceptionInterface | InvalidOffsetExceptionInterface )
-		{
+			throw $this->getInvalidValueException( $value, ValidValues::NULL_STRING, ValidValues::REGEX_BINARY_STRING );
 		}
 
 		$boolArray = [];

@@ -3,6 +3,8 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Validators\IsInstanceOfValidator;
+use CodeKandis\Validators\IsNullValidator;
 use DateTimeImmutable;
 use Override;
 
@@ -19,12 +21,18 @@ class NullableDateTimeImmutableToNullableDateTimeStringUniDirectionalConverter e
 	#[Override]
 	public function convert( mixed $value ): ?string
 	{
-		if ( null === $value )
+		if (
+			true === ( new IsNullValidator() )
+				->validate( $value )
+		)
 		{
 			return null;
 		}
 
-		if ( false === $value instanceof DateTimeImmutable )
+		if (
+			false === ( new IsInstanceOfValidator( DateTimeImmutable::class ) )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_DATETIME_IMMUTABLE );
 		}

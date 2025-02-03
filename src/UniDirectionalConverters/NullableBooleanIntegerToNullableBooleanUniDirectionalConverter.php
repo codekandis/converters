@@ -4,10 +4,11 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
+use CodeKandis\Validators\IsInArrayValidator;
+use CodeKandis\Validators\IsIntegerValidator;
+use CodeKandis\Validators\IsNullValidator;
 use Override;
 use function array_map;
-use function in_array;
-use function is_int;
 
 /**
  * Represents a unidirectional converter converting a nullable boolean integer value equal to `0` or `1` into its corresponding nullable boolean value equal to `false` or `true`.
@@ -22,17 +23,26 @@ class NullableBooleanIntegerToNullableBooleanUniDirectionalConverter extends Abs
 	#[Override]
 	public function convert( mixed $value ): ?bool
 	{
-		if ( null === $value )
+		if (
+			true === ( new IsNullValidator() )
+				->validate( $value )
+		)
 		{
 			return null;
 		}
 
-		if ( false === is_int( $value ) )
+		if (
+			false === ( new IsIntegerValidator() )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_INTEGER );
 		}
 
-		if ( false === in_array( $value, ValidValues::BOOLEAN_INTEGER_SET ) )
+		if (
+			false === ( new IsInArrayValidator( ValidValues::BOOLEAN_INTEGER_SET ) )
+				->validate( $value )
+		)
 		{
 			$expectedValues = array_map(
 				fn( $expectedValue ): string => (string) $expectedValue,

@@ -3,9 +3,9 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Validators\IsIntegerValidator;
 use Override;
 use function decbin;
-use function is_int;
 
 /**
  * Represents a unidirectional converter converting an integer value into its corresponding binary string value matching the regular expression {@link ValidValues::REGEX_BINARY_STRING}.
@@ -20,7 +20,10 @@ class IntegerToBinaryStringUniDirectionalConverter extends AbstractConverter imp
 	#[Override]
 	public function convert( mixed $value ): string
 	{
-		if ( false === is_int( $value ) )
+		if (
+			false === ( new IsIntegerValidator() )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::INTEGER );
 		}

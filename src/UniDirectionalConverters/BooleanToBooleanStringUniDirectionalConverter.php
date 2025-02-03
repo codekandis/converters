@@ -4,8 +4,8 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
+use CodeKandis\Validators\IsBooleanValidator;
 use Override;
-use function is_bool;
 
 /**
  * Represents a unidirectional converter converting a boolean value equal to `false` or `true` into its corresponding boolean string value matching the regular expression {@link ValidValues::REGEX_BOOLEAN_STRING}.
@@ -20,7 +20,10 @@ class BooleanToBooleanStringUniDirectionalConverter extends AbstractConverter im
 	#[Override]
 	public function convert( mixed $value ): string
 	{
-		if ( false === is_bool( $value ) )
+		if (
+			false === ( new IsBooleanValidator() )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::BOOLEAN );
 		}

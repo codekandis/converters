@@ -4,9 +4,10 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
+use CodeKandis\Validators\IsArrayValidator;
+use CodeKandis\Validators\IsBooleanValidator;
+use CodeKandis\Validators\IsNullValidator;
 use Override;
-use function is_array;
-use function is_bool;
 
 /**
  * Represents a unidirectional converter converting a nullable boolean array containing values equal to `false` or `true` into its corresponding nullable binary string value matching the regular expression {@link ValidValues::REGEX_BINARY_STRING}.
@@ -21,19 +22,26 @@ class NullableBooleanArrayToNullableBinaryStringUniDirectionalConverter extends 
 	#[Override]
 	public function convert( mixed $value ): ?string
 	{
-		if ( null === $value )
+		if (
+			true === ( new IsNullValidator() )
+				->validate( $value )
+		)
 		{
 			return null;
 		}
 
-		if ( false === is_array( $value ) )
+		if (
+			false === ( new IsArrayValidator() )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_BOOLEAN_ARRAY );
 		}
 
+		$elementValidator = new IsBooleanValidator();
 		foreach ( $value as $valueFetched )
 		{
-			if ( false === is_bool( $valueFetched ) )
+			if ( false === $elementValidator->validate( $valueFetched ) )
 			{
 				throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_BOOLEAN_ARRAY );
 			}

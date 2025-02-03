@@ -4,11 +4,10 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
-use CodeKandis\RegularExpressions\RegularExpression;
-use CodeKandis\RegularExpressions\RegularExpressionNotMatchingExceptionInterface;
-use CodeKandis\Types\InvalidOffsetExceptionInterface;
+use CodeKandis\Types\UnexpectedErrorExceptionInterface;
+use CodeKandis\Validators\IsMatchingRegularExpressionValidator;
+use CodeKandis\Validators\IsStringValidator;
 use Override;
-use function is_string;
 
 /**
  * Represents a unidirectional converter converting a float string value matching the regular expression {@link ValidValues::REGEX_FLOAT_STRING} into its corresponding float value.
@@ -19,25 +18,25 @@ class FloatStringToFloatUniDirectionalConverter extends AbstractConverter implem
 {
 	/**
 	 * @inheritDoc
+	 * @throws UnexpectedErrorExceptionInterface An unexpected error occured.
 	 */
 	#[Override]
 	public function convert( mixed $value ): float
 	{
-		if ( false === is_string( $value ) )
+		if (
+			false === ( new IsStringValidator() )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}
 
-		try
+		if (
+			false === ( new IsMatchingRegularExpressionValidator( ValidValues::REGEX_FLOAT_STRING ) )
+				->validate( $value )
+		)
 		{
-			$regularExpression = new RegularExpression( ValidValues::REGEX_FLOAT_STRING );
-			if ( null === $regularExpression->match( $value, false ) )
-			{
-				throw $this->getInvalidValueException( $value, ValidValues::REGEX_FLOAT_STRING );
-			}
-		}
-		catch ( RegularExpressionNotMatchingExceptionInterface | InvalidOffsetExceptionInterface )
-		{
+			throw $this->getInvalidValueException( $value, ValidValues::REGEX_FLOAT_STRING );
 		}
 
 		return (float) $value;

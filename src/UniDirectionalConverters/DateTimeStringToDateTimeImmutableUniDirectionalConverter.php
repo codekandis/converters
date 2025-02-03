@@ -4,9 +4,9 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
+use CodeKandis\Validators\IsStringValidator;
 use DateTimeImmutable;
 use Override;
-use function is_string;
 
 /**
  * Represents a unidirectional converter converting a `DateTime` string value into its corresponding `DateTimeImmutable` value depending on a given format.
@@ -21,7 +21,10 @@ class DateTimeStringToDateTimeImmutableUniDirectionalConverter extends AbstractD
 	#[Override]
 	public function convert( mixed $value ): DateTimeImmutable
 	{
-		if ( false === is_string( $value ) )
+		if (
+			false === ( new IsStringValidator() )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::STRING );
 		}

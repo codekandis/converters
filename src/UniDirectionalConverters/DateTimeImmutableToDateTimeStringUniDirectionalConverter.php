@@ -3,6 +3,7 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractDateTimeRelatedConverter;
 use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Validators\IsInstanceOfValidator;
 use DateTimeImmutable;
 use Override;
 
@@ -19,7 +20,10 @@ class DateTimeImmutableToDateTimeStringUniDirectionalConverter extends AbstractD
 	#[Override]
 	public function convert( mixed $value ): string
 	{
-		if ( false === $value instanceof DateTimeImmutable )
+		if (
+			false === ( new IsInstanceOfValidator( DateTimeImmutable::class ) )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::DATETIME_IMMUTABLE );
 		}

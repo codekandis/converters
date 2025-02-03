@@ -3,8 +3,9 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Validators\IsFloatValidator;
+use CodeKandis\Validators\IsNullValidator;
 use Override;
-use function is_float;
 
 /**
  * Represents a unidirectional converter converting a nullable float value into its corresponding nullable float string value matching the regular expression {@link ValidValues::REGEX_FLOAT_STRING}.
@@ -19,12 +20,18 @@ class NullableFloatToNullableFloatStringUniDirectionalConverter extends Abstract
 	#[Override]
 	public function convert( mixed $value ): ?string
 	{
-		if ( null === $value )
+		if (
+			true === ( new IsNullValidator() )
+				->validate( $value )
+		)
 		{
 			return null;
 		}
 
-		if ( false === is_float( $value ) )
+		if (
+			false === ( new IsFloatValidator() )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_FLOAT );
 		}

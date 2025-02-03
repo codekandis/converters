@@ -4,8 +4,9 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
 use CodeKandis\Converters\ValidValues;
+use CodeKandis\Validators\IsBooleanValidator;
+use CodeKandis\Validators\IsNullValidator;
 use Override;
-use function is_bool;
 
 /**
  * Represents a unidirectional converter converting a nullable boolean value equal to `false` or `true` into its corresponding nullable boolean integer value equal to `0` or `1`.
@@ -20,12 +21,18 @@ class NullableBooleanToNullableBooleanIntegerUniDirectionalConverter extends Abs
 	#[Override]
 	public function convert( mixed $value ): ?int
 	{
-		if ( null === $value )
+		if (
+			true === ( new IsNullValidator() )
+				->validate( $value )
+		)
 		{
 			return null;
 		}
 
-		if ( false === is_bool( $value ) )
+		if (
+			false === ( new IsBooleanValidator() )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_BOOLEAN );
 		}

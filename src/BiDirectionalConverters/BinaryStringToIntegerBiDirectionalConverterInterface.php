@@ -21,7 +21,7 @@ interface BinaryStringToIntegerBiDirectionalConverterInterface extends BiDirecti
 	public function convertTo( mixed $value ): int;
 
 	/**
-	 * Converts from a integer value into its corresponding binary string value matching the regular expression {@link ValidValues::REGEX_BINARY_STRING}.
+	 * Converts from an integer value into its corresponding binary string value matching the regular expression {@link ValidValues::REGEX_BINARY_STRING}.
 	 * @param int $value The integer value which has to be converted.
 	 * @return string The converted binary string value.
 	 * @throws InvalidTypeExceptionInterface The type of the value to convert is invalid.

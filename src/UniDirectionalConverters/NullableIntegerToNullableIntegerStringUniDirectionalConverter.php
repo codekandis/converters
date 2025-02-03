@@ -3,8 +3,9 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Validators\IsIntegerValidator;
+use CodeKandis\Validators\IsNullValidator;
 use Override;
-use function is_int;
 
 /**
  * Represents a unidirectional converter converting a nullable integer value into its corresponding nullable integer string value matching the regular expression {@link ValidValues::REGEX_INTEGER_STRING}.
@@ -19,12 +20,18 @@ class NullableIntegerToNullableIntegerStringUniDirectionalConverter extends Abst
 	#[Override]
 	public function convert( mixed $value ): ?string
 	{
-		if ( null === $value )
+		if (
+			true === ( new IsNullValidator() )
+				->validate( $value )
+		)
 		{
 			return null;
 		}
 
-		if ( false === is_int( $value ) )
+		if (
+			false === ( new IsIntegerValidator() )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::NULLABLE_INTEGER );
 		}

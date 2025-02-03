@@ -3,8 +3,8 @@ namespace CodeKandis\Converters\UniDirectionalConverters;
 
 use CodeKandis\Converters\AbstractConverter;
 use CodeKandis\Converters\ExpectedTypes;
+use CodeKandis\Validators\IsFloatValidator;
 use Override;
-use function is_float;
 
 /**
  * Represents a unidirectional converter converting a float value into its corresponding float string value matching the regular expression {@link ValidValues::REGEX_FLOAT_STRING}.
@@ -19,7 +19,10 @@ class FloatToFloatStringUniDirectionalConverter extends AbstractConverter implem
 	#[Override]
 	public function convert( mixed $value ): string
 	{
-		if ( false === is_float( $value ) )
+		if (
+			false === ( new IsFloatValidator() )
+				->validate( $value )
+		)
 		{
 			throw $this->getInvalidTypeException( $value, ExpectedTypes::FLOAT );
 		}
