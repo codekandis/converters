@@ -7,6 +7,10 @@
 
 `codekandis/converters` is a library providing converter interfaces and classes.
 
+> [!CAUTION]
+> This repository is no longer maintained.
+> It has been superseded by [codekandis/toolkit][xtlink-github-codekandis-toolkit].
+
 ## Index
 
 * [Installation](#installation)
@@ -29,3 +33,5 @@ $ composer require codekandis/converters
 
 [srclink-changelog]: ./CHANGELOG.md
 [srclink-license]: ./LICENSE
+
+[xtlink-github-codekandis-toolkit]: https://github.com/codekandis/toolkit
